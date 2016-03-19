@@ -45,7 +45,7 @@ class USGNISTable:
             return False
 
         for i in range(0, len(columns)):
-            if self.fields[i].field_name != columns[i]:
+            if self.fields[i].field_name != columns[i].strip('"'):
                 return False
 
         return True
@@ -78,6 +78,24 @@ class USGNISTable:
             null=''
             )
 
+
+class USGNISTableCSV(USGNISTable):
+
+    def __init__(self, filename_regexp, table_name, fields, pk, sep=','):
+        self.filename_regexp = re.compile(filename_regexp)
+        self.table_name = table_name
+        self.fields = fields
+        self.pk = pk
+        self.sep = sep
+
+    def copy_data(self, fileobj, cur):
+        '''Copy data from the file object fileobj to the database using the
+        cursor cur'''
+
+        sql = 'COPY {} FROM STDIN WITH (FORMAT CSV)'.format(self.table_name)
+        cur.copy_expert(sql=sql, file=fileobj)
+
+
 NationalFedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
     table_name='usgnis.nationalfedcodes',
@@ -99,4 +117,13 @@ NationalFedCodes = USGNISTable(
             DateField('DATE_EDITED')
             ),
     pk='feature_id'
+    )
+
+CensusClassCodeDefinitions = USGNISTableCSV(
+    filename_regexp='Census_Class_Code_Definitions.csv',
+    table_name='usgnis.census_class_code_definitions',
+    fields=(FixedTextField('Code', width=2, nullable=False),
+            TextField('Description', nullable=False),
+            ),
+    pk='code'
     )
