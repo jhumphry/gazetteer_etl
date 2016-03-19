@@ -3,10 +3,8 @@
 '''Descriptions of the fields that can make up USGNIS data files, along with
 information on their SQL equivalents'''
 
-import abc
 
-
-class USGNISField(metaclass=abc.ABCMeta):
+class USGNISField:
 
     def __init__(self, field_name, sql_name='', nullable=True):
         self.field_name = field_name
@@ -15,31 +13,29 @@ class USGNISField(metaclass=abc.ABCMeta):
         else:
             self.sql_name = sql_name
         self.nullable = nullable
-        self.nullable_string = '' if nullable else ' NOT NULL'
 
-    @abc.abstractmethod
     def generate_sql(self):
         '''Return the SQL describing a field of this sort, suitable for
         inclusion in a CREATE TABLE statement'''
-        pass
+        if self.nullable:
+            return self.sql_name + ' ' + self.sql_type_name
+        else:
+            return self.sql_name + ' ' + self.sql_type_name + ' NOT NULL'
 
 
 class IntegerField(USGNISField):
 
-    def generate_sql(self):
-        return self.sql_name + ' INTEGER' + self.nullable_string
+    sql_type_name = 'INTEGER'
 
 
 class DoubleField(USGNISField):
 
-    def generate_sql(self):
-        return self.sql_name + ' DOUBLE PRECISION' + self.nullable_string
+    sql_type_name = 'DOUBLE PRECISION'
 
 
 class TextField(USGNISField):
 
-    def generate_sql(self):
-        return self.sql_name + ' TEXT' + self.nullable_string
+    sql_type_name = 'TEXT'
 
 
 class FixedTextField(USGNISField):
@@ -49,11 +45,13 @@ class FixedTextField(USGNISField):
         self.width = width
 
     def generate_sql(self):
-        return self.sql_name + ' CHARACTER({})'.format(self.width) +\
-            self.nullable_string
+        if self.nullable:
+            return self.sql_name + ' CHARACTER({})'.format(self.width)
+        else:
+            return self.sql_name + ' CHARACTER({})'.format(self.width) +\
+             ' NOT NULL'
 
 
 class DateField(USGNISField):
 
-    def generate_sql(self):
-        return self.sql_name + ' DATE' + self.nullable_string
+    sql_type_name = 'DATE'
