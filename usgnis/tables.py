@@ -102,8 +102,8 @@ NationalFedCodes = USGNISTable(
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
-            TextField('CENSUS_CODE', nullable=False),
-            FixedTextField('CENSUS_CLASS_CODE', width=2, nullable=False),
+            TextField('CENSUS_CODE'),
+            FixedTextField('CENSUS_CLASS_CODE', width=2),
             TextField('GSA_CODE'),
             TextField('OPM_CODE'),
             IntegerField('STATE_NUMERIC', nullable=False),
@@ -116,7 +116,7 @@ NationalFedCodes = USGNISTable(
             DateField('DATE_CREATED'),
             DateField('DATE_EDITED')
             ),
-    pk='feature_id'
+    pk='feature_id, county_sequence'
     )
 
 CensusClassCodeDefinitions = USGNISTableCSV(
