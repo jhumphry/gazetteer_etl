@@ -6,8 +6,6 @@ generating appropriate SQL'''
 import datetime
 import re
 
-from .fields import *
-
 
 class USGNISTable:
 

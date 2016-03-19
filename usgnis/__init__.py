@@ -2,8 +2,9 @@
 
 '''Descriptions of USGNIS data files'''
 
-from .fields import *
-from .tables import *
+from .fields import IntegerField, DoubleField, TextField
+from .fields import FixedTextField, DateField
+from .tables import USGNISTable, USGNISTableCSV
 
 NationalFedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
