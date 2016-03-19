@@ -64,6 +64,16 @@ class USGNISTable:
         result += ');\n'
         return result
 
+    def copy_data(self, fileobj, cur):
+        '''Copy data from the file object fileobj to the database using the
+        cursor cur'''
+
+        cur.copy_from(
+            file=fileobj,
+            table=self.table_name,
+            sep=self.sep,
+            null=''
+            )
 
 NationalFedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
