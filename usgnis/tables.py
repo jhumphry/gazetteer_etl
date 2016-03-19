@@ -84,7 +84,7 @@ NationalFedCodes = USGNISTable(
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
-            IntegerField('CENSUS_CODE', nullable=False),
+            TextField('CENSUS_CODE', nullable=False),
             FixedTextField('CENSUS_CLASS_CODE', width=2, nullable=False),
             TextField('GSA_CODE'),
             TextField('OPM_CODE'),
