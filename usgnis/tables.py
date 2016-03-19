@@ -25,11 +25,14 @@ class USGNISTable:
 
         matched = self.filename_regexp.match(filename)
         if matched:
-            date_text = matched.group(1)
-            file_date = datetime.date(year=int(date_text[0:4]),
-                                      month=int(date_text[4:6]),
-                                      day=int(date_text[6:8]))
-            return (matched, file_date)
+            date_text = matched.groups()
+            if len(date_text) == 1:
+                file_date = datetime.date(year=int(date_text[0][0:4]),
+                                          month=int(date_text[0][4:6]),
+                                          day=int(date_text[0][6:8]))
+            else:
+                file_date = None
+            return (True, file_date)
         else:
             return (False, None)
 
@@ -37,7 +40,7 @@ class USGNISTable:
         '''Return a Boolean value based on whether the provided header row
         matches the expectation in the code'''
 
-        columns = header.strip().split(self.sep)
+        columns = header.strip('\ufeff\n ').split(self.sep)
         if len(columns) != len(self.fields):
             return False
 
