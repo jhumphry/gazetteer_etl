@@ -6,6 +6,34 @@ from .fields import IntegerField, DoubleField, TextField
 from .fields import FixedTextField, DateField
 from .tables import USGNISTable, USGNISTableCSV
 
+
+NationalFile = USGNISTable(
+    filename_regexp='NationalFile_([0-9]{8})\.txt',
+    table_name='usgnis.nationalfile',
+    fields=(IntegerField('FEATURE_ID', nullable=False),
+            TextField('FEATURE_NAME', nullable=False),
+            TextField('FEATURE_CLASS', nullable=False),
+            FixedTextField('STATE_ALPHA', width=2, nullable=False),
+            IntegerField('STATE_NUMERIC', nullable=False),
+            TextField('COUNTY_NAME', nullable=False),
+            IntegerField('COUNTY_NUMERIC', nullable=False),
+            TextField('PRIMARY_LAT_DMS', nullable=False),
+            TextField('PRIMARY_LONG_DMS', nullable=False),
+            DoubleField('PRIM_LAT_DEC', nullable=False),
+            DoubleField('PRIM_LONG_DEC', nullable=False),
+            TextField('SOURCE_LAT_DMS'),
+            TextField('SOURCE_LONG_DMS'),
+            DoubleField('SOURCE_LAT_DEC'),
+            DoubleField('SOURCE_LONG_DEC'),
+            IntegerField('ELEV_IN_M', nullable=False),
+            IntegerField('ELEV_IN_FT', nullable=False),
+            TextField('MAP_NAME', nullable=False),
+            DateField('DATE_CREATED'),
+            DateField('DATE_EDITED')
+            ),
+    pk='feature_id'
+    )
+
 NationalFedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
     table_name='usgnis.nationalfedcodes',
