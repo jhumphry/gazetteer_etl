@@ -34,16 +34,22 @@ class USGNISTable:
         else:
             return (False, None)
 
-    def check_header(self, header):
+    def check_header(self, header, print_debug=False):
         '''Return a Boolean value based on whether the provided header row
         matches the expectation in the code'''
 
         columns = header.strip('\ufeff\n ').split(self.sep)
         if len(columns) != len(self.fields):
+            if print_debug:
+                print('Wrong number of columns: {} expected : {}'
+                      .format(len(columns), len(self.fields)))
             return False
 
         for i in range(0, len(columns)):
             if self.fields[i].field_name != columns[i].strip('"'):
+                if print_debug:
+                    print('Unknown column name: {}'
+                      .format(columns[i].strip('"')))
                 return False
 
         return True
