@@ -30,6 +30,8 @@ import psycopg2
 import usgnis
 import usgnis.mockdb
 
+# Parse command line arguments
+
 parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
                                  'database schema for USGNIS data')
 parser.add_argument('action', metavar='ACTION',
@@ -62,11 +64,15 @@ parser_db.add_argument('--port', help='PostgreSQL port (if required)',
                        action='store', type=int, default=5432)
 args = parser.parse_args()
 
+# List tables in the usgnis schema if requested
+
 if args.action == 'list':
     print('Valid PostgreSQL table names in the usgnis schema are:')
     for i in usgnis.USGNIS_Files:
         print(i)
     sys.exit(0)
+
+# Create database connection
 
 if args.dry_run:
     connection = usgnis.mockdb.Connection(args.dry_run)
@@ -81,6 +87,8 @@ else:
         connection = psycopg2.connect(database=args.database,
                                       user=args.user,
                                       password=args.password)
+
+# Create tables or truncate them
 
 with connection.cursor() as cur:
     cur.execute('CREATE SCHEMA IF NOT EXISTS usgnis;')
@@ -105,6 +113,8 @@ with connection.cursor() as cur:
             cur.execute(usgnis.USGNIS_Files[table].generate_sql_ddl())
 
     connection.commit()
+
+# Update database statistics
 
 connection.autocommit = True
 with connection.cursor() as cur:

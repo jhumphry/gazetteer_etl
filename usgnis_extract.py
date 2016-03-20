@@ -18,8 +18,8 @@
 #  MA 02110-1301, USA.
 #
 
-''' usgnis_schema.py - This program connects to a database and creates or
-recreates a schema that matches the data files provided by USGNIS.'''
+''' usgnis_extract.py - This program extracts data files provided by the
+USGNIS. and uploads them into a PostgreSQL database.'''
 
 import io
 import os
@@ -32,6 +32,8 @@ import psycopg2
 
 import usgnis
 import usgnis.mockdb
+
+# Parse command line arguments
 
 parser = argparse.ArgumentParser(description='Upload USGNIS data to a '
                                  'PostgreSQL database')
@@ -66,6 +68,8 @@ parser_db.add_argument("--maintenance-work-mem",
                        action="store", type=int, default=0)
 args = parser.parse_args()
 
+# Create database connection and change settings if requested
+
 if args.dry_run:
     connection = usgnis.mockdb.Connection(args.dry_run)
 else:
@@ -91,8 +95,11 @@ with connection.cursor() as cur:
         cur.execute("SET SESSION maintenance_work_mem=%s;",
                     (args.maintenance_work_mem*1024,))
 
+# Process files
+
 
 def process_file(filename, fp, cursor):
+    '''Process a file and if appropriate copy data to the database'''
 
     table = usgnis.find_table(os.path.split(filename)[-1])
 
@@ -108,6 +115,7 @@ def process_file(filename, fp, cursor):
 
     table.copy_data(fp, cur)
 
+# Find the files to process
 
 file_ext = os.path.splitext(args.file)[1]
 
@@ -132,6 +140,8 @@ elif file_ext == '.zip':
 else:
     print('Cannot handle files of this type: {}'.format(file_ext))
     sys.exit(1)
+
+# Update database statistics
 
 connection.autocommit = True
 with connection.cursor() as cur:
