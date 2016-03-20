@@ -19,7 +19,9 @@
 #
 
 ''' usgnis_schema.py - This program connects to a database and creates or
-recreates a schema that matches the data files provided by USGNIS.'''
+recreates a schema that matches the data files provided by USGNIS. Note that
+this program is not associated with or endorsed by the U.S. Geological
+Survey.'''
 
 import os
 import sys

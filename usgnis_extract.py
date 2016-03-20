@@ -19,7 +19,8 @@
 #
 
 ''' usgnis_extract.py - This program extracts data files provided by the
-USGNIS. and uploads them into a PostgreSQL database.'''
+USGNIS. and uploads them into a PostgreSQL database. Note that this program is
+not associated with or endorsed by the U.S. Geological Survey.'''
 
 import io
 import os
