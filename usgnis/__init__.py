@@ -77,6 +77,23 @@ NationalFedCodes = USGNISTable(
     pk='feature_id, county_sequence'
     )
 
+GovtUnits = USGNISTable(
+    filename_regexp='GOVT_UNITS_([0-9]{8})\.txt',
+    table_name='usgnis.govt_units',
+    fields=(IntegerField('FEATURE_ID', nullable=False),
+            TextField('UNIT_TYPE', nullable=False),
+            IntegerField('COUNTY_NUMERIC'),
+            TextField('COUNTY_NAME'),
+            IntegerField('STATE_NUMERIC', nullable=False),
+            FixedTextField('STATE_ALPHA', width=2, nullable=False),
+            TextField('STATE_NAME', nullable=False),
+            FixedTextField('COUNTRY_ALPHA', width=2, nullable=False),
+            TextField('COUNTRY_NAME', nullable=False),
+            TextField('FEATURE_NAME', nullable=False),
+            ),
+    pk='feature_id, unit_type'
+    )
+
 CensusClassCodeDefinitions = USGNISTableCSV(
     filename_regexp='Census_Class_Code_Definitions.csv',
     table_name='usgnis.census_class_code_definitions',
@@ -98,6 +115,7 @@ FeatureClassCodeDefinitions = USGNISTableCSV(
 USGNIS_Files = {
     'national_file': NationalFile,
     'national_fed_codes': NationalFedCodes,
+    'govt_units': GovtUnits,
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
     }
