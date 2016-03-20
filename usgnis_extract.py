@@ -106,7 +106,7 @@ def process_file(filename, fp, cursor):
         print('Cannot identify the file type for {}'.format(filename))
         sys.exit(1)
 
-    print('Uploading data to {}.'.format(table.table_name))
+    print('Uploading ''{}'' data to {}.'.format(filename, table.table_name))
 
     if not table.check_header(fp.readline()):
         print('File {} does not have the correct header'.format(filename))
