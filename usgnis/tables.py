@@ -67,7 +67,7 @@ class USGNISTable:
             if self.fields[i].field_name != columns[i].strip('"'):
                 if print_debug:
                     print('Unknown column name: {}'
-                      .format(columns[i].strip('"')))
+                          .format(columns[i].strip('"')))
                 return False
 
         return True

@@ -26,7 +26,6 @@ import os
 import sys
 import argparse
 import zipfile
-import contextlib
 
 import psycopg2
 
