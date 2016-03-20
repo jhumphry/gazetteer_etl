@@ -81,3 +81,14 @@ USGNIS_Files = {
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
     }
+
+
+def find_table(file_name):
+    '''Given a file name, return the USGNISTable or USGNITSTableCSV that it
+    is likely to relate to, or None if it does not appear to be related to any
+    of them.'''
+
+    for i in USGNIS_Files:
+        if USGNIS_Files[i].match_name(file_name)[0]:
+            return USGNIS_Files[i]
+    return None
