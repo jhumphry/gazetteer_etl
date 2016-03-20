@@ -75,8 +75,9 @@ FeatureClassCodeDefinitions = USGNISTableCSV(
     pk='class'
     )
 
-USGNIS_Files = (
-    NationalFedCodes,
-    CensusClassCodeDefinitions,
-    FeatureClassCodeDefinitions
-    )
+USGNIS_Files = {
+    'nationalfile': NationalFile,
+    'nationalfedcodes': NationalFedCodes,
+    'census_class_code_definitions': CensusClassCodeDefinitions,
+    'feature_class_code_definitions': FeatureClassCodeDefinitions
+    }
