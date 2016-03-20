@@ -26,6 +26,8 @@ import re
 
 
 class USGNISTable:
+    '''This class defines both a file provided by USGNIS that can be read, and
+    a database table that the data can be uploaded to.'''
 
     def __init__(self, filename_regexp, table_name, fields, pk, sep='|'):
         self.filename_regexp = re.compile(filename_regexp)
@@ -102,17 +104,52 @@ class USGNISTable:
 
 
 class USGNISTableCSV(USGNISTable):
+    '''This is a child class of USGNISTable that uses the CSV mode of
+    PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
-    def __init__(self, filename_regexp, table_name, fields, pk, sep=','):
+    def __init__(self, filename_regexp, table_name, fields, pk, sep=',',
+                 escape='\\', quote='"'):
         self.filename_regexp = re.compile(filename_regexp)
         self.table_name = table_name
         self.fields = fields
         self.pk = pk
         self.sep = sep
+        self.escape = escape
+        self.quote = quote
 
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the
         cursor cur'''
 
-        sql = 'COPY {} FROM STDIN WITH (FORMAT CSV)'.format(self.table_name)
+        sql = 'COPY {} FROM STDIN WITH ' \
+              '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}', QUOTE '{}' )''' \
+              .format(self.table_name, self.sep, self.escape, self.quote)
         cur.copy_expert(sql=sql, file=fileobj)
+
+
+class USGNISTableInserted(USGNISTable):
+    '''This functions like the USGNISTable, except that data is manually split
+    in Python and uploaded using a PREPAREd INSERT statement. This is slower
+    but works around files with dodgy characters that confuse PostgreSQL.'''
+
+    def copy_data(self, fileobj, cur):
+        '''Copy data from the file object fileobj to the database using the
+        cursor cur'''
+
+        prepared_name = 'insert_' + self.table_name.replace('.', '_')
+        num_fields = len(self.fields)
+
+        sql_prepare_params = ",".join(["$"+str(x)
+                                       for x in range(1, num_fields+1)])
+        cur.execute('''PREPARE {0} AS INSERT INTO {1} VALUES ({2});'''
+                    .format(prepared_name,
+                            self.table_name,
+                            sql_prepare_params))
+
+        sql_insert_params = ",".join(["%s" for x in range(1, num_fields+1)])
+        sql_insert = 'EXECUTE {0} ({1});'.format(prepared_name,
+                                                 sql_insert_params)
+
+        for line in fileobj:
+            params = [(None if x == '' else x) for x in line.split(self.sep)]
+            cur.execute(sql_insert, params)
