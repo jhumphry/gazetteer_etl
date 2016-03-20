@@ -27,7 +27,7 @@ from .tables import USGNISTable, USGNISTableCSV
 
 NationalFile = USGNISTable(
     filename_regexp='NationalFile_([0-9]{8})\.txt',
-    table_name='usgnis.nationalfile',
+    table_name='usgnis.national_file',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -56,7 +56,7 @@ NationalFile = USGNISTable(
 
 NationalFedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
-    table_name='usgnis.nationalfedcodes',
+    table_name='usgnis.national_fed_codes',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -96,8 +96,8 @@ FeatureClassCodeDefinitions = USGNISTableCSV(
     )
 
 USGNIS_Files = {
-    'nationalfile': NationalFile,
-    'nationalfedcodes': NationalFedCodes,
+    'national_file': NationalFile,
+    'national_fed_codes': NationalFedCodes,
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
     }
