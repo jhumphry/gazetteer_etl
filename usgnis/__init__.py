@@ -20,6 +20,9 @@
 
 '''A package that describes USGNIS data files and the associated schema.'''
 
+import copy
+import re
+
 from .fields import IntegerField, DoubleField, TextField
 from .fields import FixedTextField, DateField
 from .tables import USGNISTable, USGNISTableCSV, USGNISTableInserted
@@ -54,6 +57,10 @@ NationalFile = USGNISTable(
     pk='feature_id, state_numeric'
     )
 
+AllStatesFeatures = copy.copy(NationalFile)
+AllStatesFeatures.filename_regexp = \
+    re.compile('[A-Z]{2}_Features_([0-9]{8})\.txt')
+
 NationalFedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
     table_name='usgnis.national_fed_codes',
@@ -76,6 +83,10 @@ NationalFedCodes = USGNISTable(
             ),
     pk='feature_id, county_sequence'
     )
+
+AllStatesFedCodes = copy.copy(NationalFedCodes)
+AllStatesFedCodes.filename_regexp = \
+    re.compile('[A-Z]{2}_FedCodes_([0-9]{8})\.txt')
 
 # The Feature_Description_History files currently have lines containing a
 # variety of characters, including a '\|' sequence that PostgreSQL's COPY
@@ -137,6 +148,8 @@ USGNIS_Tables = {
     }
 
 USGNIS_Files = USGNIS_Tables.copy()
+USGNIS_Files['allstate_features'] = AllStatesFeatures
+USGNIS_Files['allstate_fed_codes'] = AllStatesFedCodes
 
 
 def find_table(file_name):
