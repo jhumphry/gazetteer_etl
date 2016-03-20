@@ -21,6 +21,7 @@
 ''' usgnis_schema.py - This program connects to a database and creates or
 recreates a schema that matches the data files provided by USGNIS.'''
 
+import io
 import os
 import sys
 import argparse
@@ -79,36 +80,58 @@ else:
                                       user=args.user,
                                       password=args.password)
 
+with connection.cursor() as cur:
+    if args.no_sync_commit:
+        cur.execute("SET SESSION synchronous_commit=off;")
+
+    if args.work_mem != 0:
+        cur.execute("SET SESSION work_mem=%s;", (args.work_mem*1024,))
+
+    if args.maintenance_work_mem != 0:
+        cur.execute("SET SESSION maintenance_work_mem=%s;",
+                    (args.maintenance_work_mem*1024,))
+
+
+def process_file(filename, fp, cursor):
+
+    table = usgnis.find_table(os.path.split(filename)[-1])
+
+    if table is None:
+        print('Cannot identify the file type for {}'.format(filename))
+        sys.exit(1)
+
+    print('Uploading data to {}.'.format(table.table_name))
+
+    if not table.check_header(fp.readline()):
+        print('File {} does not have the correct header'.format(filename))
+        sys.exit(1)
+
+    table.copy_data(fp, cur)
+
+
 file_ext = os.path.splitext(args.file)[1]
 
 if file_ext == '.txt' or file_ext == '.csv':
-    table = usgnis.find_table(os.path.split(args.file)[-1])
-
-    if table is None:
-        print('Cannot identify file type')
-        sys.exit(1)
-    else:
-        print('Uploading data to {}.'.format(table.table_name))
-
-    with open(args.file, 'r') as fp, \
+    with open(args.file, 'rt') as fp, \
             connection.cursor() as cur:
 
-        if not table.check_header(fp.readline()):
-            print('File {} does not have the correct header'.format(args.file))
-            sys.exit(1)
+        process_file(args.file, fp, cur)
 
-        if args.no_sync_commit:
-            cur.execute("SET SESSION synchronous_commit=off;")
+    connection.commit()
 
-        if args.work_mem != 0:
-            cur.execute("SET SESSION work_mem=%s;", (args.work_mem*1024,))
+elif file_ext == '.zip':
+    with zipfile.ZipFile(args.file, 'r') as inputs, \
+            connection.cursor() as cur:
 
-        if args.maintenance_work_mem != 0:
-            cur.execute("SET SESSION maintenance_work_mem=%s;",
-                        (args.maintenance_work_mem*1024,))
+        for i in inputs.namelist():
+            with io.TextIOWrapper(inputs.open(i, 'r')) as fp:
+                process_file(i, fp, cur)
 
-        table.copy_data(fp, cur)
-        connection.commit()
+    connection.commit()
+
+else:
+    print('Cannot handle files of this type: {}'.format(file_ext))
+    sys.exit(1)
 
 connection.autocommit = True
 with connection.cursor() as cur:
