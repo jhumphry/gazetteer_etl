@@ -68,7 +68,7 @@ args = parser.parse_args()
 
 if args.action == 'list':
     print('Valid PostgreSQL table names in the usgnis schema are:')
-    for i in usgnis.USGNIS_Files:
+    for i in usgnis.USGNIS_Tables:
         print(i)
     sys.exit(0)
 
@@ -94,9 +94,9 @@ with connection.cursor() as cur:
     cur.execute('CREATE SCHEMA IF NOT EXISTS usgnis;')
 
     if args.table == 'ALL':
-        tables = usgnis.USGNIS_Files
+        tables = usgnis.USGNIS_Tables
     else:
-        if args.table in usgnis.USGNIS_Files:
+        if args.table in usgnis.USGNIS_Tables:
             tables = [args.table, ]
         else:
             print('"{}" is not a recognised table name. Use the "list" action '
@@ -110,7 +110,7 @@ with connection.cursor() as cur:
             if args.drop_existing:
                 cur.execute('DROP TABLE IF EXISTS usgnis.{} CASCADE;'
                             .format(table))
-            cur.execute(usgnis.USGNIS_Files[table].generate_sql_ddl())
+            cur.execute(usgnis.USGNIS_Tables[table].generate_sql_ddl())
 
     connection.commit()
 

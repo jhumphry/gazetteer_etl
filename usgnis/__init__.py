@@ -127,7 +127,7 @@ FeatureClassCodeDefinitions = USGNISTableCSV(
     pk='class'
     )
 
-USGNIS_Files = {
+USGNIS_Tables = {
     'national_file': NationalFile,
     'national_fed_codes': NationalFedCodes,
     'feature_description_history': FeatureDescriptionHistory,
@@ -135,6 +135,8 @@ USGNIS_Files = {
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
     }
+
+USGNIS_Files = USGNIS_Tables.copy()
 
 
 def find_table(file_name):
