@@ -22,7 +22,7 @@
 
 from .fields import IntegerField, DoubleField, TextField
 from .fields import FixedTextField, DateField
-from .tables import USGNISTable, USGNISTableCSV
+from .tables import USGNISTable, USGNISTableCSV, USGNISTableInserted
 
 
 NationalFile = USGNISTable(
@@ -77,6 +77,21 @@ NationalFedCodes = USGNISTable(
     pk='feature_id, county_sequence'
     )
 
+# The Feature_Description_History files currently have lines containing a
+# variety of characters, including a '\|' sequence that PostgreSQL's COPY
+# command incorrectly interprets as a literal '|' in the data. This data has
+# to be processed with a slower, prepared INSERT-based routine.
+
+FeatureDescriptionHistory = USGNISTableInserted(
+    filename_regexp='Feature_Description_History_([0-9]{8})\.txt',
+    table_name='usgnis.feature_description_history',
+    fields=(IntegerField('FEATURE_ID', nullable=False),
+            TextField('DESCRIPTION'),
+            TextField('HISTORY')
+            ),
+    pk='feature_id'
+    )
+
 GovtUnits = USGNISTable(
     filename_regexp='GOVT_UNITS_([0-9]{8})\.txt',
     table_name='usgnis.govt_units',
@@ -115,6 +130,7 @@ FeatureClassCodeDefinitions = USGNISTableCSV(
 USGNIS_Files = {
     'national_file': NationalFile,
     'national_fed_codes': NationalFedCodes,
+    'feature_description_history': FeatureDescriptionHistory,
     'govt_units': GovtUnits,
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
