@@ -100,16 +100,24 @@ with connection.cursor() as cur:
 def process_file(filename, fp, cursor):
     '''Process a file and if appropriate copy data to the database'''
 
-    table = usgnis.find_table(os.path.split(filename)[-1])
+    if args.type == 'DEFAULT':
+        table = usgnis.find_table(os.path.split(filename)[-1])
 
-    if table is None:
-        print('Cannot identify the file type for {}'.format(filename))
-        sys.exit(1)
+        if table is None:
+            print('Cannot identify the file type for ''{}'''.format(filename))
+            sys.exit(1)
+
+    else:
+        if args.type not in usgnis.USGNIS_Tables:
+            print('Type ''{}'' is not valid'.format(args.type))
+            sys.exit(1)
+
+        table = usgnis.USGNIS_Tables[args.type]
 
     print('Uploading ''{}'' data to {}.'.format(filename, table.table_name))
 
     if not table.check_header(fp.readline()):
-        print('File {} does not have the correct header'.format(filename))
+        print('File ''{}'' does not have the correct header'.format(filename))
         sys.exit(1)
 
     table.copy_data(fp, cur)
