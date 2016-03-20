@@ -69,7 +69,7 @@ CensusClassCodeDefinitions = USGNISTableCSV(
 FeatureClassCodeDefinitions = USGNISTableCSV(
     filename_regexp='Feature_Class_Code_Definitions.csv',
     table_name='usgnis.feature_class_code_definitions',
-    fields=(FixedTextField('Class', width=2, nullable=False),
+    fields=(TextField('Class', nullable=False),
             TextField('Description', nullable=False),
             ),
     pk='class'
