@@ -73,3 +73,12 @@ class FixedTextField(USGNISField):
 class DateField(USGNISField):
 
     sql_type_name = 'DATE'
+
+
+class FlagField(USGNISField):
+    '''This is intended for single character fields that are sometimes used as
+    a form of Boolean or basic enumeration type. It may be more efficient to
+    switch these to the "char" type (with the quotations) which is an internal
+    PostgreSQL type which has a fixed width and only takes up one byte.'''
+
+    sql_type_name = 'CHARACTER VARYING(1)'

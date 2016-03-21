@@ -151,5 +151,6 @@ class USGNISTableInserted(USGNISTable):
                                                  sql_insert_params)
 
         for line in fileobj:
-            params = [(None if x == '' else x) for x in line.split(self.sep)]
+            params = [(None if x.strip() == '' else x)
+                      for x in line.split(self.sep)]
             cur.execute(sql_insert, params)

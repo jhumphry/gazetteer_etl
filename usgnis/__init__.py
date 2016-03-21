@@ -27,7 +27,7 @@ import copy
 import re
 
 from .fields import IntegerField, DoubleField, TextField
-from .fields import FixedTextField, DateField
+from .fields import FixedTextField, DateField, FlagField
 from .tables import USGNISTable, USGNISTableCSV, USGNISTableInserted
 
 
@@ -123,6 +123,21 @@ GovtUnits = USGNISTable(
     pk='feature_id, unit_type'
     )
 
+# Some AllNames files have null bytes in the text, so the slower insert routine
+# is required.
+
+AllNames = USGNISTableInserted(
+    filename_regexp='AllNames_([0-9]{8})\.txt',
+    table_name='usgnis.all_names',
+    fields=(IntegerField('FEATURE_ID', nullable=False),
+            TextField('FEATURE_NAME', nullable=False),
+            FlagField('FEATURE_NAME_OFFICIAL'),
+            TextField('CITATION', nullable=False),
+            DateField('DATE_CREATED')
+            ),
+    pk='feature_id, feature_name'
+    )
+
 AntarcticaFeatures = USGNISTable(
     filename_regexp='ANTARCTICA_([0-9]{8})\.txt',
     table_name='usgnis.antarctica',
@@ -166,6 +181,7 @@ USGNIS_Tables = {
     'national_fed_codes': NationalFedCodes,
     'feature_description_history': FeatureDescriptionHistory,
     'govt_units': GovtUnits,
+    'all_names': AllNames,
     'antarctica': AntarcticaFeatures,
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
