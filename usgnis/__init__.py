@@ -31,9 +31,9 @@ from .fields import FixedTextField, DateField, FlagField
 from .tables import USGNISTable, USGNISTableCSV, USGNISTableInserted
 
 
-NationalFile = USGNISTable(
+Features = USGNISTable(
     filename_regexp='NationalFile_([0-9]{8})\.txt',
-    table_name='usgnis.national_file',
+    table_name='usgnis.features',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -60,13 +60,13 @@ NationalFile = USGNISTable(
     pk='feature_id, state_numeric'
     )
 
-AllStatesFeatures = copy.copy(NationalFile)
+AllStatesFeatures = copy.copy(Features)
 AllStatesFeatures.filename_regexp = \
     re.compile('[A-Z]{2}_Features_([0-9]{8})\.txt')
 
-NationalFedCodes = USGNISTable(
+FedCodes = USGNISTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
-    table_name='usgnis.national_fed_codes',
+    table_name='usgnis.fed_codes',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -87,7 +87,7 @@ NationalFedCodes = USGNISTable(
     pk='feature_id, county_sequence'
     )
 
-AllStatesFedCodes = copy.copy(NationalFedCodes)
+AllStatesFedCodes = copy.copy(FedCodes)
 AllStatesFedCodes.filename_regexp = \
     re.compile('[A-Z]{2}_FedCodes_([0-9]{8})\.txt')
 
@@ -177,8 +177,8 @@ FeatureClassCodeDefinitions = USGNISTableCSV(
     )
 
 USGNIS_Tables = {
-    'national_file': NationalFile,
-    'national_fed_codes': NationalFedCodes,
+    'features': Features,
+    'fed_codes': FedCodes,
     'feature_description_history': FeatureDescriptionHistory,
     'govt_units': GovtUnits,
     'all_names': AllNames,
