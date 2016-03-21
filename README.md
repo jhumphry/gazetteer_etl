@@ -1,9 +1,8 @@
-# USGNIS_ETL
+# Gazetteer_ETL
 
 ## Introduction
 
-This project aims to simplify the use of the data files provided by the U.S.
-Geological Survey at <http://geonames.usgs.gov/domestic/download_data.htm> by
+This project aims to simplify the use of gazetteer data files  by
 making it easy to upload them to a PostgreSQL database. These files are mainly
 provided in simple comma- or pipe-separated-value formats which are supported
 by many existing tools. However this project also takes care of creating an
@@ -12,14 +11,16 @@ automatically choosing the correct destination table.
 
 A geographical database with worldwide coverage is available from
 <http://www.geonames.org>, and tools exist to work with it. However it does
-not contain all of the fields included in the USGS data. If you are sure you
-are only interested in the US, and you either need some of these fields or you
-need to be able to prove the official provenance of the data, this project may
-still be useful.
+not contain all of the fields included in the data available from the
+underlying sources. Currently, files from the following sources are supported
+to some degree:
+
+- U.S. Board on Geographic Names - Domestic and Antarctic Names
+<http://geonames.usgs.gov/domestic/download_data.htm>
 
 This is an independent project and it is not associated with or endorsed by
-the U.S. Geological Survey. It is available under the GPL v2 or later, as
-described in the file `COPYING`.
+the producers of the data sources listed above. It is available under the GPL
+v2 or later, as described in the file `COPYING`.
 
 > This program is distributed in the hope that it will be useful, but
 > WITHOUT WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -28,18 +29,18 @@ described in the file `COPYING`.
 
 ## Provided programs and package
 
-### `usgnis_schema.py`
+### `gazetteer_schema.py`
 
 This program can create or recreate a schema `usgnis` in a database which can
-then be used by `usgnis_extract.py`. It can also truncate the tables to clear
+then be used by `gazetteer_extract.py`. It can also truncate the tables to clear
 out all existing data. The optional `TABLE` parameter indicates which table
 to operate on. By default, actions are applied to all tables.
 
-    $ python3 usgnis_schema.py --help
-    usage: usgnis_schema.py [-h] [--drop-existing] [--dry-run [LOG FILE]]
-                            [--database DATABASE] [--user USER]
-                            [--password PASSWORD] [--host HOST] [--port PORT]
-                            ACTION [TABLE]
+    $ python3 gazetteer_schema.py --help
+    usage: gazetteer_schema.py [-h] [--drop-existing] [--dry-run [LOG FILE]]
+                               [--database DATABASE] [--user USER]
+                               [--password PASSWORD] [--host HOST] [--port PORT]
+                               ACTION [TABLE]
 
     Create or modify a PostgreSQL database schema for USGNIS data
 
@@ -62,19 +63,19 @@ to operate on. By default, actions are applied to all tables.
       --host HOST           PostgreSQL host (if using TCP/IP)
       --port PORT           PostgreSQL port (if required)
 
-### `usgnis_extract.py`
+### `gazetteer_extract.py`
 
 This program uploads data from a file to the existing `usgnis` schema in the
 database. The optional `TYPE` parameter can be used to over-ride the automatic
 recognition of the destination table from the file name.
 
-    $ python3 usgnis_extract.py --help
-    usage: usgnis_extract.py [-h] [--dry-run [LOG FILE]] [--database DATABASE]
-                             [--user USER] [--password PASSWORD] [--host HOST]
-                             [--port PORT] [--no-sync-commit]
-                             [--work-mem WORK_MEM]
-                             [--maintenance-work-mem MAINTENANCE_WORK_MEM]
-                             FILE [TYPE]
+    $ python3 gazetteer_extract.py --help
+    usage: gazetteer_extract.py [-h] [--dry-run [LOG FILE]] [--database DATABASE]
+                                [--user USER] [--password PASSWORD] [--host HOST]
+                                [--port PORT] [--no-sync-commit]
+                                [--work-mem WORK_MEM]
+                                [--maintenance-work-mem MAINTENANCE_WORK_MEM]
+                                FILE [TYPE]
 
     Upload USGNIS data to a PostgreSQL database
 

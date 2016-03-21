@@ -1,4 +1,4 @@
-# usgnis_schema.py
+# gazetteer_schema.py
 
 # Copyright 2016, James Humphry
 
@@ -18,10 +18,10 @@
 #  MA 02110-1301, USA.
 #
 
-''' usgnis_schema.py - This program connects to a database and creates or
-recreates a schema that matches the data files provided by USGNIS. Note that
-this program is not associated with or endorsed by the U.S. Geological
-Survey.'''
+''' gazetteer_schema.py - This program connects to a database and creates or
+recreates a schema that matches gazetteer data files provided by various
+sources. Note that this program is not associated with or endorsed by any of
+the supported sources.'''
 
 import os
 import sys
@@ -35,7 +35,7 @@ import usgnis.mockdb
 # Parse command line arguments
 
 parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
-                                 'database schema for USGNIS data')
+                                 'database schema for gazetteer data')
 parser.add_argument('action', metavar='ACTION',
                     choices=['create', 'truncate', 'list'],
                     help='Whether to "create", "truncate" or "list" tables')

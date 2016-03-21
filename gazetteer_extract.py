@@ -1,4 +1,4 @@
-# usgnis_extract.py
+# gazetteer_extract.py
 
 # Copyright 2016, James Humphry
 
@@ -18,9 +18,9 @@
 #  MA 02110-1301, USA.
 #
 
-''' usgnis_extract.py - This program extracts data files provided by the
-USGNIS. and uploads them into a PostgreSQL database. Note that this program is
-not associated with or endorsed by the U.S. Geological Survey.'''
+''' gazetteer_extract.py - This program extracts gazetteer data files provided
+by various sources and uploads them into a PostgreSQL database. Note that this
+program is not associated with or endorsed by any of the supported sources.'''
 
 import io
 import os
@@ -35,7 +35,7 @@ import usgnis.mockdb
 
 # Parse command line arguments
 
-parser = argparse.ArgumentParser(description='Upload USGNIS data to a '
+parser = argparse.ArgumentParser(description='Upload gazetteer data to a '
                                  'PostgreSQL database')
 parser.add_argument('file', metavar='FILE',
                     help='The file to extract and upload data from')
