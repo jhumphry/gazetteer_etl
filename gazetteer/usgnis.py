@@ -57,7 +57,8 @@ Features = GazetteerTable(
             DateField('DATE_CREATED'),
             DateField('DATE_EDITED')
             ),
-    pk='feature_id, state_numeric'
+    pk='feature_id, state_numeric',
+    datestyle='MDY'
     )
 
 AllStatesFeatures = copy.copy(Features)
@@ -85,7 +86,8 @@ FedCodes = GazetteerTable(
             DateField('DATE_CREATED'),
             DateField('DATE_EDITED')
             ),
-    pk='feature_id, county_sequence'
+    pk='feature_id, county_sequence',
+    datestyle='MDY'
     )
 
 AllStatesFedCodes = copy.copy(FedCodes)
@@ -139,7 +141,8 @@ AllNames = GazetteerTableInserted(
             TextField('CITATION', nullable=False),
             DateField('DATE_CREATED')
             ),
-    pk='feature_id, feature_name'
+    pk='feature_id, feature_name',
+    datestyle='MDY'
     )
 
 AntarcticaFeatures = GazetteerTable(
@@ -160,7 +163,8 @@ AntarcticaFeatures = GazetteerTable(
             DateField('DATE_CREATED'),
             DateField('DATE_EDITED')
             ),
-    pk='antarctica_feature_id'
+    pk='antarctica_feature_id',
+    datestyle='MDY'
     )
 
 CensusClassCodeDefinitions = GazetteerTableCSV(

@@ -29,8 +29,8 @@ class GazetteerTable:
     '''This class defines both a file provided by USGNIS that can be read, and
     a database table that the data can be uploaded to.'''
 
-    def __init__(self, filename_regexp, schema,
-                 table_name, fields, pk, sep='|', encoding=None):
+    def __init__(self, filename_regexp, schema, table_name,
+                 fields, pk, sep='|', encoding=None, datestyle='MDY'):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -39,6 +39,7 @@ class GazetteerTable:
         self.pk = pk
         self.sep = sep
         self.encoding = encoding
+        self.datestyle = datestyle
 
     def match_name(self, filename):
         '''Return a tuple with two elements. The first is a Boolean that
@@ -99,6 +100,8 @@ class GazetteerTable:
         '''Copy data from the file object fileobj to the database using the
         cursor cur'''
 
+        cur.execute('SET DATESTYLE=%s;', (self.datestyle, ))
+
         cur.copy_from(
             file=fileobj,
             table=self.full_table_name,
@@ -112,7 +115,8 @@ class GazetteerTableCSV(GazetteerTable):
     PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
     def __init__(self, filename_regexp, schema, table_name, fields, pk,
-                 sep=',', escape='\\', quote='"', encoding=None):
+                 sep=',', escape='\\', quote='"', encoding=None,
+                 datestyle='MDY'):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -123,10 +127,13 @@ class GazetteerTableCSV(GazetteerTable):
         self.escape = escape
         self.quote = quote
         self.encoding = encoding
+        self.datestyle = datestyle
 
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the
         cursor cur'''
+
+        cur.execute('SET DATESTYLE=%s;', (self.datestyle, ))
 
         sql = 'COPY {} FROM STDIN WITH ' \
               '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}', QUOTE '{}' )''' \
@@ -142,6 +149,8 @@ class GazetteerTableInserted(GazetteerTable):
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the
         cursor cur'''
+
+        cur.execute('SET DATESTYLE=%s;', (self.datestyle, ))
 
         prepared_name = 'insert_' + self.table_name.replace('.', '_')
         num_fields = len(self.fields)
