@@ -30,7 +30,7 @@ class GazetteerTable:
     a database table that the data can be uploaded to.'''
 
     def __init__(self, filename_regexp, schema,
-                 table_name, fields, pk, sep='|'):
+                 table_name, fields, pk, sep='|', encoding=None):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -38,6 +38,7 @@ class GazetteerTable:
         self.fields = fields
         self.pk = pk
         self.sep = sep
+        self.encoding = encoding
 
     def match_name(self, filename):
         '''Return a tuple with two elements. The first is a Boolean that
@@ -69,7 +70,7 @@ class GazetteerTable:
             return False
 
         for i in range(0, len(columns)):
-            if self.fields[i].field_name != columns[i].strip('"'):
+            if self.fields[i].field_name != columns[i].strip('" '):
                 if print_debug:
                     print('Unknown column name: {}'
                           .format(columns[i].strip('"')))
@@ -111,7 +112,7 @@ class GazetteerTableCSV(GazetteerTable):
     PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
     def __init__(self, filename_regexp, schema, table_name, fields, pk,
-                 sep=',', escape='\\', quote='"'):
+                 sep=',', escape='\\', quote='"', encoding=None):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -121,6 +122,7 @@ class GazetteerTableCSV(GazetteerTable):
         self.sep = sep
         self.escape = escape
         self.quote = quote
+        self.encoding = encoding
 
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the

@@ -117,11 +117,16 @@ def process_file(filename, fp, cursor):
 
     print('Uploading ''{}'' data to {}.'.format(filename, table.table_name))
 
-    if not table.check_header(fp.readline()):
+    if isinstance(fp, io.TextIOBase):
+        fpp = fp
+    else:
+        fpp = io.TextIOWrapper(fp, encoding=table.encoding)
+
+    if not table.check_header(fpp.readline(), print_debug=True):
         print('File ''{}'' does not have the correct header'.format(filename))
         sys.exit(1)
 
-    table.copy_data(fp, cur)
+    table.copy_data(fpp, cur)
 
 # Find the files to process
 
@@ -140,7 +145,7 @@ elif file_ext == '.zip':
             connection.cursor() as cur:
 
         for i in inputs.namelist():
-            with io.TextIOWrapper(inputs.open(i, 'r')) as fp:
+            with inputs.open(i, 'r') as fp:
                 process_file(i, fp, cur)
 
     connection.commit()
