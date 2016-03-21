@@ -123,6 +123,26 @@ GovtUnits = USGNISTable(
     pk='feature_id, unit_type'
     )
 
+AntarcticaFeatures = USGNISTable(
+    filename_regexp='ANTARCTICA_([0-9]{8})\.txt',
+    table_name='usgnis.antarctica',
+    fields=(IntegerField('ANTARCTICA_FEATURE_ID', nullable=False),
+            TextField('FEATURE_NAME', nullable=False),
+            TextField('FEATURE_CLASS', nullable=False),
+            TextField('PRIMARY_LATITUDE_DMS', nullable=False),
+            TextField('PRIMARY_LONGITUDE_DMS', nullable=False),
+            DoubleField('PRIMARY_LATITUDE_DEC', nullable=False),
+            DoubleField('PRIMARY_LONGITUDE_DEC', nullable=False),
+            IntegerField('ELEV_IN_M'),
+            IntegerField('ELEV_IN_FT'),
+            DateField('DECISION_YEAR'),
+            TextField('DESCRIPTION'),
+            DateField('DATE_CREATED'),
+            DateField('DATE_EDITED')
+            ),
+    pk='antarctica_feature_id'
+    )
+
 CensusClassCodeDefinitions = USGNISTableCSV(
     filename_regexp='Census_Class_Code_Definitions.csv',
     table_name='usgnis.census_class_code_definitions',
@@ -146,6 +166,7 @@ USGNIS_Tables = {
     'national_fed_codes': NationalFedCodes,
     'feature_description_history': FeatureDescriptionHistory,
     'govt_units': GovtUnits,
+    'antarctica': AntarcticaFeatures,
     'census_class_code_definitions': CensusClassCodeDefinitions,
     'feature_class_code_definitions': FeatureClassCodeDefinitions
     }
