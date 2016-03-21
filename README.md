@@ -31,10 +31,11 @@ v2 or later, as described in the file `COPYING`.
 
 ### `gazetteer_schema.py`
 
-This program can create or recreate a schema `usgnis` in a database which can
-then be used by `gazetteer_extract.py`. It can also truncate the tables to clear
-out all existing data. The optional `TABLE` parameter indicates which table
-to operate on. By default, actions are applied to all tables.
+This program can create or recreate the schemas in a database which can then
+be used by `gazetteer_extract.py`. It can also truncate the tables to clear
+out all existing data. The optional `TABLE` parameter can be used to act only
+on the tables in one schema, or on one particular table, rather than acting on
+all the tables it knows about.
 
     $ python3 gazetteer_schema.py --help
     usage: gazetteer_schema.py [-h] [--drop-existing] [--dry-run [LOG FILE]]
@@ -42,11 +43,11 @@ to operate on. By default, actions are applied to all tables.
                                [--password PASSWORD] [--host HOST] [--port PORT]
                                ACTION [TABLE]
 
-    Create or modify a PostgreSQL database schema for USGNIS data
+    Create or modify a PostgreSQL database schema for gazetteer data
 
     positional arguments:
       ACTION                Whether to "create", "truncate" or "list" tables
-      TABLE                 The database table to act on, or ALL
+      TABLE                 The database schema or table to act on, or ALL
 
     optional arguments:
       -h, --help            show this help message and exit
@@ -57,16 +58,17 @@ to operate on. By default, actions are applied to all tables.
     database arguments:
       --dry-run [LOG FILE]  Dump commands to a file rather than executing them on
                             the database
-      --database DATABASE   PostgreSQL database to use (default usgnis)
+      --database DATABASE   PostgreSQL database to use (default gazetteer)
       --user USER           PostgreSQL user for upload
       --password PASSWORD   PostgreSQL user password
       --host HOST           PostgreSQL host (if using TCP/IP)
       --port PORT           PostgreSQL port (if required)
 
+
 ### `gazetteer_extract.py`
 
-This program uploads data from a file to the existing `usgnis` schema in the
-database. The optional `TYPE` parameter can be used to over-ride the automatic
+This program uploads data from a file to the existing schema in the database.
+The optional `TYPE` parameter can be used to over-ride the automatic
 recognition of the destination table from the file name.
 
     $ python3 gazetteer_extract.py --help
@@ -77,7 +79,7 @@ recognition of the destination table from the file name.
                                 [--maintenance-work-mem MAINTENANCE_WORK_MEM]
                                 FILE [TYPE]
 
-    Upload USGNIS data to a PostgreSQL database
+    Upload gazetteer data to a PostgreSQL database
 
     positional arguments:
       FILE                  The file to extract and upload data from
@@ -89,7 +91,7 @@ recognition of the destination table from the file name.
     database arguments:
       --dry-run [LOG FILE]  Dump commands to a file rather than executing them on
                             the database
-      --database DATABASE   PostgreSQL database to use (default usgnis)
+      --database DATABASE   PostgreSQL database to use (default gazetteer)
       --user USER           PostgreSQL user for upload
       --password PASSWORD   PostgreSQL user password
       --host HOST           PostgreSQL host (if using TCP/IP)
@@ -99,10 +101,10 @@ recognition of the destination table from the file name.
       --maintenance-work-mem MAINTENANCE_WORK_MEM
                             Size of maintenance working memory in MB
 
-The `--no-sync-commit` option temporarily disables synchronous
-commits and so can give a speed boost. The `--work-mem` and
-`--maintenance-work-mem` options temporarily increase the amount of working
-memory that the PostgreSQL server uses.
+The `--no-sync-commit` option temporarily disables synchronous commits and so
+can give a speed boost. The `--work-mem` and `--maintenance-work-mem` options
+temporarily increase the amount of working memory that the PostgreSQL server
+uses.
 
 ### `gazetteer`
 

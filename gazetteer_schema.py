@@ -54,8 +54,8 @@ parser_db.add_argument('--dry-run', help='Dump commands to a file rather than '
                        nargs='?', metavar='LOG FILE', default=None,
                        type=argparse.FileType('x'))
 parser_db.add_argument('--database',
-                       help='PostgreSQL database to use (default usgnis)',
-                       action='store', default='usgnis')
+                       help='PostgreSQL database to use (default gazetteer)',
+                       action='store', default='gazetteer')
 parser_db.add_argument('--user', help='PostgreSQL user for upload',
                        action='store',
                        default=os.environ.get('USER', 'postgres'))
