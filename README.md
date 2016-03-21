@@ -15,6 +15,9 @@ not contain all of the fields included in the data available from the
 underlying sources. Currently, files from the following sources are supported
 to some degree:
 
+- ukapc: UK Antarctic Place-names Committee
+<http://apc.antarctica.ac.uk/gazetteers/>
+
 - usgnis: U.S. Board on Geographic Names - Domestic and Antarctic Names
 <http://geonames.usgs.gov/domestic/download_data.htm>
 

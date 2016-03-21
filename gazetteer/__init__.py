@@ -21,6 +21,7 @@
 '''A package that describes gazetteer data files and the associated schema for
 upload into a database.'''
 
+import gazetteer.ukapc
 import gazetteer.usgnis
 import gazetteer.uscensus2010
 
@@ -60,5 +61,6 @@ def find_table(file_name):
 
 # Actually register the tables defined in each module
 
+register_tables(ukapc.tables)
 register_tables(usgnis.tables)
 register_tables(uscensus2010.tables)
