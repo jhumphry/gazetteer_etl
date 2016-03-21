@@ -32,7 +32,8 @@ from .tables import GazetteerTable, GazetteerTableCSV, GazetteerTableInserted
 
 Features = GazetteerTable(
     filename_regexp='NationalFile_([0-9]{8})\.txt',
-    table_name='usgnis.features',
+    schema='usgnis',
+    table_name='features',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -65,7 +66,8 @@ AllStatesFeatures.filename_regexp = \
 
 FedCodes = GazetteerTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
-    table_name='usgnis.fed_codes',
+    schema='usgnis',
+    table_name='fed_codes',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -97,7 +99,8 @@ AllStatesFedCodes.filename_regexp = \
 
 FeatureDescriptionHistory = GazetteerTableInserted(
     filename_regexp='Feature_Description_History_([0-9]{8})\.txt',
-    table_name='usgnis.feature_description_history',
+    schema='usgnis',
+    table_name='feature_description_history',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('DESCRIPTION'),
             TextField('HISTORY')
@@ -107,7 +110,8 @@ FeatureDescriptionHistory = GazetteerTableInserted(
 
 GovtUnits = GazetteerTable(
     filename_regexp='GOVT_UNITS_([0-9]{8})\.txt',
-    table_name='usgnis.govt_units',
+    schema='usgnis',
+    table_name='govt_units',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('UNIT_TYPE', nullable=False),
             IntegerField('COUNTY_NUMERIC'),
@@ -127,7 +131,8 @@ GovtUnits = GazetteerTable(
 
 AllNames = GazetteerTableInserted(
     filename_regexp='AllNames_([0-9]{8})\.txt',
-    table_name='usgnis.all_names',
+    schema='usgnis',
+    table_name='all_names',
     fields=(IntegerField('FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             FlagField('FEATURE_NAME_OFFICIAL'),
@@ -139,7 +144,8 @@ AllNames = GazetteerTableInserted(
 
 AntarcticaFeatures = GazetteerTable(
     filename_regexp='ANTARCTICA_([0-9]{8})\.txt',
-    table_name='usgnis.antarctica',
+    schema='usgnis',
+    table_name='antarctica',
     fields=(IntegerField('ANTARCTICA_FEATURE_ID', nullable=False),
             TextField('FEATURE_NAME', nullable=False),
             TextField('FEATURE_CLASS', nullable=False),
@@ -159,7 +165,8 @@ AntarcticaFeatures = GazetteerTable(
 
 CensusClassCodeDefinitions = GazetteerTableCSV(
     filename_regexp='Census_Class_Code_Definitions.csv',
-    table_name='usgnis.census_class_code_definitions',
+    schema='usgnis',
+    table_name='census_class_code_definitions',
     fields=(FixedTextField('Code', width=2, nullable=False),
             TextField('Description', nullable=False),
             ),
@@ -168,7 +175,8 @@ CensusClassCodeDefinitions = GazetteerTableCSV(
 
 FeatureClassCodeDefinitions = GazetteerTableCSV(
     filename_regexp='Feature_Class_Code_Definitions.csv',
-    table_name='usgnis.feature_class_code_definitions',
+    schema='usgnis',
+    table_name='feature_class_code_definitions',
     fields=(TextField('Class', nullable=False),
             TextField('Description', nullable=False),
             ),

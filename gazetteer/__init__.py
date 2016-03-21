@@ -23,6 +23,7 @@ upload into a database.'''
 
 import gazetteer.usgnis
 
+gazetteer_schema = {}
 gazetteer_tables = {}
 gazetteer_files = []
 
@@ -35,6 +36,11 @@ def register_tables(tables):
     # only records the first table to provide the information for a SQL table.
 
     for i in tables:
+
+        if i.schema not in gazetteer_schema:
+            gazetteer_schema[i.schema] = set()
+        gazetteer_schema[i.schema].add(i.table_name)
+
         gazetteer_files.append(i)
 
         if i.full_table_name not in gazetteer_tables:

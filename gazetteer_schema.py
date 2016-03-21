@@ -39,7 +39,8 @@ parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
 parser.add_argument('action', metavar='ACTION',
                     choices=['create', 'truncate', 'list'],
                     help='Whether to "create", "truncate" or "list" tables')
-parser.add_argument('table', help='The database table to act on, or ALL',
+parser.add_argument('table',
+                    help='The database schema or table to act on, or ALL',
                     metavar='TABLE', nargs='?', default='ALL')
 
 parser_po = parser.add_argument_group('processing options')
@@ -66,12 +67,14 @@ parser_db.add_argument('--port', help='PostgreSQL port (if required)',
                        action='store', type=int, default=5432)
 args = parser.parse_args()
 
-# List tables in the usgnis schema if requested
+# List tables in each schema if requested
 
 if args.action == 'list':
     print('Valid PostgreSQL table names are:')
-    for i in gazetteer.gazetteer_tables:
-        print(i)
+    for i in gazetteer.gazetteer_schema:
+        print('Schema {}:'.format(i))
+        for j in gazetteer.gazetteer_schema[i]:
+            print(' {0}.{1}'.format(i, j))
     sys.exit(0)
 
 # Create database connection
@@ -93,12 +96,16 @@ else:
 # Create tables or truncate them
 
 with connection.cursor() as cur:
-    cur.execute('CREATE SCHEMA IF NOT EXISTS usgnis;')
+    for i in gazetteer.gazetteer_schema:
+        cur.execute('CREATE SCHEMA IF NOT EXISTS {};'.format(i))
 
     if args.table == 'ALL':
         tables = gazetteer.gazetteer_tables.keys()
     else:
-        if args.table in gazetteer.gazetteer_tables:
+        if args.table in gazetteer.gazetteer_schema:
+            tables = [args.table + '.' + x
+                      for x in gazetteer.gazetteer_schema[args.table]]
+        elif args.table in gazetteer.gazetteer_tables:
             tables = [args.table, ]
         else:
             print('"{}" is not a recognised table name. Use the "list" action '
@@ -107,10 +114,10 @@ with connection.cursor() as cur:
 
     for table in tables:
         if args.action == 'truncate':
-            cur.execute('TRUNCATE TABLE usgnis.{} CASCADE;'.format(table))
+            cur.execute('TRUNCATE TABLE {} CASCADE;'.format(table))
         elif args.action == 'create':
             if args.drop_existing:
-                cur.execute('DROP TABLE IF EXISTS usgnis.{} CASCADE;'
+                cur.execute('DROP TABLE IF EXISTS {} CASCADE;'
                             .format(table))
             cur.execute(gazetteer.gazetteer_tables[table].generate_sql_ddl())
 

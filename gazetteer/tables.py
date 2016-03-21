@@ -29,9 +29,12 @@ class GazetteerTable:
     '''This class defines both a file provided by USGNIS that can be read, and
     a database table that the data can be uploaded to.'''
 
-    def __init__(self, filename_regexp, table_name, fields, pk, sep='|'):
+    def __init__(self, filename_regexp, schema,
+                 table_name, fields, pk, sep='|'):
         self.filename_regexp = re.compile(filename_regexp)
+        self.schema = schema
         self.table_name = table_name
+        self.full_table_name = schema + '.' + table_name
         self.fields = fields
         self.pk = pk
         self.sep = sep
@@ -77,7 +80,7 @@ class GazetteerTable:
     def generate_sql_ddl(self):
         '''Return the SQL describing a table of this sort'''
 
-        result = 'CREATE TABLE {} (\n'.format(self.table_name)
+        result = 'CREATE TABLE {} (\n'.format(self.full_table_name)
         for i in self.fields[:-1]:
                 result += '    ' + i.generate_sql() + ',\n'
 
@@ -97,7 +100,7 @@ class GazetteerTable:
 
         cur.copy_from(
             file=fileobj,
-            table=self.table_name,
+            table=self.full_table_name,
             sep=self.sep,
             null=''
             )
@@ -107,10 +110,12 @@ class GazetteerTableCSV(GazetteerTable):
     '''This is a child class of USGNISTable that uses the CSV mode of
     PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
-    def __init__(self, filename_regexp, table_name, fields, pk, sep=',',
-                 escape='\\', quote='"'):
+    def __init__(self, filename_regexp, schema, table_name, fields, pk,
+                 sep=',', escape='\\', quote='"'):
         self.filename_regexp = re.compile(filename_regexp)
+        self.schema = schema
         self.table_name = table_name
+        self.full_table_name = schema + '.' + table_name
         self.fields = fields
         self.pk = pk
         self.sep = sep
@@ -123,7 +128,7 @@ class GazetteerTableCSV(GazetteerTable):
 
         sql = 'COPY {} FROM STDIN WITH ' \
               '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}', QUOTE '{}' )''' \
-              .format(self.table_name, self.sep, self.escape, self.quote)
+              .format(self.full_table_name, self.sep, self.escape, self.quote)
         cur.copy_expert(sql=sql, file=fileobj)
 
 
@@ -143,7 +148,7 @@ class GazetteerTableInserted(GazetteerTable):
                                        for x in range(1, num_fields+1)])
         cur.execute('''PREPARE {0} AS INSERT INTO {1} VALUES ({2});'''
                     .format(prepared_name,
-                            self.table_name,
+                            self.full_table_name,
                             sql_prepare_params))
 
         sql_insert_params = ",".join(["%s" for x in range(1, num_fields+1)])
