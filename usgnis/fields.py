@@ -64,10 +64,10 @@ class FixedTextField(USGNISField):
 
     def generate_sql(self):
         if self.nullable:
-            return self.sql_name + ' CHARACTER({})'.format(self.width)
+            return self.sql_name + ' CHARACTER VARYING({})'.format(self.width)
         else:
-            return self.sql_name + ' CHARACTER({})'.format(self.width) +\
-             ' NOT NULL'
+            return self.sql_name + ' CHARACTER VARYING({})'.format(self.width)\
+             + ' NOT NULL'
 
 
 class DateField(USGNISField):
