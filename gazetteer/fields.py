@@ -41,9 +41,19 @@ class GazetteerField:
             return self.sql_name + ' ' + self.sql_type_name + ' NOT NULL'
 
 
+class BigIntField(GazetteerField):
+
+    sql_type_name = 'BIGINT'
+
+
 class IntegerField(GazetteerField):
 
     sql_type_name = 'INTEGER'
+
+
+class SmallIntField(GazetteerField):
+
+    sql_type_name = 'SMALLINT'
 
 
 class DoubleField(GazetteerField):
