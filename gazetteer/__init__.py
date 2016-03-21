@@ -26,10 +26,10 @@ import re
 
 from .fields import IntegerField, DoubleField, TextField
 from .fields import FixedTextField, DateField, FlagField
-from .tables import USGNISTable, USGNISTableCSV, USGNISTableInserted
+from .tables import GazetteerTable, GazetteerTableCSV, GazetteerTableInserted
 
 
-Features = USGNISTable(
+Features = GazetteerTable(
     filename_regexp='NationalFile_([0-9]{8})\.txt',
     table_name='usgnis.features',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -62,7 +62,7 @@ AllStatesFeatures = copy.copy(Features)
 AllStatesFeatures.filename_regexp = \
     re.compile('[A-Z]{2}_Features_([0-9]{8})\.txt')
 
-FedCodes = USGNISTable(
+FedCodes = GazetteerTable(
     filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
     table_name='usgnis.fed_codes',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -94,7 +94,7 @@ AllStatesFedCodes.filename_regexp = \
 # command incorrectly interprets as a literal '|' in the data. This data has
 # to be processed with a slower, prepared INSERT-based routine.
 
-FeatureDescriptionHistory = USGNISTableInserted(
+FeatureDescriptionHistory = GazetteerTableInserted(
     filename_regexp='Feature_Description_History_([0-9]{8})\.txt',
     table_name='usgnis.feature_description_history',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -104,7 +104,7 @@ FeatureDescriptionHistory = USGNISTableInserted(
     pk='feature_id'
     )
 
-GovtUnits = USGNISTable(
+GovtUnits = GazetteerTable(
     filename_regexp='GOVT_UNITS_([0-9]{8})\.txt',
     table_name='usgnis.govt_units',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -124,7 +124,7 @@ GovtUnits = USGNISTable(
 # Some AllNames files have null bytes in the text, so the slower insert routine
 # is required.
 
-AllNames = USGNISTableInserted(
+AllNames = GazetteerTableInserted(
     filename_regexp='AllNames_([0-9]{8})\.txt',
     table_name='usgnis.all_names',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -136,7 +136,7 @@ AllNames = USGNISTableInserted(
     pk='feature_id, feature_name'
     )
 
-AntarcticaFeatures = USGNISTable(
+AntarcticaFeatures = GazetteerTable(
     filename_regexp='ANTARCTICA_([0-9]{8})\.txt',
     table_name='usgnis.antarctica',
     fields=(IntegerField('ANTARCTICA_FEATURE_ID', nullable=False),
@@ -156,7 +156,7 @@ AntarcticaFeatures = USGNISTable(
     pk='antarctica_feature_id'
     )
 
-CensusClassCodeDefinitions = USGNISTableCSV(
+CensusClassCodeDefinitions = GazetteerTableCSV(
     filename_regexp='Census_Class_Code_Definitions.csv',
     table_name='usgnis.census_class_code_definitions',
     fields=(FixedTextField('Code', width=2, nullable=False),
@@ -165,7 +165,7 @@ CensusClassCodeDefinitions = USGNISTableCSV(
     pk='code'
     )
 
-FeatureClassCodeDefinitions = USGNISTableCSV(
+FeatureClassCodeDefinitions = GazetteerTableCSV(
     filename_regexp='Feature_Class_Code_Definitions.csv',
     table_name='usgnis.feature_class_code_definitions',
     fields=(TextField('Class', nullable=False),
@@ -191,9 +191,9 @@ USGNIS_Files['allstate_fed_codes'] = AllStatesFedCodes
 
 
 def find_table(file_name):
-    '''Given a file name, return the USGNISTable or USGNITSTableCSV that it
-    is likely to relate to, or None if it does not appear to be related to any
-    of them.'''
+    '''Given a file name, return the GazetteerTable or GazetteerTableCSV that
+    it is likely to relate to, or None if it does not appear to be related to
+    any of them.'''
 
     for i in USGNIS_Files:
         if USGNIS_Files[i].match_name(file_name)[0]:

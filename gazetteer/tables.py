@@ -25,7 +25,7 @@ import datetime
 import re
 
 
-class USGNISTable:
+class GazetteerTable:
     '''This class defines both a file provided by USGNIS that can be read, and
     a database table that the data can be uploaded to.'''
 
@@ -103,7 +103,7 @@ class USGNISTable:
             )
 
 
-class USGNISTableCSV(USGNISTable):
+class GazetteerTableCSV(GazetteerTable):
     '''This is a child class of USGNISTable that uses the CSV mode of
     PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
@@ -127,7 +127,7 @@ class USGNISTableCSV(USGNISTable):
         cur.copy_expert(sql=sql, file=fileobj)
 
 
-class USGNISTableInserted(USGNISTable):
+class GazetteerTableInserted(GazetteerTable):
     '''This functions like the USGNISTable, except that data is manually split
     in Python and uploaded using a PREPAREd INSERT statement. This is slower
     but works around files with dodgy characters that confuse PostgreSQL.'''
