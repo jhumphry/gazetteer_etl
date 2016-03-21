@@ -22,6 +22,7 @@
 upload into a database.'''
 
 import gazetteer.usgnis
+import gazetteer.uscensus2010
 
 gazetteer_schema = {}
 gazetteer_tables = {}
@@ -60,3 +61,4 @@ def find_table(file_name):
 # Actually register the tables defined in each module
 
 register_tables(usgnis.tables)
+register_tables(uscensus2010.tables)

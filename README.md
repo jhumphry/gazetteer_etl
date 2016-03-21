@@ -15,8 +15,11 @@ not contain all of the fields included in the data available from the
 underlying sources. Currently, files from the following sources are supported
 to some degree:
 
-- U.S. Board on Geographic Names - Domestic and Antarctic Names
+- usgnis: U.S. Board on Geographic Names - Domestic and Antarctic Names
 <http://geonames.usgs.gov/domestic/download_data.htm>
+
+- uscensus2010: U.S. Census Bureau 2010 Census Gazetteer Files
+<http://www.census.gov/geo/maps-data/data/gazetteer2010.html>
 
 This is an independent project and it is not associated with or endorsed by
 the producers of the data sources listed above. It is available under the GPL
