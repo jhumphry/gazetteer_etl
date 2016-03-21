@@ -109,11 +109,11 @@ def process_file(filename, fp, cursor):
             sys.exit(1)
 
     else:
-        if args.type not in gazetteer.USGNIS_Tables:
+        if args.type not in gazetteer.gazetteer_tables:
             print('Type ''{}'' is not valid'.format(args.type))
             sys.exit(1)
 
-        table = gazetteer.USGNIS_Tables[args.type]
+        table = gazetteer.gazetteer_tables[args.type]
 
     print('Uploading ''{}'' data to {}.'.format(filename, table.table_name))
 

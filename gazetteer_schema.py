@@ -69,8 +69,8 @@ args = parser.parse_args()
 # List tables in the usgnis schema if requested
 
 if args.action == 'list':
-    print('Valid PostgreSQL table names in the usgnis schema are:')
-    for i in gazetteer.USGNIS_Tables:
+    print('Valid PostgreSQL table names are:')
+    for i in gazetteer.gazetteer_tables:
         print(i)
     sys.exit(0)
 
@@ -96,9 +96,9 @@ with connection.cursor() as cur:
     cur.execute('CREATE SCHEMA IF NOT EXISTS usgnis;')
 
     if args.table == 'ALL':
-        tables = gazetteer.USGNIS_Tables
+        tables = gazetteer.gazetteer_tables.keys()
     else:
-        if args.table in gazetteer.USGNIS_Tables:
+        if args.table in gazetteer.gazetteer_tables:
             tables = [args.table, ]
         else:
             print('"{}" is not a recognised table name. Use the "list" action '
@@ -112,7 +112,7 @@ with connection.cursor() as cur:
             if args.drop_existing:
                 cur.execute('DROP TABLE IF EXISTS usgnis.{} CASCADE;'
                             .format(table))
-            cur.execute(gazetteer.USGNIS_Tables[table].generate_sql_ddl())
+            cur.execute(gazetteer.gazetteer_tables[table].generate_sql_ddl())
 
     connection.commit()
 
