@@ -29,8 +29,8 @@ import argparse
 
 import psycopg2
 
-import usgnis
-import usgnis.mockdb
+import gazetteer
+import gazetteer.mockdb
 
 # Parse command line arguments
 
@@ -70,14 +70,14 @@ args = parser.parse_args()
 
 if args.action == 'list':
     print('Valid PostgreSQL table names in the usgnis schema are:')
-    for i in usgnis.USGNIS_Tables:
+    for i in gazetteer.USGNIS_Tables:
         print(i)
     sys.exit(0)
 
 # Create database connection
 
 if args.dry_run:
-    connection = usgnis.mockdb.Connection(args.dry_run)
+    connection = gazetteer.mockdb.Connection(args.dry_run)
 else:
     if args.host:
         connection = psycopg2.connect(database=args.database,
@@ -96,9 +96,9 @@ with connection.cursor() as cur:
     cur.execute('CREATE SCHEMA IF NOT EXISTS usgnis;')
 
     if args.table == 'ALL':
-        tables = usgnis.USGNIS_Tables
+        tables = gazetteer.USGNIS_Tables
     else:
-        if args.table in usgnis.USGNIS_Tables:
+        if args.table in gazetteer.USGNIS_Tables:
             tables = [args.table, ]
         else:
             print('"{}" is not a recognised table name. Use the "list" action '
@@ -112,7 +112,7 @@ with connection.cursor() as cur:
             if args.drop_existing:
                 cur.execute('DROP TABLE IF EXISTS usgnis.{} CASCADE;'
                             .format(table))
-            cur.execute(usgnis.USGNIS_Tables[table].generate_sql_ddl())
+            cur.execute(gazetteer.USGNIS_Tables[table].generate_sql_ddl())
 
     connection.commit()
 

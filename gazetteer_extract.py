@@ -30,8 +30,8 @@ import zipfile
 
 import psycopg2
 
-import usgnis
-import usgnis.mockdb
+import gazetteer
+import gazetteer.mockdb
 
 # Parse command line arguments
 
@@ -71,7 +71,7 @@ args = parser.parse_args()
 # Create database connection and change settings if requested
 
 if args.dry_run:
-    connection = usgnis.mockdb.Connection(args.dry_run)
+    connection = gazetteer.mockdb.Connection(args.dry_run)
 else:
     if args.host:
         connection = psycopg2.connect(database=args.database,
@@ -102,18 +102,18 @@ def process_file(filename, fp, cursor):
     '''Process a file and if appropriate copy data to the database'''
 
     if args.type == 'DEFAULT':
-        table = usgnis.find_table(os.path.split(filename)[-1])
+        table = gazetteer.find_table(os.path.split(filename)[-1])
 
         if table is None:
             print('Cannot identify the file type for ''{}'''.format(filename))
             sys.exit(1)
 
     else:
-        if args.type not in usgnis.USGNIS_Tables:
+        if args.type not in gazetteer.USGNIS_Tables:
             print('Type ''{}'' is not valid'.format(args.type))
             sys.exit(1)
 
-        table = usgnis.USGNIS_Tables[args.type]
+        table = gazetteer.USGNIS_Tables[args.type]
 
     print('Uploading ''{}'' data to {}.'.format(filename, table.table_name))
 

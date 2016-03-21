@@ -1,4 +1,4 @@
-# usgnis
+# gazetteer
 
 # Copyright 2016, James Humphry
 
@@ -18,10 +18,8 @@
 #  MA 02110-1301, USA.
 #
 
-'''A package that describes USGNIS data files available from
-http://geonames.usgs.gov/domestic/download_data.htm and the associated schema
-for upload into a database. Note that this package is not associated with or
-endorsed by the U.S. Geological Survey.'''
+'''A package that describes gazetteer data files and the associated schema for
+upload into a database.'''
 
 import copy
 import re

@@ -1,4 +1,4 @@
-# usgnis.fields
+# gazetteer.fields
 
 # Copyright 2016, James Humphry
 
@@ -18,8 +18,8 @@
 #  MA 02110-1301, USA.
 #
 
-'''Descriptions of the fields that can make up USGNIS data files, along with
-information on their SQL equivalents'''
+'''Descriptions of the fields that can make up gazetteer data files, along
+with information on their SQL equivalents'''
 
 
 class USGNISField:

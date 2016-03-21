@@ -104,7 +104,7 @@ commits and so can give a speed boost. The `--work-mem` and
 `--maintenance-work-mem` options temporarily increase the amount of working
 memory that the PostgreSQL server uses.
 
-### `usgnis`
+### `gazetteer`
 
 This is an internal package that defines classes that are used by the above
 programs.

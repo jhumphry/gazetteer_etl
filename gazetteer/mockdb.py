@@ -1,4 +1,4 @@
-# mockdb.py
+# gazetteer.mockdb
 
 # Copyright 2013 - 2016, James Humphry
 

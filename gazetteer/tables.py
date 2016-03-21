@@ -1,4 +1,4 @@
-# usgnis.tables
+# gazetteer.tables
 
 # Copyright 2016, James Humphry
 
@@ -18,8 +18,8 @@
 #  MA 02110-1301, USA.
 #
 
-'''Descriptions of the tables in USGNIS data files, along with information on
-generating appropriate SQL'''
+'''Descriptions of the tables in Gazetteer data files, along with information
+on generating appropriate SQL'''
 
 import datetime
 import re
