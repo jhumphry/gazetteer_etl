@@ -85,6 +85,11 @@ class DateField(GazetteerField):
     sql_type_name = 'DATE'
 
 
+class TimeStampField(GazetteerField):
+
+    sql_type_name = 'TIMESTAMP'
+
+
 class FlagField(GazetteerField):
     '''This is intended for single character fields that are sometimes used as
     a form of Boolean or basic enumeration type. It may be more efficient to
