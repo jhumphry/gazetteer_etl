@@ -115,7 +115,7 @@ else:
 # Create tables or truncate them
 
 with connection.cursor() as cur:
-    for i in gazetteer.gazetteer_schema:
+    for i in schemas:
         cur.execute('CREATE SCHEMA IF NOT EXISTS {};'.format(i))
 
     for table in tables:
