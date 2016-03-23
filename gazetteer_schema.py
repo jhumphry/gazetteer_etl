@@ -45,8 +45,9 @@ parser.add_argument('table',
                     metavar='TABLE', nargs='?', default='ALL')
 
 parser_po = parser.add_argument_group('processing options')
-parser_po.add_argument('--drop-existing', help='Drop existing tables (and any '
-                       'data) before recreating', action='store_true',
+parser_po.add_argument('--drop-existing', help='Drop existing tables or '
+                       'indexes (and any data) before recreating',
+                       action='store_true',
                        default=False)
 
 parser_db = parser.add_argument_group('database arguments')
@@ -127,8 +128,10 @@ with connection.cursor() as cur:
                             .format(table))
             cur.execute(gazetteer.gazetteer_tables[table].generate_sql_ddl())
         elif args.action == 'index':
-            cur.execute(gazetteer.gazetteer_tables[table].
-                        generate_sql_indexes())
+            if table in gazetteer.gazetteer_tables_indexes:
+                for index in gazetteer.gazetteer_tables_indexes[table]:
+                    cur.execute(index.
+                                generate_sql(drop_existing=args.drop_existing))
 
     connection.commit()
 

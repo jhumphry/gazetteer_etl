@@ -28,7 +28,7 @@ import re
 from .fields import IntegerField, DoubleField, TextField
 from .fields import FixedTextField, DateField, FlagField
 from .tables import GazetteerTable, GazetteerTableCSV, GazetteerTableInserted
-from .tables import GazetteerTableIndex
+from .indexes import GazetteerBTreeIndex
 
 
 Features = GazetteerTable(
@@ -59,16 +59,21 @@ Features = GazetteerTable(
             DateField('DATE_EDITED')
             ),
     pk='feature_id, state_numeric',
-    datestyle='MDY',
-    indexes=(GazetteerTableIndex(name='usgnis_features_name_pattern_idx',
-                                 unique=False,
-                                 method='btree',
-                                 columns='feature_name text_pattern_ops'),
-             GazetteerTableIndex(name='usgnis_features_state_alpha_idx',
-                                 unique=False,
-                                 method='btree',
-                                 columns='state_alpha')
-             )
+    datestyle='MDY'
+    )
+
+FeaturesNameIndex = GazetteerBTreeIndex(
+    name='features_feature_name_pattern_idx',
+    schema='usgnis',
+    table_name='features',
+    columns='feature_name text_pattern_ops'
+    )
+
+FeaturesStateIndex = GazetteerBTreeIndex(
+    name='features_state_idx',
+    schema='usgnis',
+    table_name='features',
+    columns='state_alpha'
     )
 
 AllStatesFeatures = copy.copy(Features)
@@ -209,4 +214,9 @@ tables = (
     AntarcticaFeatures,
     CensusClassCodeDefinitions,
     FeatureClassCodeDefinitions
+    )
+
+indexes = (
+    FeaturesNameIndex,
+    FeaturesStateIndex
     )

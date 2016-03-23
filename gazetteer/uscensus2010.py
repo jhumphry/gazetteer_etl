@@ -104,3 +104,5 @@ tables = (
     CountiesSubdivisions,
     Places
     )
+
+indexes = tuple()

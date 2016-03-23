@@ -21,14 +21,8 @@
 '''Descriptions of the tables in Gazetteer data files, along with information
 on generating appropriate SQL'''
 
-import collections
 import datetime
 import re
-
-
-GazetteerTableIndex = collections.namedtuple('GazetteerTableIndex',
-                                             ('name', 'unique',
-                                              'method', 'columns'))
 
 
 class GazetteerTable:
@@ -36,8 +30,7 @@ class GazetteerTable:
     a database table that the data can be uploaded to.'''
 
     def __init__(self, filename_regexp, schema, table_name,
-                 fields, pk, sep='|', encoding=None, datestyle='MDY',
-                 indexes=None):
+                 fields, pk, sep='|', encoding=None, datestyle='MDY'):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -47,7 +40,6 @@ class GazetteerTable:
         self.sep = sep
         self.encoding = encoding
         self.datestyle = datestyle
-        self.indexes = indexes
 
     def match_name(self, filename):
         '''Return a tuple with two elements. The first is a Boolean that
@@ -104,23 +96,6 @@ class GazetteerTable:
         result += ');\n'
         return result
 
-    def generate_sql_indexes(self):
-        '''Return the SQL that creates any indexes on a table of this sort'''
-
-        result = ''
-
-        if self.indexes is not None:
-            for index in self.indexes:
-                unique = 'UNIQUE' if index.unique else ''
-                result += 'CREATE {0} INDEX IF NOT EXISTS {1} ON {2} ' \
-                          'USING {3} ({4});\n'.format(unique,
-                                                      index.name,
-                                                      self.full_table_name,
-                                                      index.method,
-                                                      index.columns)
-
-        return result
-
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the
         cursor cur'''
@@ -141,7 +116,7 @@ class GazetteerTableCSV(GazetteerTable):
 
     def __init__(self, filename_regexp, schema, table_name, fields, pk,
                  sep=',', escape='\\', quote='"', encoding=None,
-                 datestyle='MDY', indexes=None):
+                 datestyle='MDY'):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -153,7 +128,6 @@ class GazetteerTableCSV(GazetteerTable):
         self.quote = quote
         self.encoding = encoding
         self.datestyle = datestyle
-        self.indexes = indexes
 
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the

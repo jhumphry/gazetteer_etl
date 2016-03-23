@@ -29,6 +29,9 @@ gazetteer_schema = {}
 gazetteer_tables = {}
 gazetteer_files = []
 
+gazetteer_schema_indexes = {}
+gazetteer_tables_indexes = {}
+
 
 def register_tables(tables):
     '''Register a sequence of GazetteerTable objects'''
@@ -49,6 +52,19 @@ def register_tables(tables):
             gazetteer_tables[i.full_table_name] = i
 
 
+def register_indexes(indexes):
+    '''Register a sequence of GazetteerBTreeIndex objects'''
+
+    for i in indexes:
+        if i.schema not in gazetteer_schema_indexes:
+            gazetteer_schema_indexes[i.schema] = set()
+        gazetteer_schema_indexes[i.schema].add(i)
+
+        if i.full_table_name not in gazetteer_tables_indexes:
+            gazetteer_tables_indexes[i.full_table_name] = set()
+        gazetteer_tables_indexes[i.full_table_name].add(i)
+
+
 def find_table(file_name):
     '''Given a file name, return the GazetteerTable or GazetteerTableCSV that
     it is likely to relate to, or None if it does not appear to be related to
@@ -59,8 +75,11 @@ def find_table(file_name):
             return i
     return None
 
-# Actually register the tables defined in each module
+# Actually register the tables and indexes defined in each module
 
 register_tables(ukapc.tables)
+register_indexes(ukapc.indexes)
 register_tables(usgnis.tables)
+register_indexes(usgnis.indexes)
 register_tables(uscensus2010.tables)
+register_indexes(uscensus2010.indexes)

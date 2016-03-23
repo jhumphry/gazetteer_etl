@@ -24,8 +24,8 @@ Place-names Committee.'''
 
 from .fields import SmallIntField, IntegerField, DoubleField, DateField
 from .fields import TextField, FlagField, TimeStampField
-from .tables import GazetteerTableCSV, GazetteerTableIndex
-
+from .tables import GazetteerTableCSV
+from .indexes import GazetteerBTreeIndex
 
 BAT = GazetteerTableCSV(
     filename_regexp='apip_bat_gazetteer.csv',
@@ -49,15 +49,20 @@ BAT = GazetteerTableCSV(
             ),
     pk='id',
     encoding='UTF-8',
-    datestyle='DMY',
-    indexes=(GazetteerTableIndex(name='bat_placename_pattern_idx',
-                                 unique=False,
-                                 method='btree',
-                                 columns='placename text_pattern_ops'),
-             )
+    datestyle='DMY'
     )
 
+BATPlacenameIndex = GazetteerBTreeIndex(
+    name='bat_placename_pattern_idx',
+    schema='ukapc',
+    table_name='bat',
+    columns='placename text_pattern_ops'
+    )
 
 tables = (
     BAT,
+    )
+
+indexes = (
+    BATPlacenameIndex,
     )
