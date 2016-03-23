@@ -66,14 +66,20 @@ def register_indexes(indexes):
         gazetteer_tables_indexes[i.full_table_name].add(i)
 
 
-def find_table(file_name):
+def find_table(file_name, schema=None):
     '''Given a file name, return the GazetteerTable or GazetteerTableCSV that
     it is likely to relate to, or None if it does not appear to be related to
-    any of them.'''
+    any of them. If schema is specified, only search in that schema.'''
 
-    for i in gazetteer_files:
-        if i.match_name(file_name)[0]:
-            return i
+    if schema is not None:
+        for table in gazetteer_files:
+            if table.schema == schema and table.match_name(file_name):
+                return table
+    else:
+        for table in gazetteer_files:
+            if table.match_name(file_name):
+                return table
+
     return None
 
 # Actually register the tables and indexes defined in each module

@@ -88,15 +88,18 @@ working memory that the PostgreSQL server uses when building indexes.
 
 ### `gazetteer_extract.py`
 
-This program uploads data from a file to the existing schema in the database.
-The optional `TYPE` parameter can be used to over-ride the automatic
-recognition of the destination table from the file name.
+This program uploads data from a file to a table in an existing schema in the
+database. By default the program will identify which table to use by looking
+at the file name. In the case of `.zip` containers each file in the container
+will be processed separately. The `--schema` option can be used to limit the
+search to one of the schema and the optional `TYPE` parameter can be used to
+over-ride the automatic recognition altogether.
 
     $ python3 gazetteer_extract.py --help
-    usage: gazetteer_extract.py [-h] [--dry-run [LOG FILE]] [--database DATABASE]
-                                [--user USER] [--password PASSWORD] [--host HOST]
-                                [--port PORT] [--no-sync-commit]
-                                [--work-mem WORK_MEM]
+    usage: gazetteer_extract.py [-h] [--schema SCHEMA] [--dry-run [LOG FILE]]
+                                [--database DATABASE] [--user USER]
+                                [--password PASSWORD] [--host HOST] [--port PORT]
+                                [--no-sync-commit] [--work-mem WORK_MEM]
                                 [--maintenance-work-mem MAINTENANCE_WORK_MEM]
                                 FILE [TYPE]
 
@@ -108,6 +111,7 @@ recognition of the destination table from the file name.
 
     optional arguments:
       -h, --help            show this help message and exit
+      --schema SCHEMA       Only search this schema when identifying the type
 
     database arguments:
       --dry-run [LOG FILE]  Dump commands to a file rather than executing them on

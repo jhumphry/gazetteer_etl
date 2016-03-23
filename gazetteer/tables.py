@@ -42,22 +42,15 @@ class GazetteerTable:
         self.datestyle = datestyle
 
     def match_name(self, filename):
-        '''Return a tuple with two elements. The first is a Boolean that
-        indicates if the filename matches the pattern for this table and the
-        second gives the date of the file, or is None'''
+        '''Return a Boolean that indicates if the filename matches the pattern
+        for this table.'''
 
-        matched = self.filename_regexp.match(filename)
+        matched = self.filename_regexp.fullmatch(filename)
+
         if matched:
-            date_text = matched.groups()
-            if len(date_text) == 1:
-                file_date = datetime.date(year=int(date_text[0][0:4]),
-                                          month=int(date_text[0][4:6]),
-                                          day=int(date_text[0][6:8]))
-            else:
-                file_date = None
-            return (True, file_date)
+            return True
         else:
-            return (False, None)
+            return False
 
     def check_header(self, header, print_debug=False):
         '''Return a Boolean value based on whether the provided header row

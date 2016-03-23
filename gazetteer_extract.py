@@ -42,6 +42,10 @@ parser.add_argument('file', metavar='FILE',
 parser.add_argument('type', help='Override recognition of the type of file',
                     metavar='TYPE', nargs='?', default='DEFAULT')
 
+parser.add_argument('--schema',
+                    help='Only search this schema when identifying the type',
+                    action='store', default='ALL')
+
 parser_db = parser.add_argument_group('database arguments')
 parser_db.add_argument('--dry-run', help='Dump commands to a file rather than '
                                          'executing them on the database',
@@ -102,7 +106,12 @@ def process_file(filename, fp, cursor):
     '''Process a file and if appropriate copy data to the database'''
 
     if args.type == 'DEFAULT':
-        table = gazetteer.find_table(os.path.split(filename)[-1])
+
+        if args.schema == 'ALL':
+            table = gazetteer.find_table(os.path.split(filename)[-1])
+        else:
+            table = gazetteer.find_table(os.path.split(filename)[-1],
+                                         args.schema)
 
         if table is None:
             print('Cannot identify the file type for ''{}'''.format(filename))
