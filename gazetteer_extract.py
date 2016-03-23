@@ -115,7 +115,8 @@ def process_file(filename, fp, cursor):
 
         table = gazetteer.gazetteer_tables[args.type]
 
-    print('Uploading ''{}'' data to {}.'.format(filename, table.table_name))
+    print('Uploading ''{}'' data to {}.'.format(filename,
+                                                table.full_table_name))
 
     if isinstance(fp, io.TextIOBase):
         fpp = fp
