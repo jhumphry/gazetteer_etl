@@ -67,6 +67,9 @@ parser_db.add_argument('--host', help='PostgreSQL host (if using TCP/IP)',
                        action='store', default=None)
 parser_db.add_argument('--port', help='PostgreSQL port (if required)',
                        action='store', type=int, default=5432)
+parser_db.add_argument("--maintenance-work-mem",
+                       help="Size of maintenance working memory in MB",
+                       action="store", type=int, default=0)
 args = parser.parse_args()
 
 # Identify the required tables and schemas
@@ -116,6 +119,10 @@ else:
 # Create tables or truncate them
 
 with connection.cursor() as cur:
+    if args.maintenance_work_mem != 0:
+        cur.execute("SET SESSION maintenance_work_mem=%s;",
+                    (args.maintenance_work_mem*1024,))
+
     for i in schemas:
         cur.execute('CREATE SCHEMA IF NOT EXISTS {};'.format(i))
 
