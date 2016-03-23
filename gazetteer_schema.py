@@ -37,8 +37,9 @@ import gazetteer.mockdb
 parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
                                  'database schema for gazetteer data')
 parser.add_argument('action', metavar='ACTION',
-                    choices=['create', 'truncate', 'list'],
-                    help='Whether to "create", "truncate" or "list" tables')
+                    choices=['create', 'truncate', 'index', 'list'],
+                    help='Whether to "create", "truncate","index" or "list" '
+                         'tables')
 parser.add_argument('table',
                     help='The database schema or table to act on, or ALL',
                     metavar='TABLE', nargs='?', default='ALL')
@@ -125,6 +126,9 @@ with connection.cursor() as cur:
                 cur.execute('DROP TABLE IF EXISTS {} CASCADE;'
                             .format(table))
             cur.execute(gazetteer.gazetteer_tables[table].generate_sql_ddl())
+        elif args.action == 'index':
+            cur.execute(gazetteer.gazetteer_tables[table].
+                        generate_sql_indexes())
 
     connection.commit()
 
