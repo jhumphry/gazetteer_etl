@@ -164,3 +164,26 @@ class GazetteerTableInserted(GazetteerTable):
             params = [(None if x.strip() == '' else x)
                       for x in line.split(self.sep)]
             cur.execute(sql_insert, params)
+
+
+class GazetteerTableDuplicate(GazetteerTable):
+    '''Some data sources provide their data as multiple overlapping files. Only
+    one (the most comprehensive) should be uploaded and the others can be
+    ignored unless the type is specifically set. This table type can be used
+    to match on the filename, but not do anything with the file itself.'''
+
+    def __init__(self, filename_regexp, schema, table_name):
+        self.filename_regexp = re.compile(filename_regexp)
+        self.schema = schema
+        self.table_name = table_name
+        self.full_table_name = schema + '.' + table_name
+        self.encoding = 'UTF-8'
+
+    def check_header(self, header, print_debug=False):
+        return True
+
+    def generate_sql_ddl(self):
+        return ''
+
+    def copy_data(self, fileobj, cur):
+        pass

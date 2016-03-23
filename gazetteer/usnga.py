@@ -22,9 +22,12 @@
 files. Note that this project is not endorsed by or affiliated with the US
 NGA.'''
 
+import copy
+import re
+
 from .fields import SmallIntField, IntegerField, DoubleField, DateField
 from .fields import FixedTextField, TextField, FlagField
-from .tables import GazetteerTable
+from .tables import GazetteerTable, GazetteerTableDuplicate
 from .indexes import GazetteerBTreeIndex
 
 
@@ -75,6 +78,22 @@ Geonames = GazetteerTable(
     datestyle='ISO'
     )
 
+GeonamesCountryFiles = copy.copy(Geonames)
+GeonamesCountryFiles.filename_regexp = re.compile('[a-z]{2}.txt')
+
+GeonamesCountryFilesDuplicates = GazetteerTableDuplicate(
+    filename_regexp='[a-z]{2}_('
+                    'administrative_a|hydrographic_h|'
+                    'localities_l|populatedplaces_p|'
+                    'transportation_r|spot_s|'
+                    'hypsographic_t|undersea_u|'
+                    'vegetation_v|disclaimer'
+                    ').txt',
+    schema='usnga',
+    table_name='geonames'
+    )
+
+
 GeonamesFullNameROIndex = GazetteerBTreeIndex(
     name='geonames_full_name_ro_idx',
     schema='usnga',
@@ -84,6 +103,8 @@ GeonamesFullNameROIndex = GazetteerBTreeIndex(
 
 tables = (
     Geonames,
+    GeonamesCountryFiles,
+    GeonamesCountryFilesDuplicates
     )
 
 indexes = (
