@@ -67,14 +67,32 @@ parser_db.add_argument('--port', help='PostgreSQL port (if required)',
                        action='store', type=int, default=5432)
 args = parser.parse_args()
 
+# Identify the required tables and schemas
+
+if args.table == 'ALL':
+    tables = gazetteer.gazetteer_tables.keys()
+    schemas = gazetteer.gazetteer_schema.keys()
+elif args.table in gazetteer.gazetteer_schema:
+    schemas = [args.table, ]
+    tables = [args.table + '.' + x
+              for x in gazetteer.gazetteer_schema[args.table]]
+elif args.table in gazetteer.gazetteer_tables:
+    schemas = [args.table.split('.')[0], ]
+    tables = [args.table, ]
+else:
+    print('"{}" is not a recognised table name. Use the "list" action '
+          'to list valid table names'.format(args.table))
+    sys.exit(1)
+
 # List tables in each schema if requested
 
 if args.action == 'list':
     print('Valid PostgreSQL table names are:')
-    for i in gazetteer.gazetteer_schema:
+    for i in schemas:
         print('Schema {}:'.format(i))
-        for j in gazetteer.gazetteer_schema[i]:
-            print(' {0}.{1}'.format(i, j))
+        for j in tables:
+            if j.split('.')[0] == i:
+                print(' {0}'.format(j))
     sys.exit(0)
 
 # Create database connection
@@ -98,19 +116,6 @@ else:
 with connection.cursor() as cur:
     for i in gazetteer.gazetteer_schema:
         cur.execute('CREATE SCHEMA IF NOT EXISTS {};'.format(i))
-
-    if args.table == 'ALL':
-        tables = gazetteer.gazetteer_tables.keys()
-    else:
-        if args.table in gazetteer.gazetteer_schema:
-            tables = [args.table + '.' + x
-                      for x in gazetteer.gazetteer_schema[args.table]]
-        elif args.table in gazetteer.gazetteer_tables:
-            tables = [args.table, ]
-        else:
-            print('"{}" is not a recognised table name. Use the "list" action '
-                  'to list valid table names'.format(args.table))
-            sys.exit(1)
 
     for table in tables:
         if args.action == 'truncate':
