@@ -38,7 +38,7 @@ parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
                                  'database schema for gazetteer data')
 parser.add_argument('action', metavar='ACTION',
                     choices=['create', 'truncate', 'index', 'list'],
-                    help='Whether to "create", "truncate","index" or "list" '
+                    help='Whether to "create", "truncate", "index" or "list" '
                          'tables')
 parser.add_argument('table',
                     help='The database schema or table to act on, or ALL',

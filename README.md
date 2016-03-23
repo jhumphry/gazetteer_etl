@@ -2,12 +2,17 @@
 
 ## Introduction
 
-This project aims to simplify the use of gazetteer data files  by
-making it easy to upload them to a PostgreSQL database. These files are mainly
-provided in simple comma- or pipe-separated-value formats which are supported
-by many existing tools. However this project also takes care of creating an
-appropriate schema in the database, decompressing the `.zip` files and
-automatically choosing the correct destination table.
+This project aims to simplify the use of gazetteer data files  by making it
+easy to upload them to a PostgreSQL database. These files are mainly provided
+in comma- or pipe-separated-value formats which are supported by many existing
+tools. While this should make it simple to upload the data there are many
+practical issues with the files such as varying date formats, stray null
+bytes, inconsistent quoting schemes and confusion over escape characters. The
+code in this project is aware of these problems and chooses the fastest
+working upload method for each file. It also takes care of creating an
+appropriate schema in the database, decompressing the `.zip` files,
+automatically choosing the correct destination table and creating suitable
+indexes if desired.
 
 A geographical database with worldwide coverage is available from
 <http://www.geonames.org>, and tools exist to work with it. However it does
@@ -37,29 +42,32 @@ v2 or later, as described in the file `COPYING`.
 
 ### `gazetteer_schema.py`
 
-This program can create or recreate the schemas in a database which can then
-be used by `gazetteer_extract.py`. It can also truncate the tables to clear
-out all existing data. The optional `TABLE` parameter can be used to act only
-on the tables in one schema, or on one particular table, rather than acting on
-all the tables it knows about.
+This program can create or recreate the schemas and tables in a database which
+can then be used by `gazetteer_extract.py`. It can also truncate the tables to
+clear out all existing data, and create suitable indexes on the tables. The
+optional `TABLE` parameter can be used to act only on the tables and index in
+one schema, or on one particular table, rather than acting on all the tables.
 
     $ python3 gazetteer_schema.py --help
     usage: gazetteer_schema.py [-h] [--drop-existing] [--dry-run [LOG FILE]]
                                [--database DATABASE] [--user USER]
                                [--password PASSWORD] [--host HOST] [--port PORT]
+                               [--maintenance-work-mem MAINTENANCE_WORK_MEM]
                                ACTION [TABLE]
 
     Create or modify a PostgreSQL database schema for gazetteer data
 
     positional arguments:
-      ACTION                Whether to "create", "truncate" or "list" tables
+      ACTION                Whether to "create", "truncate", "index" or "list"
+                            tables
       TABLE                 The database schema or table to act on, or ALL
 
     optional arguments:
       -h, --help            show this help message and exit
 
     processing options:
-      --drop-existing       Drop existing tables (and any data) before recreating
+      --drop-existing       Drop existing tables or indexes (and any data) before
+                            recreating
 
     database arguments:
       --dry-run [LOG FILE]  Dump commands to a file rather than executing them on
@@ -69,7 +77,11 @@ all the tables it knows about.
       --password PASSWORD   PostgreSQL user password
       --host HOST           PostgreSQL host (if using TCP/IP)
       --port PORT           PostgreSQL port (if required)
+      --maintenance-work-mem MAINTENANCE_WORK_MEM
+                            Size of maintenance working memory in MB
 
+The `--maintenance-work-mem` option temporarily increases the amount of
+working memory that the PostgreSQL server uses when building indexes.
 
 ### `gazetteer_extract.py`
 
