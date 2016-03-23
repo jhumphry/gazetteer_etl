@@ -26,8 +26,8 @@ import re
 
 
 class GazetteerTable:
-    '''This class defines both a file provided by USGNIS that can be read, and
-    a database table that the data can be uploaded to.'''
+    '''This class defines both a file that can be read, and a database table
+    that the data can be uploaded to.'''
 
     def __init__(self, filename_regexp, schema, table_name,
                  fields, pk, sep='|', encoding=None, datestyle='MDY'):
@@ -104,7 +104,7 @@ class GazetteerTable:
 
 
 class GazetteerTableCSV(GazetteerTable):
-    '''This is a child class of USGNISTable that uses the CSV mode of
+    '''This is a child class of GazetteerTable that uses the CSV mode of
     PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
     def __init__(self, filename_regexp, schema, table_name, fields, pk,
@@ -135,9 +135,10 @@ class GazetteerTableCSV(GazetteerTable):
 
 
 class GazetteerTableInserted(GazetteerTable):
-    '''This functions like the USGNISTable, except that data is manually split
-    in Python and uploaded using a PREPAREd INSERT statement. This is slower
-    but works around files with dodgy characters that confuse PostgreSQL.'''
+    '''This functions like the GazetteerTable, except that data is manually
+    split in Python and uploaded using a PREPAREd INSERT statement. This is
+    slower but works around files with dodgy characters that confuse
+    PostgreSQL.'''
 
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the
