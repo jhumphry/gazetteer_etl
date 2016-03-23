@@ -24,6 +24,7 @@ upload into a database.'''
 import gazetteer.ukapc
 import gazetteer.usgnis
 import gazetteer.uscensus2010
+import gazetteer.usnga
 
 gazetteer_schema = {}
 gazetteer_tables = {}
@@ -83,3 +84,5 @@ register_tables(usgnis.tables)
 register_indexes(usgnis.indexes)
 register_tables(uscensus2010.tables)
 register_indexes(uscensus2010.indexes)
+register_tables(usnga.tables)
+register_indexes(usnga.indexes)

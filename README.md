@@ -29,6 +29,9 @@ to some degree:
 - uscensus2010: U.S. Census Bureau 2010 Census Gazetteer Files
 <http://www.census.gov/geo/maps-data/data/gazetteer2010.html>
 
+- usnga: U.S. National Geospacial-Intelligence Agency
+<http://geonames.nga.mil/gns/html/namefiles.html>
+
 This is an independent project and it is not associated with or endorsed by
 the producers of the data sources listed above. It is available under the GPL
 v2 or later, as described in the file `COPYING`.
