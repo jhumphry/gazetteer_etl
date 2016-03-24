@@ -28,7 +28,7 @@ import re
 from .fields import IntegerField, DoubleField, TextField
 from .fields import FixedTextField, DateField, FlagField
 from .tables import GazetteerTable, GazetteerTableCSV, GazetteerTableInserted
-from .indexes import GazetteerBTreeIndex
+from .indexes import GazetteerBTreeIndex, GazetteerForeignKey
 
 
 Features = GazetteerTable(
@@ -76,6 +76,12 @@ FeaturesStateIndex = GazetteerBTreeIndex(
     columns='state_alpha'
     )
 
+FeaturesFK1 = GazetteerForeignKey(
+    'featuresFK1',
+    'usgnis', 'features', 'feature_class',
+    'usgnis', 'feature_class_code_definitions', 'class'
+    )
+
 AllStatesFeatures = copy.copy(Features)
 AllStatesFeatures.filename_regexp = \
     re.compile('[A-Z]{2}_Features_([0-9]{8})\.txt')
@@ -103,6 +109,12 @@ FedCodes = GazetteerTable(
             ),
     pk='feature_id, county_sequence',
     datestyle='MDY'
+    )
+
+FedCodesFK1 = GazetteerForeignKey(
+    'fed_codesFK1',
+    'usgnis', 'fed_codes', 'census_class_code',
+    'usgnis', 'census_class_code_definitions', 'code'
     )
 
 AllStatesFedCodes = copy.copy(FedCodes)
@@ -218,5 +230,7 @@ tables = (
 
 indexes = (
     FeaturesNameIndex,
-    FeaturesStateIndex
+    FeaturesStateIndex,
+    FeaturesFK1,
+    FedCodesFK1
     )
