@@ -67,3 +67,52 @@ class GazetteerBTreeIndex:
         result += ';\n\n'
 
         return result
+
+
+class GazetteerForeignKey:
+    '''This class defines foreign keys on a table'''
+
+    def __init__(self, name, schema, table_name, columns,
+                 foreign_schema, foreign_table_name, foreign_columns):
+
+        self.name = name
+
+        self.schema = schema
+        self.table_name = table_name
+        self.full_table_name = schema + '.' + table_name
+        if isinstance(columns, str):
+            self.columns = (columns, )
+        else:
+            self.columns = columns
+
+        self.foreign_schema = foreign_schema
+        self.foreign_table_name = foreign_table_name
+        if isinstance(foreign_columns, str):
+            self.foreign_columns = (foreign_columns, )
+        else:
+            self.foreign_columns = foreign_columns
+
+    def generate_sql(self, drop_existing=False):
+
+        result = ''
+
+        if drop_existing:
+            result += 'ALTER TABLE {0} DROP CONSTRAINT IF EXISTS '\
+                      '{1} CASCADE;\n\n' \
+                      .format(self.full_table_name, self.name)
+
+        result += 'ALTER TABLE {0} ADD CONSTRAINT {1} FOREIGN KEY ('\
+                  .format(self.full_table_name, self.name)
+
+        for c in self.columns[:-1]:
+            result += c + ',\n    '
+        result += self.columns[-1] + ')\n'
+
+        result += 'REFERENCES {0}.{1} ('\
+                  .format(self.foreign_schema, self.foreign_table_name)
+
+        for c in self.foreign_columns[:-1]:
+            result += c + ',\n    '
+        result += self.foreign_columns[-1] + ');\n'
+
+        return result
