@@ -109,7 +109,7 @@ class GazetteerTableCSV(GazetteerTable):
 
     def __init__(self, filename_regexp, schema, table_name, fields, pk,
                  sep=',', escape='\\', quote='"', encoding=None,
-                 datestyle='MDY'):
+                 datestyle='MDY', force_null=None):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
         self.table_name = table_name
@@ -121,16 +121,25 @@ class GazetteerTableCSV(GazetteerTable):
         self.quote = quote
         self.encoding = encoding
         self.datestyle = datestyle
+        self.force_null = force_null
 
     def copy_data(self, fileobj, cur):
         '''Copy data from the file object fileobj to the database using the
         cursor cur'''
 
         cur.execute('SET DATESTYLE=%s;', (self.datestyle, ))
+        if self.force_null is None:
+            sql = 'COPY {} FROM STDIN WITH ' \
+                  '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}', QUOTE '{}')''' \
+                  .format(self.full_table_name, self.sep, self.escape,
+                          self.quote)
+        else:
+            sql = 'COPY {} FROM STDIN WITH ' \
+                  '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}',''' \
+                  ''' QUOTE '{}', FORCE_NULL ({}))''' \
+                  .format(self.full_table_name, self.sep, self.escape,
+                          self.quote, self.force_null)
 
-        sql = 'COPY {} FROM STDIN WITH ' \
-              '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}', QUOTE '{}' )''' \
-              .format(self.full_table_name, self.sep, self.escape, self.quote)
         cur.copy_expert(sql=sql, file=fileobj)
 
 
