@@ -45,7 +45,7 @@ class GazetteerBTreeIndex:
         result = ''
 
         if drop_existing:
-            result += 'DROP INDEX IF EXISTS {} CASCADE;\n\n'.format(self.name)
+            result += self.generate_drop_sql()
 
         unique_text = 'UNIQUE' if self.unique else ''
 
@@ -67,6 +67,10 @@ class GazetteerBTreeIndex:
         result += ';\n\n'
 
         return result
+
+    def generate_drop_sql(self):
+
+        return 'DROP INDEX IF EXISTS {} CASCADE;\n\n'.format(self.name)
 
 
 class GazetteerForeignKey:
@@ -97,9 +101,7 @@ class GazetteerForeignKey:
         result = ''
 
         if drop_existing:
-            result += 'ALTER TABLE {0} DROP CONSTRAINT IF EXISTS '\
-                      '{1} CASCADE;\n\n' \
-                      .format(self.full_table_name, self.name)
+            result += self.generate_drop_sql()
 
         result += 'ALTER TABLE {0} ADD CONSTRAINT {1} FOREIGN KEY ('\
                   .format(self.full_table_name, self.name)
@@ -116,3 +118,8 @@ class GazetteerForeignKey:
         result += self.foreign_columns[-1] + ');\n'
 
         return result
+
+    def generate_drop_sql(self):
+
+        return 'ALTER TABLE {0} DROP CONSTRAINT IF EXISTS {1} CASCADE;\n\n' \
+                  .format(self.full_table_name, self.name)

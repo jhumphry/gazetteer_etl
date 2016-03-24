@@ -37,9 +37,9 @@ import gazetteer.mockdb
 parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
                                  'database schema for gazetteer data')
 parser.add_argument('action', metavar='ACTION',
-                    choices=['create', 'truncate', 'index', 'list'],
-                    help='Whether to "create", "truncate", "index" or "list" '
-                         'tables')
+                    choices=['create', 'truncate', 'index', 'dropindex', 'list'],
+                    help='Whether to "create", "truncate", "index", '
+                         '"dropindex" or "list" tables')
 parser.add_argument('table',
                     help='The database schema or table to act on, or ALL',
                     metavar='TABLE', nargs='?', default='ALL')
@@ -139,6 +139,10 @@ with connection.cursor() as cur:
                 for index in gazetteer.gazetteer_tables_indexes[table]:
                     cur.execute(index.
                                 generate_sql(drop_existing=args.drop_existing))
+        elif args.action == 'dropindex':
+            if table in gazetteer.gazetteer_tables_indexes:
+                for index in gazetteer.gazetteer_tables_indexes[table]:
+                    cur.execute(index.generate_drop_sql())
 
     connection.commit()
 

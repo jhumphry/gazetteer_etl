@@ -50,9 +50,10 @@ v2 or later, as described in the file `COPYING`.
 
 This program can create or recreate the schemas and tables in a database which
 can then be used by `gazetteer_extract.py`. It can also truncate the tables to
-clear out all existing data, and create suitable indexes on the tables. The
-optional `TABLE` parameter can be used to act only on the tables and index in
-one schema, or on one particular table, rather than acting on all the tables.
+clear out all existing data, and create or drop suitable indexes and foreign
+key relationships on the tables. The optional `TABLE` parameter can be used to
+act only on the tables and index in one schema, or on one particular table,
+rather than acting on all the tables.
 
     $ python3 gazetteer_schema.py --help
     usage: gazetteer_schema.py [-h] [--drop-existing] [--dry-run [LOG FILE]]
@@ -64,8 +65,8 @@ one schema, or on one particular table, rather than acting on all the tables.
     Create or modify a PostgreSQL database schema for gazetteer data
 
     positional arguments:
-      ACTION                Whether to "create", "truncate", "index" or "list"
-                            tables
+      ACTION                Whether to "create", "truncate", "index", "dropindex"
+                            or "list" tables
       TABLE                 The database schema or table to act on, or ALL
 
     optional arguments:
