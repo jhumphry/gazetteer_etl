@@ -23,6 +23,9 @@ to some degree:
 - ukapc: UK Antarctic Place-names Committee
 <http://apc.antarctica.ac.uk/gazetteers/>
 
+- uknptg: UK National Public Transport Gazetteer
+<https://data.gov.uk/dataset/nptg>
+
 - usgnis: U.S. Board on Geographic Names - Domestic and Antarctic Names
 <http://geonames.usgs.gov/domestic/download_data.htm>
 

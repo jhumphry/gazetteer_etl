@@ -22,6 +22,7 @@
 upload into a database.'''
 
 import gazetteer.ukapc
+import gazetteer.uknptg
 import gazetteer.usgnis
 import gazetteer.uscensus2010
 import gazetteer.usnga
@@ -86,6 +87,8 @@ def find_table(file_name, schema=None):
 
 register_tables(ukapc.tables)
 register_indexes(ukapc.indexes)
+register_tables(uknptg.tables)
+register_indexes(uknptg.indexes)
 register_tables(usgnis.tables)
 register_indexes(usgnis.indexes)
 register_tables(uscensus2010.tables)
