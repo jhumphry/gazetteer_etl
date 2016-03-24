@@ -21,7 +21,6 @@
 '''Descriptions of the tables in Gazetteer data files, along with information
 on generating appropriate SQL'''
 
-import datetime
 import re
 
 
