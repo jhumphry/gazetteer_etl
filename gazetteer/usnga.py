@@ -32,7 +32,7 @@ from .indexes import GazetteerBTreeIndex
 
 
 Geonames = GazetteerTable(
-    filename_regexp='geonames_([0-9]{8}).txt',
+    filename_regexp='Countries.txt',
     schema='usnga',
     table_name='geonames',
     fields=(SmallIntField('RC', nullable=False),  # Regional font Code
@@ -78,6 +78,14 @@ Geonames = GazetteerTable(
     datestyle='ISO'
     )
 
+
+GeonamesDuplicates = GazetteerTableDuplicate(
+    filename_regexp='Countries_disclaimer.txt',
+    schema='usnga',
+    table_name='geonames'
+    )
+
+
 GeonamesCountryFiles = copy.copy(Geonames)
 GeonamesCountryFiles.filename_regexp = re.compile('[a-z]{2}.txt')
 
@@ -93,7 +101,6 @@ GeonamesCountryFilesDuplicates = GazetteerTableDuplicate(
     table_name='geonames'
     )
 
-
 GeonamesFullNameROIndex = GazetteerBTreeIndex(
     name='geonames_full_name_ro_idx',
     schema='usnga',
@@ -103,6 +110,7 @@ GeonamesFullNameROIndex = GazetteerBTreeIndex(
 
 tables = (
     Geonames,
+    GeonamesDuplicates,
     GeonamesCountryFiles,
     GeonamesCountryFilesDuplicates
     )
