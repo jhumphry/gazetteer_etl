@@ -70,7 +70,8 @@ class GazetteerBTreeIndex:
 
     def generate_drop_sql(self):
 
-        return 'DROP INDEX IF EXISTS {} CASCADE;\n\n'.format(self.name)
+        return 'DROP INDEX IF EXISTS {0}.{1} CASCADE;\n\n' \
+               .format(self.schema, self.name)
 
 
 class GazetteerForeignKey:
