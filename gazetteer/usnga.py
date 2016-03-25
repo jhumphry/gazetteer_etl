@@ -101,11 +101,18 @@ GeonamesCountryFilesDuplicates = GazetteerTableDuplicate(
     table_name='geonames'
     )
 
-GeonamesFullNameROIndex = GazetteerBTreeIndex(
-    name='geonames_full_name_ro_idx',
+GeonamesFullNameNDROIndex = GazetteerBTreeIndex(
+    name='geonames_full_name_nd_ro_idx',
     schema='usnga',
     table_name='geonames',
-    columns='full_name_ro text_pattern_ops'
+    columns='lower(full_name_nd_ro) text_pattern_ops'
+    )
+
+GeonamesCC1Index = GazetteerBTreeIndex(
+    name='geonames_cc1_idx',
+    schema='usnga',
+    table_name='geonames',
+    columns='cc1'
     )
 
 tables = (
@@ -116,5 +123,6 @@ tables = (
     )
 
 indexes = (
-    GeonamesFullNameROIndex,
+    GeonamesFullNameNDROIndex,
+    GeonamesCC1Index
     )
