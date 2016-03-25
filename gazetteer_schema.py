@@ -146,9 +146,10 @@ with connection.cursor() as cur:
 
     connection.commit()
 
-# Update database statistics
+# Update database statistics if necessary
 
-connection.autocommit = True
-with connection.cursor() as cur:
-    cur.execute("ANALYZE;")
-connection.close()
+if args.action == 'truncate':
+    connection.autocommit = True
+    with connection.cursor() as cur:
+        cur.execute("ANALYZE;")
+    connection.close()
