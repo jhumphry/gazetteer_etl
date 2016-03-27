@@ -37,7 +37,8 @@ import gazetteer.mockdb
 parser = argparse.ArgumentParser(description='Create or modify a PostgreSQL '
                                  'database schema for gazetteer data')
 parser.add_argument('action', metavar='ACTION',
-                    choices=['create', 'truncate', 'index', 'dropindex', 'list'],
+                    choices=['create', 'truncate', 'index',
+                             'dropindex', 'list'],
                     help='Whether to "create", "truncate", "index", '
                          '"dropindex" or "list" tables')
 parser.add_argument('table',
