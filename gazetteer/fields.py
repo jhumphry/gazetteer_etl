@@ -27,7 +27,7 @@ class GazetteerField:
     def __init__(self, field_name, sql_name='', nullable=True):
         self.field_name = field_name
         if sql_name == '':
-            self.sql_name = field_name.lower()
+            self.sql_name = field_name.lower().replace(' ', '_')
         else:
             self.sql_name = sql_name
         self.nullable = nullable
