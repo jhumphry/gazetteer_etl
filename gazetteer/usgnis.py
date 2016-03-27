@@ -195,7 +195,7 @@ AntarcticaFeatures = GazetteerTable(
     )
 
 CensusClassCodeDefinitions = GazetteerTableCSV(
-    filename_regexp='Census_Class_Code_Definitions.csv',
+    filename_regexp='USGNIS_Census_Class_Code_Definitions.csv',
     schema='usgnis',
     table_name='census_class_code_definitions',
     fields=(FixedTextField('Code', width=2, nullable=False),
@@ -205,7 +205,7 @@ CensusClassCodeDefinitions = GazetteerTableCSV(
     )
 
 FeatureClassCodeDefinitions = GazetteerTableCSV(
-    filename_regexp='Feature_Class_Code_Definitions.csv',
+    filename_regexp='USGNIS_Feature_Class_Code_Definitions.csv',
     schema='usgnis',
     table_name='feature_class_code_definitions',
     fields=(TextField('Class', nullable=False),

@@ -1,0 +1,133 @@
+Transliteration Code,Transliteration Name
+NOT_TRANSLITERATED,Name has not been transliterated
+not_transliterated,Name has not been transliterated
+UNKNOWN,Unknown transliteration method
+unknown,Unknown transliteration method
+amh_Ethi2Latn_ALA_1997,Amharic ALA-Library of Congress 1997 System
+amh_Ethi2Latn_BGN_1967,Amharic Board on Geographic Names/Permanent Committee on Geographical Names for British Official Use(PCGN) 1967 System
+ara_Arab2Latn_ALA_1997,Arabic ALA-Library of Congress 1997 System
+ara_Arab2Latn_BGN_1956,Arabic US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1956 System
+ara_Arab2Latn_BUC_2002,Arabic Tim Buckwalter 2002 System
+ara_Arab2Latn_IGN_1973,Arabic Institut Geographique Nationale 1973 System
+ara_Arab2Latn_ODNI_2004,Arabic Personal Names Office of the Director Of National Intelligence 2004 System
+ara_Arab2Latn_RJGC_1996,Arabic Royal Jordanian Geographic Center 1996 System
+ara_Arab2Latn_SES_1930,Arabic Survey of Egypt System
+asm_Deva2Latn_ALA_1997,Assamese ALA-Library of Congress 1997 System
+aze_Cyrl2Latn_ALA_1997,Azerbaijani ALA-Library of Congress 1997 System
+aze_Cyrl2Latn_GAZ_1991,Cyrillic-Roman Table of Correspondences Azeri Government 1991
+bak_Cyrl2Latn_BGN_2007,Bashkir 2007 BGN/PCGN Cyrillic-Latin Table of Correspondences
+ban_Bali2Latn_ALA_1997,Balinese ALA-Library of Congress 1997 System
+bel_Cyrl2Latn_ALA_1997,Byelorussian ALA-Library of Congress 1997 System
+bel_Cyrl2Latn_BGN_1979,Byelorussian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1979 System
+bel_Cyrl2Latn_GBO_1992,Byelorussian National Cartographic Authority 1992-3 System (based on GOST 1983)
+bel_Cyrl2Latn_GBO_1998,Byelorussian Government of Belarus 1998 System
+ben_Beng2Latn_ALA_1997,Bengali ALA-Library of Congress 1997 System
+bod_Tibt2Latn_ALA_1997,Tibetan ALA-Library of Congress 1997 System
+bul_Cyrl2Latn_ALA_1997,Bulgarian ALA-Library of Congress Bulgarian 1997 System
+bul_Cyrl2Latn_BGN_1952,Bulgarian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) Bulgarian 1952 System
+bul_Cyrl2Latn_BGN_2013,Bulgarian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names(PCGN) Bulgarian 2013 System
+bul_Cyrl2Latn_BUL_1952,Bulgarian 2002 Bulgarian Government Romanization System
+bul_Cyrl2Latn_ODNI_2005,Bulgarian Personal Names Office of the Director Of National Intelligence Bulgarian Personal Names 2004 System
+che_Cyrl2Latn_BGN_2007,Chechen 2007 BGN/PCGN Cyrillic-Latin Table of Correspondences
+deu_Latn2Latn_BGN_1986,German Spelling Convention US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1986
+div_Thaa2Latn_ALA_1997,Maldivian (Divehi) ALA-Library of Congress 1997 System
+div_Thaa2Latn_BGN_1972,Maldivian (Divehi) US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1972 system (out of date)
+div_Thaa2Latn_GMV_1988,Maldivian (Divehi) Maldivian Government 1988 system
+dzo_Tibt2Latn_GBT_1994,Dzongkha Government of Bhutan 1994 System
+ell_Grek2Latn_ALA_1997,Greek ALA-Library of Congress 1997 System
+ell_Grek2Latn_BGN_1962,US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) Greek 1962 System (out of date)
+ell_Grek2Latn_ELOT743_1996,"Greek ELOT 743 System, US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1996 agreement"
+fao_Latn2Latn_BGN_1968,Faroese Spelling Convention US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1968
+fas_Arab2Latn_ALA_1997,Persian 1997 ALA-Library of Congress System
+fas_Arab2Latn_AMMI_1959,Afghanistan Ministry of Mines and Industries Transliteration System for Geographic Names in Afghanistan (Yaghubi)
+fas_Arab2Latn_BGN_1958,Persian (Afghan and Iranian) BGN/Permanent Committee on Geographical Names for British Official Use(PCGN) 1958 System
+fas_Arab2Latn_NCO_2004,Persian 2004 Broad Transcription System National Cartographic Center of Iran
+fas_Arab2Latn_ODNI_2004,Farsi (Iranian Persian) Personal Names Office of the Director Of National Intelligence 2004 System
+guj_Gijr2Latn_ALA_1997,Gujerati 1997 ALA-Library of Congress System
+heb_Hebr2Latn_ALA_1997,Hebrew and Yiddish ALA-Library of Congress 1997 System
+heb_Hebr2Latn_HAS_1962,"Hebrew Academy System, US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) Hebrew 1962 Agreement"
+hin_Deva2Latn_ALA_1997,Hindi ALA-Library of Congress 1997 System
+hye_Armn2Latn_ALA_1997,Armenian ALA-Library of Congress 1997 System
+hye_Armn2Latn_BGN_1981,Armenian 1981 BGN/PCGN Romanization System
+isl_Armn2Latn_BGN_1981,Armenian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1981 System
+isl_Latn2Latn_BGN_1968,Icelandic Spelling Convention US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1968
+jav_Java2Latn_ALA_1997,"Javanese, Sundanese, and Madurese ALA-Library of Congress 1997 System"
+jpn_Hrkt2Latn_ALA_1997,Japanese ALA-Library of Congress 1997 System
+jpn_Hrkt2Latn_BGN_1930,Japanese Kana Modified Hepburn 1930 System
+jpn_Hrkt2Latn_GJP_1954,Japanese Kunrei-siki 1954 System
+kas_Arab2Latn_ALA_1997,Kashmiri ALA-Library of Congress 1997 System
+kat_Geor2Latn_ALA_1997,Georgian ALA-Library of Congress 1997 System
+kat_Geor2Latn_BGN_1981,Georgian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1981 System
+kat_Geor2Latn_GGG_2002,Georgian State Department of Geodesy and Cartography 2002 System
+kaz_Cyrl2Latn_BGN_1979,US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) Kazakh Cyrillic 1979 System
+khm_Khmr2Latn_ALA_1997,Cambodian (Khmer) ALA-Library of Congress 1997 System
+khm_Khmr2Latn_SGK_1959,Khmere Service Geographique 1959 System
+kir_Cyrl2Latn_BGN_1979,Kirghiz US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1979 System
+kor_Hang2Latn_ALA_1997,Korean ALA-Library of Congress 1997 System
+kor_Hang2Latn_GKN_2002,Korean Democratic People's Republic of Korea Korean 2002 System
+kor_Hang2Latn_MOCT_2000,Korean Ministry of Culture and Tourism 2000 System
+kor_Hang2Latn_MR_1939,"Korean McCune-Reischauer System, 1943 US Board on Geographic Names(BGN) Agreement"
+kor_Hang2Latn_ODNI_2004,Korean Personal Names Office of the Director Of National Intelligence 2004 System
+kur_Arab2Latn_ALA_1997,Kurdish 1997 ALA-Library of Congress Kurdish 1997 System
+kur_Arab2Latn_BGN_1931,2007 Kurdish Hawar Romanization System BGN/PCGN
+kur_Arab2Latn_EDMONDS_1931,Kurdish 1931 J.C. Edmonds Romanization System
+lad_Hebr2Latn_ALA_1997,Ladino ALA-Library of Congress 1997 System
+lao_Laoo2Latn_ALA_1997,Lao ALA-Library of Congress 1997 System
+lao_Laoo2Latn_CNT_1966,"Lao Commission Nationale de Toponymie 1966 System, US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) Agreement"
+mal_Mlym2Latn_ALA_1997,Malayalam ALA-Library of Congress 1997 System
+mar_Deva2Latn_ALA_1997,Marathi ALA-Library of Congress 1997 System
+mkd_Cyrl2Latn_BGN_1981,Macedonian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1981 System
+mkd_Cyrl2Latn_BGN_2013,Macedonian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 2013 System
+mkd_Cyrl2Latn_ODNI_2005,Macedonian Personal Names Office of the Director Of National Intelligence 2004 System
+mly_Arab2Latn_ALA_1997,Malay ALA-Library of Congress 1997 System
+mol_Cyrl2Latn_BGN_2002,Moldavian Table of Correspondences US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 2002
+mon_Cyrl2Latn_ALA_1997,Mongolian ALA-Library of Congress 1997 System
+mon_Cyrl2Latn_BGN_1964,Mongolian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1964 System
+mya_Mymr2Latn_ALA_1997,Burmese ALA-Library of Congress 1997 System
+nep_Deva2Latn_BGN_1964,Nepalese US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1964 System
+nep_Mymr2Latn_BGN_1970,Burmese US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1970 Agreement
+ori_Orya2Latn_ALA_1997,Oriya ALA-Library of Congress 1997 System
+pan_Deva2Latn_ALA_1997,Panjabi ALA-Library of Congress 1997 System
+pus_Arab2Latn_ALA_1997,Pashto ALA-Library of Congress 1997 System
+pus_Arab2Latn_AMMI_1959,Afghanistan Ministry of Mines and Industries Transliteration System for Geographic Names in Afghanistan (Yaghubi)
+pus_Arab2Latn_BGN_1968,Pashto (Pushtu) US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1968 System
+rus_Cyrl2Latn_ALA_1997,Russian ALA-Library of Congress 1997 System
+rus_Cyrl2Latn_BGN_1947,Russian US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1947 System
+rus_Cyrl2Latn_GOST_1983,"Russian GOST 1983 System, Main Administration of Geodesy and Cartography of the Former Soviet Union"
+rus_Cyrl2Latn_ODNI_2004,Russian Personal Names Office of the Director Of National Intelligence 2004 System
+sin_Sinh2Latn_ALA_1997,Sinhalese ALA-Library of Congress 1997 System
+sme_Latn2Latn_BGN_1984,North Lappish Spelling Convention US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1984 System
+snd_Arab2Latn_ALA_1997,Sindhi ALA-Library of Congress 1997 System
+srp_Cyrl2Latn_ALA_1997,Serbian and Macedonian ALA-Library of Congress 1997 System
+srp_Cyrl2Latn_BGN_2005,Serbian Cyrillic Table of Correspondences US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 2005
+srp_Cyrl2Latn_ODNI_2005,Serbian Personal Names Office of the Director Of National Intelligence 2004 System
+tam_Taml2Latn_ALA_1997,Tamil ALA-Library of Congress 1997 System
+tat_Cyrl2Latn_BGN_2005,Tatar 2005 BGN/PCGN Cyrillic-Roman Table of Correspondences
+tel_Telu2Latn_ALA_1997,Telugu ALA-Library of Congress 1997 System
+tgk_Cyrl2Latn_BGN_1994,US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) Tajik Cyrillic 1994 System
+tha_Thai2Latn_ALA_1997,Thai ALA-Library of Congress 1997 System
+tha_Thai2Latn_RIT_1968,Thai Royal Institute of Thailand 1968 System (out of date)
+tir_Ethi2Latn_ALA_1997,Tigrinya ALA-Library of Congress 1997 System
+tir_Ethi2Latn_BGN_2007,Tigrinya 2007 BGN/PCGN Romanization System
+tir_Thai2Latn_RIT_2000,Thai Royal Institute of Thailand 2000 System
+tuk_Cyrl2Latn_BGN_1979,Turkmen Cyrillic US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1979 System (out of date)
+tuk_Cyrl2Latn_GTX_2000,Cyrillic Table of Correspondences Government of Turkmenistan Turkmen 2000 System
+uas_Arab2Latn_BGN_2007,Unified Afghan Romanization System US Board on Geographic Names (BGN)/The Permanent Committee on Geographical Names (PCGN) 2007
+uig_Arab2Latn_ALA_1997,Uyghur ALA-Library of Congress 1997 System
+uig_Arab2Latn_UCIS_2001,"Uyghur 2001 Latin Script for Uyghur, Uyghur Computer Information Society"
+uig_Arab2Latn_XLSC_1959,Uyghur Pinyin New Script 1959 XUAR Language and Script Committee
+ukr_Cyrl2Latn_ALA_1997,Ukrainian ALA-Library of Congress 1997 System
+ukr_Cyrl2Latn_BGN_1965,Ukrainian Board on Geographic Names/Permanent Committee on Geographical Names for British Official Use(PCGN) 1965 System
+ukr_Cyrl2Latn_GUP_1996,Ukrainian Government of Ukraine 1996 System
+ukr_Cyrl2Latn_ODNI_2005,Ukrainian Personal Names Office of the Director Of National Intelligence 2004 System
+urd_Arab2Latn_ALA_1997,Urdu ALA-Library of Congress 1997 System
+urd_Arab2Latn_BGN_2007,Urdu 2007 BGN/PCGN Urdu Romanization System
+urd_Arab2Latn_HUN_,Hunterian System
+urd_Arab2Latn_ODNI_2004,Urdu Personal Names Office of the Director Of National Intelligence 2004 System
+urd_Arab2Latn_UN_1972,Urdu United Nations 1972 System
+uzb_Cyrl2Latn_BGN_1979,Uzbek Cyrillic US Board on Geographic Names(BGN)/Permanent Committee on Geographical Names for British Official Use(PCGN) 1979 System (out of date)
+uzb_Cyrl2Latn_GUZ_2000,Uzbek Cyrillic Table of Correspondences Government of Uzbekistan 2000 System
+zho_Hani2Latn_ALA_1997,Chinese ALA-Library of Congress 1997 System
+zho_Hani2Latn_AcadSin_2002,Chinese Tongyong Pinyin Academica Sinica 2002 System
+zho_Hani2Latn_GCH_1979,Chinese Hanyu Pinyin 1979 System
+zho_Hani2Latn_WDG_1979,Chinese Wade-Giles 1979 System

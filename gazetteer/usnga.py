@@ -27,8 +27,8 @@ import re
 
 from .fields import SmallIntField, IntegerField, DoubleField, DateField
 from .fields import FixedTextField, TextField, FlagField
-from .tables import GazetteerTable, GazetteerTableDuplicate
-from .indexes import GazetteerBTreeIndex
+from .tables import GazetteerTable, GazetteerTableCSV, GazetteerTableDuplicate
+from .indexes import GazetteerBTreeIndex, GazetteerForeignKey
 
 
 Geonames = GazetteerTable(
@@ -101,12 +101,14 @@ GeonamesCountryFilesDuplicates = GazetteerTableDuplicate(
     table_name='geonames'
     )
 
+
 GeonamesFullNameNDROIndex = GazetteerBTreeIndex(
     name='geonames_full_name_nd_ro_idx',
     schema='usnga',
     table_name='geonames',
     columns='lower(full_name_nd_ro) text_pattern_ops'
     )
+
 
 GeonamesCC1Index = GazetteerBTreeIndex(
     name='geonames_cc1_idx',
@@ -115,14 +117,118 @@ GeonamesCC1Index = GazetteerBTreeIndex(
     columns='cc1'
     )
 
+GeonamesFKFC = GazetteerForeignKey(
+    'geonamesFK_FC',
+    'usnga', 'geonames', 'FC',
+    'usnga', 'feature_class_codes', 'feature_class'
+    )
+
+GeonamesFKDSG = GazetteerForeignKey(
+    'geonamesFK_DSG',
+    'usnga', 'geonames', 'DSG',
+    'usnga', 'feature_designation_codes', 'feature_designation_code'
+    )
+
+GeonamesFKNT = GazetteerForeignKey(
+    'geonamesFK_NT',
+    'usnga', 'geonames', 'NT',
+    'usnga', 'name_type_codes', 'name_type_code'
+    )
+
+GeonamesFKTRANSL_CD = GazetteerForeignKey(
+    'geonamesFK_TRANSL_CD',
+    'usnga', 'geonames', 'TRANSL_CD',
+    'usnga', 'transliteration_codes', 'transliteration_code'
+    )
+
+
+ADM1Codes = GazetteerTableCSV(
+    filename_regexp='USNGA_ADM1_Codes.csv',
+    schema='usnga',
+    table_name='adm1_codes',
+    fields=(TextField('Country Name', nullable=False),
+            TextField('ADM1 Code', nullable=False),
+            TextField('ADM1 Name', nullable=False)
+            ),
+    pk='adm1_code'
+    )
+
+
+CountryCodes = GazetteerTableCSV(
+    filename_regexp='USNGA_Country_Codes.csv',
+    schema='usnga',
+    table_name='country_codes',
+    fields=(TextField('Country Code', nullable=False),
+            TextField('Country Name', nullable=False)
+            ),
+    pk='country_code'
+    )
+
+FeatureClassCodes = GazetteerTableCSV(
+    filename_regexp='USNGA_Feature_Class_Codes.csv',
+    schema='usnga',
+    table_name='feature_class_codes',
+    fields=(TextField('Feature Class', nullable=False),
+            TextField('Feature Class Description', nullable=False)
+            ),
+    pk='feature_class'
+    )
+
+FeatureDesignationCodes = GazetteerTableCSV(
+    filename_regexp='USNGA_Feature_Designation_Codes.csv',
+    schema='usnga',
+    table_name='feature_designation_codes',
+    fields=(TextField('Feature Designation Code', nullable=False),
+            TextField('Feature Designation Name', nullable=False),
+            TextField('Feature Designation Text', nullable=False),
+            TextField('Collection Guidance', nullable=False),
+            TextField('Feature Class', nullable=False)
+            ),
+    pk='feature_designation_code'
+    )
+
+
+NameTypeCodes = GazetteerTableCSV(
+    filename_regexp='USNGA_Name_Type_Codes.csv',
+    schema='usnga',
+    table_name='name_type_codes',
+    fields=(FixedTextField('Name Type Code', width=2, nullable=False),
+            TextField('Name Type', nullable=False),
+            TextField('Name Type Text', nullable=False)
+            ),
+    pk='name_type_code'
+    )
+
+
+TransliterationCodes = GazetteerTableCSV(
+    filename_regexp='USNGA_Transliteration_Codes.csv',
+    schema='usnga',
+    table_name='transliteration_codes',
+    fields=(TextField('Transliteration Code', nullable=False),
+            TextField('Transliteration Name', nullable=False)
+            ),
+    pk='transliteration_code'
+    )
+
+
 tables = (
     Geonames,
     GeonamesDuplicates,
     GeonamesCountryFiles,
-    GeonamesCountryFilesDuplicates
+    GeonamesCountryFilesDuplicates,
+    ADM1Codes,
+    CountryCodes,
+    FeatureClassCodes,
+    FeatureDesignationCodes,
+    NameTypeCodes,
+    TransliterationCodes
     )
 
 indexes = (
     GeonamesFullNameNDROIndex,
-    GeonamesCC1Index
+    GeonamesCC1Index,
+    GeonamesFKFC,
+    GeonamesFKDSG,
+    GeonamesFKNT,
+    GeonamesFKTRANSL_CD
     )

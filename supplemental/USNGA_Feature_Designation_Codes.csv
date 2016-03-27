@@ -1,0 +1,637 @@
+Feature Designation Code,Feature Designation Name,Feature Designation Text,Collection Guidance,Feature Class
+AIRQ,abandoned airfield,abandoned airfield,Center of Feature,S - Spot Features
+CMPQ,abandoned camp,abandoned camp,Center of Feature,S - Spot Features
+CNLQ,abandoned canal,abandoned canal,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+MFGQ,abandoned factory,abandoned factory,Center of Feature,S - Spot Features
+FRMQ,abandoned farm,abandoned farm,Center of Feature,S - Spot Features
+MNQ,abandoned mine,abandoned mine,Center of Feature,S - Spot Features
+MSSNQ,abandoned mission,abandoned mission,Center of Feature,S - Spot Features
+OILQ,abandoned oil well,abandoned oil well,Center of Feature,S - Spot Features
+PPQ,abandoned police post,abandoned police post,Center of Feature,S - Spot Features
+PPLQ,abandoned populated place,abandoned populated place,Center of Feature,P - Populated Place
+PRNQ,abandoned prison,abandoned prison,Center of Feature,S - Spot Features
+RRQ,abandoned railroad,abandoned railroad,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+RSTNQ,abandoned railroad station,abandoned railroad station,Center of Feature,S - Spot Features
+RSTPQ,abandoned railroad stop,abandoned railroad stop,Center of Feature,S - Spot Features
+STMQ,abandoned watercourse,"a former stream or distributary no longer carrying flowing water, but still evident due to lakes, wetland, topographic or vegetation patterns","Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+WLLQ,abandoned well,abandoned well,Center of Feature,H - Hydrographic
+ADMD,administrative division,"an administrative division of a political entity, undifferentiated as to administrative level",Center of Feature,A - Administrative Region
+ADMF,administrative facility,a building that houses one or more functions of government. Not related to any specific level of government,Center of Feature,S - Spot Features
+AGRC,agricultural colony,a tract of land set aside for agricultural settlement,Center of Feature,L - Area
+AGRF,agricultural facility,a building and/or tract of land used for improving agriculture,Center of Feature,S - Spot Features
+RESA,agricultural reserve,a tract of land reserved for agricultural reclamation and/or development,Center of Feature,L - Area
+SCHA,agricultural school,a school with a curriculum focused on agriculture,Center of Feature,S - Spot Features
+AIRB,airbase,"an area used to store supplies, provide barracks for air force personnel, hangars and runways for aircraft, and from which operations are initiated",Center of Feature,S - Spot Features
+AIRF,airfield,a place on land where aircraft land and take off; no facilities provided for the commercial handling of passengers and cargo,Center of Feature,S - Spot Features
+AIRP,airport,"a place where aircraft regularly land and take off, with runways, navigational aids, and major facilities for the commercial handling of passengers and cargo",Center of Feature,S - Spot Features
+AMTH,amphitheater,an oval or circular structure with rising tiers of seats about a stage or open space,Center of Feature,S - Spot Features
+STMA,anabranch,a diverging branch flowing out of a main stream and rejoining it downstream,At Mouth,H - Hydrographic
+ANCH,anchorage,an area where vessels may anchor,Center of Feature,H - Hydrographic
+RDA,ancient road,the remains of a road used by ancient cultures,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+ANS,ancient site,"a place where archeological remains, old structures, or cultural artifacts are located",Center of Feature,S - Spot Features
+WALLA,ancient wall,the remains of a linear defensive stone structure,Center of Feature,S - Spot Features
+BLDA,apartment building,a building containing several individual apartments,Center of Feature,S - Spot Features
+AQC,aquaculture facility,"facility or area for the cultivation of aquatic animals and plants, especially fish, shellfish, and seaweed, in natural or controlled marine or freshwater environments; underwater agriculture",Center of Feature,S - Spot Features
+CNLA,aqueduct,a conduit used to carry water,At Dispersal Point,H - Hydrographic
+ARCH,arch,a natural or man-made structure in the form of an arch,Center of Feature,S - Spot Features
+LAND,Arctic land,a tract of land in the Arctic,Center of Feature,L - Area
+AREA,area,a tract of land without homogeneous character or boundaries,Center of Feature,L - Area
+ISLF,artificial island,"an island created by landfill or diking and filling in a wetland, bay, or lagoon",Center of Feature,T - Hypsographic
+ASPH,asphalt lake,a small basin containing naturally occurring asphalt,Center of Feature,T - Hypsographic
+ASTR,astronomical station,a point on the earth whose position has been determined by observations of celestial bodies,Center of Feature,S - Spot Features
+ASYL,asylum,a facility where the insane are cared for and protected,Center of Feature,S - Spot Features
+ATHF,athletic field,"a tract of land used for playing team sports, and athletic track and field events",Center of Feature,S - Spot Features
+ATOL,atoll(s),a ring-shaped coral reef which has closely spaced islands on it encircling a lagoon,Center of Feature,T - Hypsographic
+CTRA,atomic center,a facility where atomic research is carried out,Center of Feature,S - Spot Features
+BDLD,badlands,"an area characterized by a maze of very closely spaced, deep, narrow, steep-sided ravines, and sharp crests and pinnacles",Center of Feature,T - Hypsographic
+BSTN,baling station,a facility for baling agricultural products,Center of Feature,S - Spot Features
+ESTB,banana plantation,an estate that specializes in the growing of bananas,Center of Feature,S - Spot Features
+BNK,bank(s),"an elevation, typically located on a shelf, over which the depth of water is relatively shallow but sufficient for most surface navigation",Center of Feature,H - Hydrographic
+BAR,bar,"a shallow ridge or mound of coarse unconsolidated material in a stream channel, at the mouth of a stream, estuary, or lagoon and in the wave-break zone along coasts",Center of Feature,T - Hypsographic
+BRKS,barracks,a building for lodging military personnel,Center of Feature,S - Spot Features
+BTL,battlefield,a site of a land battle of historical importance,Center of Feature,L - Area
+BAY,bay(s),"coastal indentation(s) between two capes or headlands, larger than a cove but smaller than a gulf. Associated generic terms may be the primary factor for determining if a feature is a gulf, bay, or cove",Center of Feature,H - Hydrographic
+RDGB,beach ridge,"a ridge of sand just inland and parallel to the beach, usually in series",Center of Feature,T - Hypsographic
+BCH,beach(es),shore zone(s) of coarse unconsolidated sediment that extends from the low-water line to the highest reach of storm waves,Center of Feature,T - Hypsographic
+BCN,beacon,a fixed artificial navigation mark,Center of Feature,S - Spot Features
+BNCH,bench,"a long, narrow bedrock platform bounded by steeper slopes above and below, usually overlooking a waterbody",Center of Feature,T - Hypsographic
+BGHT,bight(s),an open body of water forming a slight recession in a coastline,Center of Feature,H - Hydrographic
+BLHL,blowhole(s),a hole in coastal rock through which sea water is forced by a rising tide or waves and spurted through an outlet into the air,Center of Feature,T - Hypsographic
+BLOW,blowout(s),"a small depression in sandy terrain, caused by wind erosion",Center of Feature,T - Hypsographic
+BTYD,boatyard,"a waterside facility for servicing, repairing, and building small vessels",Center of Feature,S - Spot Features
+BOG,bog(s),"a wetland characterized by peat forming sphagnum moss, sedge, and other acid-water plants",Center of Feature,H - Hydrographic
+PSTB,border post,a post or station at an international boundary for the regulation of movement of people and goods,Center of Feature,S - Spot Features
+BLDR,boulder field,"a high altitude or high latitude bare, flat area covered with large angular rocks",Center of Feature,T - Hypsographic
+BP,boundary marker,a fixture marking a point along a boundary,Center of Feature,S - Spot Features
+BRKW,breakwater,a structure erected to break the force of waves at the entrance to a harbor or port,Center of Feature,S - Spot Features
+MFGB,brewery,one or more buildings where beer is brewed,Center of Feature,S - Spot Features
+BDG,bridge,"a structure erected across an obstacle such as a stream, road, etc., in order to carry roads, railroads, and pedestrians across",Center of Feature,S - Spot Features
+ZNB,buffer zone,"a delimited area separating two, or more, political entities or territories, within which certain activities are limited or prohibited",Center of Feature,A - Administrative Region
+BLDG,building(s),"a structure built for permanent use, as a house, factory, etc.",Center of Feature,S - Spot Features
+BUR,burial cave(s),a cave used for human burials,Center of Feature,S - Spot Features
+CTRB,business center,a place where a number of businesses are located,Center of Feature,L - Area
+BUTE,butte(s),"a small, isolated, usually flat-topped hill with steep sides",Center of Feature,T - Hypsographic
+CARN,cairn,a heap of stones erected as a landmark or for other purposes,Center of Feature,S - Spot Features
+CLDA,caldera,a depression measuring kilometers across formed by the collapse of a volcanic mountain,Center of Feature,T - Hypsographic
+CMP,camp(s),"a site occupied by tents, huts, or other shelters for temporary use",Center of Feature,S - Spot Features
+CNL,canal,"an individual, or system, of artificial waterway(s) with no natural flow, or a controlled flow, usable or built for irrigation and/or navigation","Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+CNLB,canal bend,a conspicuously curved or bent section of a canal,At Bend,H - Hydrographic
+TNLC,canal tunnel,a tunnel through which a canal passes,Center of Feature,H - Hydrographic
+STMC,canalized stream,"a stream that has been substantially ditched, diked, or straightened",At Mouth,H - Hydrographic
+MFGC,cannery,a building where food items are canned,Center of Feature,S - Spot Features
+CNYN,canyon,"a deep, narrow valley with steep sides cutting into a plateau or mountainous area",Center of Feature,T - Hypsographic
+CAPE,cape,"a land area, more prominent than a point, projecting into the sea and marking a notable change in coastal direction",Center of Feature,T - Hypsographic
+PPLC,capital of a political entity,capital of a political entity,Center of Feature (changes to primary name or designation require BGN/FNC approval),P - Populated Place
+RTE,caravan route,the route taken by caravans,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+CSNO,casino,"a building used for entertainment, especially gambling",Center of Feature,S - Spot Features
+CSTL,castle,a large fortified building or set of buildings,Center of Feature,S - Spot Features
+TNKD,cattle dipping tank,a small artificial pond used for immersing cattle in chemically treated water for disease control,Center of Feature,S - Spot Features
+CSWY,causeway,a raised roadway across wet ground or shallow water,Center of Feature,R - Streets/Highways/Roads
+CAVE,cave(s),"an underground passageway or chamber, or cavity on the side of a cliff",Center of Feature,S - Spot Features
+CMTY,cemetery,a burial place or ground,Center of Feature,S - Spot Features
+CHN,channel,"the deepest part of a stream, bay, lagoon, or strait, through which the main current flows","Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+MNCR,chrome mine(s),a mine where chrome ore is extracted,Center of Feature,S - Spot Features
+CH,church,a building for public Christian worship,Center of Feature,S - Spot Features
+CRQ,cirque(es),bowl-like hollow(s) partially surrounded by cliffs or steep slopes at the head of a glaciated valley,Center of Feature,T - Hypsographic
+CLG,clearing,an area in a forest with trees removed,Center of Feature,L - Area
+CFT,cleft(s),"a deep narrow slot, notch, or groove in a coastal cliff",Center of Feature,T - Hypsographic
+CLF,cliff(s),"a high, steep to perpendicular slope overlooking a waterbody or lower area",Center of Feature,T - Hypsographic
+HSPC,clinic,facility which provides medical or surgical treatment for the ill or wounded on an out-patient basis (for example: at a clinic or dispensary),Center of Feature,S - Spot Features
+MNC,coal mine(s),a mine where coal is extracted,Center of Feature,S - Spot Features
+COLF,coalfield,a region in which coal deposits of possible economic value occur,Center of Feature,L - Area
+CST,coast,a zone of variable width straddling the shoreline,Center of Feature,L - Area
+STNC,coast guard station,a facility from which the coast is guarded by armed vessels,Center of Feature,S - Spot Features
+SCHC,college,the grounds and buildings of an institution of higher learning,Center of Feature,S - Spot Features
+COMC,communication center,"a facility, including buildings, antennae, towers and electronic equipment for receiving and transmitting information",Center of Feature,S - Spot Features
+CTRCM,community center,a facility for community recreation and other activities,Center of Feature,S - Spot Features
+CNS,concession area,"a lease of land by a government for economic development, e.g., mining, forestry",Center of Feature,L - Area
+CONE,cone(s),a conical landform composed of mud or volcanic material,Center of Feature,T - Hypsographic
+CNFL,confluence,a place where two or more streams or intermittent streams flow together,Center of Feature,H - Hydrographic
+CRSU,continental rise,a gentle slope rising from oceanic depths towards the foot of a continental slope,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+CVNT,convent,a building where a community of nuns lives in seclusion,Center of Feature,S - Spot Features
+MNCU,copper mine(s),a mine where copper ore is extracted,Center of Feature,S - Spot Features
+MFGCU,copper works,a facility for processing copper ore,Center of Feature,S - Spot Features
+RFC,coral reef(s),a surface-navigation hazard composed of coral,Center of Feature,H - Hydrographic
+CRRL,corral(s),enclosed area(s) where livestock may be captured and/or temporarily kept,Center of Feature,S - Spot Features
+CRDR,corridor,a strip or area of land having significance as an access way,Center of Feature,T - Hypsographic
+ESTC,cotton plantation,an estate specializing in the cultivation of cotton,Center of Feature,S - Spot Features
+HSEC,country house,"a large house, mansion, or chateau, on a large estate",Center of Feature,S - Spot Features
+CTHSE,courthouse,a building in which courts of law are held,Center of Feature,S - Spot Features
+COVE,cove(s),"a small coastal indentation, smaller than a bay",Center of Feature,H - Hydrographic
+LKC,crater lake(s),body(-ies) of water formed by the collection of water in the crater of an inactive volcano,Center of Feature,H - Hydrographic
+CRTR,crater(s),a generally circular saucer or bowl-shaped depression caused by volcanic or meteorite explosive action,Center of Feature,T - Hypsographic
+CUET,cuesta(s),an asymmetric ridge formed on tilted strata,Center of Feature,T - Hypsographic
+CULT,cultivated area,an area under cultivation,Center of Feature,V - Vegetation
+CRNT,current,a horizontal flow of water in a given direction with uniform velocity,Center of Feature,H - Hydrographic
+CSTM,customs checkpoint,"a government checkpoint where customs duties are collected, the flow of goods are regulated and restrictions enforced, and shipments or vehicles are cleared for entering or leaving a country",Center of Feature,S - Spot Features
+CUTF,cutoff,a channel formed as a result of a stream cutting through a meander neck,Center of Feature,H - Hydrographic
+DARY,dairy,"a facility for the processing, sale and distribution of milk or milk products",Center of Feature,S - Spot Features
+DAM,dam,a barrier constructed across a stream to impound water,Center of Feature,S - Spot Features
+DEPU,deep,"a localized deep area within the confines of a larger feature, such as a trough, basin or trench",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+DLTA,delta,a flat plain formed by alluvial deposits at the mouth of a stream,Center of Feature,T - Hypsographic
+PCLD,dependent political entity,dependent political entity,Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+DPR,depression(s),a low area surrounded by higher land and usually characterized by interior drainage,Center of Feature,T - Hypsographic
+DSRT,desert,a large area with little or no vegetation due to extreme environmental conditions,Center of Feature,T - Hypsographic
+PPLW,destroyed populated place,"a village, town or city destroyed by a natural disaster, or by war",Center of Feature,P - Populated Place
+MNDT,diatomite mine(s),a place where diatomaceous earth is extracted,Center of Feature,S - Spot Features
+DIKE,dike,an earth or stone embankment usually constructed for flood or stream control,Center of Feature,S - Spot Features
+DIP,diplomatic facility,"office, residence, or facility of a foreign government, which may include an embassy, consulate, chancery, office of charge dâ€™affaires, or other diplomatic, economic, military, or cultural mission",Center of Feature,S - Spot Features
+STMD,distributary(-ies),"a branch which flows away from the main stream, as in a delta or irrigation canal",At Mouth,H - Hydrographic
+DTCH,ditch,a small artificial watercourse dug for draining or irrigating the land,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+DTCHM,ditch mouth(s),"an area where a drainage ditch enters a lagoon, lake or bay",Center of Feature,H - Hydrographic
+DVD,divide,a line separating adjacent drainage basins,Center of Feature,T - Hypsographic
+DCK,dock,"a waterway between two piers, or cut into the land for the berthing of ships, may be open or enclosed, and includes the surrounding piers and wharves",Center of Feature,H - Hydrographic
+DCKY,dockyard,"a facility for servicing, building, or repairing ships",Center of Feature,S - Spot Features
+BSND,drainage basin,an area drained by a stream,Center of Feature,L - Area
+DTCHD,drainage ditch,a ditch which serves to drain the land,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+DCKD,dry dock,"a dock providing support for a vessel, and means for removing the water so that the bottom of the vessel can be exposed",Center of Feature,S - Spot Features
+SBED,dry stream bed,a channel formerly containing the water of a stream,Center of Feature,T - Hypsographic
+DUNE,dune(s),"a wave form, ridge or star shape feature composed of sand",Center of Feature,T - Hypsographic
+RGNE,economic region,a region of a country established for economic development or for statistical purposes,Center of Feature,L - Area
+SCRP,escarpment,a long line of cliffs or steep slopes separating level surfaces above and below,Center of Feature,T - Hypsographic
+EST,estate(s),a large commercialized agricultural landholding with associated buildings and other facilities,Center of Feature,S - Spot Features
+ESTY,estuary,a funnel-shaped stream mouth or embayment where fresh water mixes with sea water under tidal influences,Center of Feature,H - Hydrographic
+FCL,facility,"an area, and associated structures, that have been developed to perform a specific principal function",Center of Feature,S - Spot Features
+MFG,factory,"one or more buildings where goods are manufactured, processed or fabricated",Center of Feature,S - Spot Features
+FAN,fan(s),a fan-shaped wedge of coarse alluvium with apex merging with a mountain stream bed and the fan spreading out at a low angle slope onto an adjacent plain,Center of Feature,T - Hypsographic
+PPLF,farm village,a populated place where the population is largely engaged in agricultural activities,Center of Feature,P - Populated Place
+FRM,farm(s),tract(s) of land and associated building(s) devoted primarily to the production of crops and or livestock,Center of Feature,S - Spot Features
+FY,ferry,a boat or other floating conveyance and terminal facilities regularly used to transport people and vehicles across a waterbody,Center of Feature,S - Spot Features
+FYT,ferry terminal,"a place where ferries pick-up and discharge passengers, vehicles and or cargo",Center of Feature,S - Spot Features
+FLD,field(s),an open as opposed to wooded area,Center of Feature,L - Area
+FIN,financial institution,"an establishment for the custody, loan, exchange or issue of money, for the extension of credit, and for facilitating the transmission of funds",Center of Feature,S - Spot Features
+FIRE,fire station,building housing firefighters and/or fire fighting equipment,Center of Feature,S - Spot Features
+RNGA,firing range,a tract of land designated for the safe discharge of weapons of all types and the detonation of munitions,Center of Feature,L - Area
+ADM1,first-order administrative division,"a primary administrative division of a country, such as a state in the United States",Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+FISH,fishing area,"a fishing ground, bank or area where fishermen go to catch fish",Center of Feature,H - Hydrographic
+PNDSF,fishponds,ponds or enclosures in which fish are kept or raised,Center of Feature,H - Hydrographic
+FSR,fissure,a crack associated with volcanism,Center of Feature,T - Hypsographic
+FJD,fjord(s),"long, narrow, steep-walled, deep-water arm(s) of the sea at high latitudes, usually along mountainous coasts",Center of Feature,H - Hydrographic
+FORD,ford,a shallow part of a stream which can be crossed on foot or by land vehicle,Center of Feature,T - Hypsographic
+RESF,forest reserve,a forested area set aside for preservation or controlled use,Center of Feature,L - Area
+STNF,forest station,a collection of buildings and facilities for carrying out forest management,Center of Feature,S - Spot Features
+FRST,forest(s),an area dominated by tree vegetation,Center of Feature,V - Vegetation
+MLSGQ,former sugar mill,a sugar mill no longer used as a sugar mill,Center of Feature,S - Spot Features
+FT,fort,a building that is specifically designed or reinforced to provide for defense from armed attack,Center of Feature,S - Spot Features
+FRSTF,fossilized forest,a forest fossilized by geologic processes and now exposed at the earth's surface,Center of Feature,V - Vegetation
+FNDY,foundry,a building or works where metal casting is carried out,Center of Feature,S - Spot Features
+ADM4,fourth-order administrative division,a subdivision of a third-order administrative division,Center of Feature,A - Administrative Region
+ZNF,free trade zone,"an area, usually a section of a port, where goods may be received and shipped free of customs duty and of most customs regulations",Center of Feature,S - Spot Features
+DPOF,fuel depot,an area where fuel is stored,Center of Feature,S - Spot Features
+GAP,gap,"a low place in a ridge, not used for transportation",Center of Feature,T - Hypsographic
+GDN,garden(s),an enclosure for displaying selected plant or animal life,Center of Feature,S - Spot Features
+GOSP,gas-oil separator plant,a facility for separating gas from oil,Center of Feature,S - Spot Features
+GASF,gasfield,an area containing a subterranean store of natural gas of economic value,Center of Feature,L - Area
+GATE,gate,a barrier on a transportation route that controls passage along that route,Center of Feature,S - Spot Features
+GYSR,geyser,a type of hot spring with intermittent eruptions of jets of hot water and steam,Center of Feature,H - Hydrographic
+GHAT,ghÄﾁt,"a set of steps leading to a river, which are of religious significance, and at their base is usually a platform for bathing",Center of Feature,S - Spot Features
+GLCR,glacier(s),"a mass of ice, usually at high latitudes or high elevations, with sufficient thickness to flow away from the source area in lobes, tongues, or masses",Center of Feature,H - Hydrographic
+MNAU,gold mine(s),"a mine where gold ore, or alluvial gold is extracted",Center of Feature,S - Spot Features
+RECG,golf course,a recreation field where golf is played,Center of Feature,S - Spot Features
+GRGE,gorge(s),"a short, narrow, steep-sided section of a stream valley",Center of Feature,T - Hypsographic
+GRSLD,grassland,an area dominated by grass vegetation,Center of Feature,V - Vegetation
+GRVE,grave,a burial site,Center of Feature,S - Spot Features
+GVL,gravel area,an area covered with gravel,Center of Feature,L - Area
+GRAZ,grazing area,an area of grasses and shrubs used for grazing,Center of Feature,L - Area
+GROVE,grove,"a small wooded area or collection of trees growing closely together, occurring naturally or deliberately planted",Center of Feature,V - Vegetation
+GHSE,guest house,a house used to provide lodging for paying guests,Center of Feature,S - Spot Features
+GULF,gulf,"a large recess in the coastline, larger than a bay",Center of Feature,H - Hydrographic
+HLT,halting place,a place where caravans stop for rest,Center of Feature,S - Spot Features
+HMCK,hammock(s),"a patch of ground, distinct from and slightly above the surrounding plain or wetland. Often occurs in groups",Center of Feature,T - Hypsographic
+AIRG,hangar,a covered and usually enclosed area for housing and repairing aircraft,Center of Feature,S - Spot Features
+VALG,hanging valley,a valley the floor of which is notably higher than the valley or shore to which it leads; most common in areas that have been glaciated,Center of Feature,T - Hypsographic
+HBR,harbor(s),a haven or space of deep water so sheltered by the adjacent land as to afford a safe anchorage for ships,Center of Feature,H - Hydrographic
+HDLD,headland,a high projection of land extending into a large body of water beyond the line of the coast,Center of Feature,T - Hypsographic
+STMH,headwaters,"the source and upper part of a stream, including the upper drainage basin",Center of Feature,H - Hydrographic
+HTH,heath,an upland moor or sandy area dominated by low shrubby vegetation including heather,Center of Feature,V - Vegetation
+AIRH,heliport,a place where helicopters land and take off,Center of Feature,S - Spot Features
+HERM,hermitage,"a secluded residence, usually for religious sects",Center of Feature,S - Spot Features
+HLL,hill,a rounded elevation of limited extent rising above the surrounding land with local relief of less than 300m,Center of Feature,T - Hypsographic
+HLLS,hills,rounded elevations of limited extent rising above the surrounding land with local relief of less than 300m,Center of Feature,T - Hypsographic
+ADMDH,historical administrative division,"a former administrative division of a political entity, undifferentiated as to administrative level",Center of Feature,A - Administrative Region
+ADM1H,historical first-order administrative division,a former primary administrative division,Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+ADM4H,historical fourth-order administrative division,a former fourth-order administrative division,Center of Feature,A - Administrative Region
+PCLH,historical political entity,a former political entity,Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+PPLH,historical populated place,a populated place that no longer exists,Center of Feature,P - Populated Place
+RRH,historical railroad,a former permanent twin steel-rail track on which freight and passenger cars move long distances,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+RSTNH,historical railroad station,"a former facility comprising ticket office, platforms, etc. for loading and unloading train passengers and freight",Center of Feature,S - Spot Features
+RGNH,historical region,a former area distinguished by one or more observable physical or cultural characteristics,Center of Feature,L - Area
+ADM2H,historical second-order administrative division,a former second-order administrative division,Center of Feature,A - Administrative Region
+HSTS,historical site,a place of historical importance,Center of Feature,S - Spot Features
+ADM3H,historical third-order administrative division,a former third-order administrative division,Center of Feature,A - Administrative Region
+UFHU,historical undersea feature,an undersea feature whose existence has been subsequently disproved,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+HMSD,homestead,"a residence, owner's or manager's, on a sheep or cattle station, woolshed, outcamp, or Aboriginal outstation, specific to Australia and New Zealand",Center of Feature,S - Spot Features
+HSP,hospital,"a building in which sick or injured, especially those confined to bed, are medically treated",Center of Feature,S - Spot Features
+SPNT,hot spring(s),a place where hot ground water flows naturally out of the ground,Center of Feature,H - Hydrographic
+HTL,hotel,a building providing lodging and/or meals for the public,Center of Feature,S - Spot Features
+HSE,house(s),a building or buildings used as human habitation,Center of Feature,S - Spot Features
+DEVH,housing development,a tract of land on which many houses of similar design are built according to a development plan,Center of Feature,L - Area
+RESH,hunting reserve,a tract of land used primarily for hunting,Center of Feature,L - Area
+HUT,hut(s),"single or multiple, small, free standing, self-contained residence(s) usually having only a single multi-function room",Center of Feature,S - Spot Features
+PSH,hydroelectric power station,a building where electricity is generated from water power,Center of Feature,S - Spot Features
+CAPG,icecap,a dome-shaped mass of glacial ice covering an area of mountain summits or other high lands; smaller than an ice sheet,Center of Feature,H - Hydrographic
+DPRG,icecap depression,a comparatively depressed area on an icecap,Center of Feature,H - Hydrographic
+DOMG,icecap dome,a comparatively elevated area on an icecap,Center of Feature,H - Hydrographic
+RDGG,icecap ridge,a linear elevation on an icecap,Center of Feature,H - Hydrographic
+PCLI,independent political entity,independent political entity,Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+INDS,industrial area,an area characterized by industrial activity,Center of Feature,L - Area
+INLT,inlet,"a narrow waterway extending into the land, or connecting a bay or lagoon with a larger body of water",Center of Feature,H - Hydrographic
+STNI,inspection station,"a station at which vehicles, goods, and people are inspected",Center of Feature,S - Spot Features
+TRGD,interdune trough(s),a long wind-swept trough between parallel longitudinal dunes,Center of Feature,T - Hypsographic
+INTF,interfluve,a relatively undissected upland between adjacent stream valleys,Center of Feature,T - Hypsographic
+LKI,intermittent lake(s),large inland body(-ies) of water that are filled for part of the year only,Center of Feature,H - Hydrographic
+LKOI,intermittent oxbow lake,intermittent oxbow lake,Center of Feature,H - Hydrographic
+PNDI,intermittent pond(s),small standing waterbody(-ies) that are filled for part of the year,Center of Feature,H - Hydrographic
+POOLI,intermittent pool,intermittent pool,Center of Feature,H - Hydrographic
+RSVI,intermittent reservoir,intermittent reservoir,Center of Feature,H - Hydrographic
+LKNI,intermittent salt lake(s),large inland body(-ies) of salt water that are filled for part of the year only,Center of Feature,H - Hydrographic
+PNDNI,intermittent salt pond(s),intermittent salt pond(s),Center of Feature,H - Hydrographic
+STMI,intermittent stream,intermittent stream,At Mouth,H - Hydrographic
+WTLDI,intermittent wetland,intermittent wetland,Center of Feature,H - Hydrographic
+RDIN,intersection,a junction of two or more highways by a system of separate levels that permit traffic to pass from one to another without the crossing of traffic streams,Center of Feature,S - Spot Features
+MNFE,iron mine(s),a mine where iron ore is extracted,Center of Feature,S - Spot Features
+FLDI,irrigated field(s),a tract of level or terraced land which is irrigated,Center of Feature,L - Area
+DTCHI,irrigation ditch,a ditch which serves to distribute irrigation water,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+SYSI,irrigation system,"a network of ditches and one or more of the following elements: water supply, reservoir, canal, pump, well, drain, etc.",Center of Feature,H - Hydrographic
+ISL,island,"a tract of land, smaller than a continent, surrounded by water at high water",Center of Feature,T - Hypsographic
+ISLS,islands,"tracts of land, smaller than a continent, surrounded by water at high water",Center of Feature,T - Hypsographic
+STLMT,Israeli settlement,Israeli settlement,Center of Feature,P - Populated Place
+ISTH,isthmus,a narrow strip of land connecting two larger land masses and bordered by water,Center of Feature,T - Hypsographic
+JTY,jetty,a structure built out into the water at a river mouth or harbor entrance to regulate currents and silting,Center of Feature,S - Spot Features
+KRST,karst area,"a distinctive landscape developed on soluble rock such as limestone characterized by sinkholes, caves, disappearing streams, and underground drainage",Center of Feature,T - Hypsographic
+CMPLA,labor camp,a camp used by migrant or temporary laborers,Center of Feature,S - Spot Features
+LGN,lagoon(s),"shallow coastal waterbody(-ies), completely or partly separated from a larger body of water by a barrier island, coral reef or other depositional feature",Center of Feature,H - Hydrographic
+LK,lake,a large inland body of standing water,Center of Feature,H - Hydrographic
+LBED,lake bed(s),a dried up or drained area of a former lake,Center of Feature,H - Hydrographic
+CHNL,lake channel(s),"that part of a lake having water deep enough for navigation between islands, shoals, etc.","Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+RGNL,lake region,a tract of land distinguished by numerous lakes,Center of Feature,L - Area
+LKS,lakes,large inland bodies of standing water,Center of Feature,H - Hydrographic
+ISLT,land-tied island,"a coastal island connected to the mainland by barrier beaches, levees or dikes",Center of Feature,T - Hypsographic
+LNDF,landfill,a place for trash and garbage disposal in which the waste is buried between layers of earth to build up low-lying land,Center of Feature,S - Spot Features
+LDNG,landing,"a place where boats receive or discharge passengers and freight, but lacking most port facilities",Center of Feature,S - Spot Features
+LAVA,lava area,an area of solidified lava,Center of Feature,T - Hypsographic
+MNPB,lead mine(s),a mine where lead ore is extracted,Center of Feature,S - Spot Features
+LTER,leased area,a tract of land leased by the United Kingdom from the People's Republic of China to form part of Hong Kong,Center of Feature,A - Administrative Region
+LEPC,leper colony,a settled area inhabited by lepers in relative isolation,Center of Feature,S - Spot Features
+HSPL,leprosarium,an asylum or hospital for lepers,Center of Feature,S - Spot Features
+LEV,levee,a natural low embankment bordering a distributary or meandering stream; often built up artificially to control floods,Center of Feature,T - Hypsographic
+LTHSE,lighthouse,a distinctive structure exhibiting a major navigation light,Center of Feature,S - Spot Features
+MFGLM,limekiln,a furnace in which limestone is reduced to lime,Center of Feature,S - Spot Features
+LCTY,locality,a minor area or place of unspecified or mixed character and indefinite boundaries,Center of Feature,L - Area
+LOCK,lock(s),a basin in a waterway with gates at each end by means of which vessels are passed from one water level to another,Center of Feature,S - Spot Features
+CMPL,logging camp,a camp used by loggers,Center of Feature,S - Spot Features
+STMSB,lost river,"a surface stream that disappears into an underground channel, or dries up in an arid area",Where stream disperses in arid area or goes underground,H - Hydrographic
+MVA,maneuver area,a tract of land where military field exercises are carried out,Center of Feature,L - Area
+ISLM,mangrove island,a mangrove swamp surrounded by a waterbody,Center of Feature,T - Hypsographic
+MGV,mangrove swamp,a tropical tidal mud flat characterized by mangrove vegetation,Center of Feature,H - Hydrographic
+MAR,marina,"a harbor facility for small boats, yachts, etc.",Center of Feature,S - Spot Features
+CHNM,marine channel,that part of a body of water deep enough for navigation through an area otherwise not suitable,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+SCHN,maritime school,a school at which maritime sciences form the core of the curriculum,Center of Feature,S - Spot Features
+MKT,market,a place where goods are bought and sold at regular intervals,Center of Feature,S - Spot Features
+MRSH,marsh(es),a wetland dominated by grass-like vegetation,Center of Feature,H - Hydrographic
+MDW,meadow,"a small, poorly drained area dominated by grassy vegetation",Center of Feature,V - Vegetation
+NKM,meander neck,a narrow strip of land between the two limbs of a meander loop at its narrowest point,Center of Feature,T - Hypsographic
+CTRM,medical center,"a complex of health care buildings including two or more of the following: hospital, medical school, clinic, pharmacy, doctor's offices, etc.",Center of Feature,S - Spot Features
+MESA,mesa(s),"a flat-topped, isolated elevation with steep slopes on all sides, less extensive than a plateau",Center of Feature,T - Hypsographic
+STNM,meteorological station,a station at which weather elements are recorded,Center of Feature,S - Spot Features
+INSM,military installation,an installation designed for and used by the military,Center of Feature,S - Spot Features
+SCHM,military school,a school at which military science forms the core of the curriculum,Center of Feature,S - Spot Features
+ML,mill(s),"a building housing machines for transforming, shaping, finishing, grinding, or extracting products",Center of Feature,S - Spot Features
+MN,mine(s),a site where mineral ores are extracted from the ground by excavating surface pits and subterranean passages,Center of Feature,S - Spot Features
+MNA,mining area,an area of mine sites where minerals and ores are extracted,Center of Feature,L - Area
+CMPMN,mining camp,a camp used by miners,Center of Feature,S - Spot Features
+MSSN,mission,"a place characterized by dwellings, school, church, hospital and other facilities operated by a religious group for the purpose of providing charitable services and to propagate religion",Center of Feature,S - Spot Features
+MOLE,mole,a massive structure of masonry or large stones serving as a pier or breakwater,Center of Feature,S - Spot Features
+MSTY,monastery,a building and grounds where a community of monks lives in seclusion,Center of Feature,S - Spot Features
+MNMT,monument,a commemorative structure or statue,Center of Feature,S - Spot Features
+MOOR,moor(s),an area of open ground overlaid with wet peaty soils,Center of Feature,H - Hydrographic
+MRN,moraine,"a mound, ridge, or other accumulation of glacial till",Center of Feature,T - Hypsographic
+MSQE,mosque,a building for public Islamic worship,Center of Feature,S - Spot Features
+MND,mound(s),"a low, isolated, rounded hill",Center of Feature,T - Hypsographic
+MT,mountain,"an elevation standing high above the surrounding area with small summit area, steep slopes and local relief of 300m or more",Center of Feature,T - Hypsographic
+MTS,mountains,a mountain range or a group of mountains or high ridges,Center of Feature,T - Hypsographic
+FLTM,mud flat(s),"a relatively level area of mud either between high and low tide lines, or subject to flooding",Center of Feature,H - Hydrographic
+MFGM,munitions plant,a factory where ammunition is made,Center of Feature,S - Spot Features
+MUS,museum,a building where objects of permanent interest in one or more of the arts and sciences are preserved and exhibited,Center of Feature,S - Spot Features
+NRWS,narrows,"a navigable narrow part of a bay, strait, river, etc.",Center of Feature,H - Hydrographic
+RESN,nature reserve,an area reserved for the maintenance of a natural habitat,Center of Feature,L - Area
+NVB,naval base,"an area used to store supplies, provide barracks for troops and naval personnel, a port for naval vessels, and from which operations are initiated",Center of Feature,L - Area
+CHNN,navigation channel,a buoyed channel of sufficient depth for the safe navigation of vessels,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+MNNI,nickel mine(s),a mine where nickel ore is extracted,Center of Feature,S - Spot Features
+NOV,novitiate,a religious house or school where novices are trained,Center of Feature,S - Spot Features
+PSN,nuclear power station,nuclear power station,Center of Feature,S - Spot Features
+NTK,nunatak,a rock or mountain peak protruding through glacial ice,Center of Feature,T - Hypsographic
+NTKS,nunataks,rocks or mountain peaks protruding through glacial ice,Center of Feature,T - Hypsographic
+NSY,nursery(-ies),a place where plants are propagated for transplanting or grafting,Center of Feature,S - Spot Features
+OAS,oasis(-es),an area in a desert made productive by the availability of water,Center of Feature,L - Area
+OBPT,observation point,a wildlife or scenic observation point,Center of Feature,S - Spot Features
+OBS,observatory,a facility equipped for observation of atmospheric or space phenomena,Center of Feature,S - Spot Features
+OCN,ocean,one of the major divisions of the vast expanse of salt water covering part of the earth,Center of Feature (changes to primary name or designation require BGN/FNC approval),H - Hydrographic
+BLDO,office building,commercial building where business and/or services are conducted,Center of Feature,S - Spot Features
+CMPO,oil camp,a camp used by oilfield workers,Center of Feature,S - Spot Features
+ESTO,oil palm plantation,an estate specializing in the cultivation of oil palm trees,Center of Feature,S - Spot Features
+OILP,oil pipeline,a pipeline used for transporting oil,At Dispersal Point,R - Streets/Highways/Roads
+OILJ,oil pipeline junction,a section of an oil pipeline where two or more pipes join together,Center of Feature,S - Spot Features
+TRMO,oil pipeline terminal,a tank farm or loading facility at the end of an oil pipeline,Center of Feature,S - Spot Features
+PMPO,oil pumping station,a facility for pumping oil through a pipeline,Center of Feature,S - Spot Features
+OILR,oil refinery,a facility for converting crude oil into refined petroleum products,Center of Feature,S - Spot Features
+OILW,oil well,a well from which oil may be pumped,Center of Feature,S - Spot Features
+OILF,oilfield,an area containing a subterranean store of petroleum of economic value,Center of Feature,L - Area
+MLO,olive oil mill,a mill where oil is extracted from olives,Center of Feature,S - Spot Features
+OCH,orchard(s),a planting of fruit or nut trees,Center of Feature,V - Vegetation
+MLM,ore treatment plant,a facility for improving the metal content of ore by concentration,Center of Feature,S - Spot Features
+OVF,overfalls,an area of breaking waves caused by the meeting of currents or by waves moving against the current,Center of Feature,H - Hydrographic
+LKO,oxbow lake,a crescent-shaped lake commonly found adjacent to meandering streams,Center of Feature,H - Hydrographic
+PGDA,pagoda,"a tower-like storied structure, usually a Buddhist shrine",Center of Feature,S - Spot Features
+PAL,palace,"a large stately house, often a royal or presidential residence",Center of Feature,S - Spot Features
+RESP,palm tree reserve,an area of palm trees where use is controlled,Center of Feature,L - Area
+PAN,pan,"a near-level shallow, natural depression or basin, usually containing an intermittent lake, pond, or pool",Center of Feature,T - Hypsographic
+PANS,pans,"a near-level shallow, natural depression or basin, usually containing an intermittent lake, pond, or pool",Center of Feature,T - Hypsographic
+PRSH,parish,an ecclesiastical district,Center of Feature,A - Administrative Region
+PRK,park,"an area of defined limits which is set aside for human recreation and enjoyment and/or for historic preservation purposes, and is usually maintained in a natural, semi-natural, or ornamentally planted state",Center of Feature,L - Area
+PRKHQ,park headquarters,a park administrative facility,Center of Feature,S - Spot Features
+GARG,parking garage,a building or underground facility used exclusively for parking vehicles,Center of Feature,S - Spot Features
+PKLT,parking lot,an area used for parking vehicles,Center of Feature,S - Spot Features
+PASS,pass,"a break in a mountain range or other high obstruction, used for transportation from one side to the other [See also gap]",Center of Feature,T - Hypsographic
+PSTP,patrol post,a post from which patrols are sent out,Center of Feature,S - Spot Features
+PK,peak,"a pointed elevation atop a mountain, ridge, or other hypsographic feature",Center of Feature,T - Hypsographic
+PKS,peaks,"pointed elevations atop a mountain, ridge, or other hypsographic features",Center of Feature,T - Hypsographic
+PEAT,peat cutting area,an area where peat is harvested,Center of Feature,L - Area
+PEN,peninsula,an elongate area of land projecting into a body of water and nearly surrounded by water,Center of Feature,T - Hypsographic
+BSNP,petroleum basin,an area underlain by an oil-rich structural basin,Center of Feature,L - Area
+MFGPH,phosphate works,a facility for producing fertilizer,Center of Feature,S - Spot Features
+PIER,pier,a structure built out into navigable water on piles providing berthing for ships and recreation,Center of Feature,S - Spot Features
+MNPL,placer mine(s),a place where heavy metals are concentrated and running water is used to extract them from unconsolidated sediments,Center of Feature,S - Spot Features
+PLN,plain(s),"an extensive area of comparatively level to gently undulating land, lacking surface irregularities, and usually adjacent to a higher area",Center of Feature,T - Hypsographic
+PLAT,plateau,"an elevated plain with steep slopes on one or more sides, and often with incised streams",Center of Feature,T - Hypsographic
+PT,point(s),"tapering piece(s) of land projecting into a body of water, less prominent than a cape",Center of Feature,T - Hypsographic
+PLDR,polder,an area reclaimed from the sea by diking and draining,Center of Feature,T - Hypsographic
+PP,police post,a building in which police are stationed,Center of Feature,S - Spot Features
+PCL,political entity,political entity,Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+PND,pond(s),small standing waterbody(-ies),Center of Feature,H - Hydrographic
+POOL,pool(s),"a small and comparatively still, deep part of a larger body of water such as a stream or harbor; or a small body of standing water",Center of Feature,H - Hydrographic
+PPLL,populated locality,an area similar to a locality but with a small group of dwellings or other buildings,Center of Feature,P - Populated Place
+PPL,populated place,"a city, town, village, or other agglomeration of buildings where people live and work",Center of Feature,P - Populated Place
+PRT,port,"a place provided with terminal and transfer facilities for loading and discharging waterborne cargo or passengers, usually located in a harbor",Center of Feature,L - Area
+PTGE,portage,"a place where boats, goods, etc., are carried overland between navigable waters",Center of Feature,R - Streets/Highways/Roads
+PO,post office,"a public building in which mail is received, sorted and distributed",Center of Feature,S - Spot Features
+PS,power station,a facility for generating electric power,Center of Feature,S - Spot Features
+PRN,prison,a facility for confining prisoners,Center of Feature,S - Spot Features
+PRMN,promenade,"a place for public walking, usually along a beach front",Center of Feature,R - Streets/Highways/Roads
+PROM,promontory(-ies),a bluff or prominent hill overlooking or projecting into a lowland,Center of Feature,T - Hypsographic
+PYR,pyramid(s),ancient massive structure(s) of square ground plan with four triangular faces meeting at a point and used for enclosing tombs,Center of Feature,S - Spot Features
+MNQR,quarry(-ies),"a surface mine where building stone or gravel and sand, etc. are extracted",Center of Feature,S - Spot Features
+QUAY,quay,a structure of solid construction along a shore or bank which provides berthing for ships and which generally provides cargo handling facilities,Center of Feature,S - Spot Features
+QCKS,quicksand,"an area where loose sand with water moving through it may become unstable when heavy objects are placed at the surface, causing them to sink",Center of Feature,L - Area
+RECR,racetrack,a track where races are held,Center of Feature,S - Spot Features
+OBSR,radio observatory,a facility equipped with an array of antennae for receiving radio waves from space,Center of Feature,S - Spot Features
+STNR,radio station,a facility for producing and transmitting information by radio waves,Center of Feature,S - Spot Features
+RR,railroad,a permanent twin steel-rail track on which freight and passenger cars move long distances,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+RJCT,railroad junction,a place where two or more railroad tracks join,Center of Feature,R - Streets/Highways/Roads
+RSD,railroad siding,a short track parallel to and joining the main track,Center of Feature,S - Spot Features
+RSGNL,railroad signal,a signal at the entrance of a particular section of track governing the movement of trains,Center of Feature,S - Spot Features
+RSTN,railroad station,"a facility comprising ticket office, platforms, etc. for loading and unloading train passengers and freight",Center of Feature,S - Spot Features
+RSTP,railroad stop,a place lacking station facilities where trains stop to pick up and unload passengers and freight,Center of Feature,S - Spot Features
+TNLRR,railroad tunnel,a tunnel through which a railroad passes,Center of Feature,R - Streets/Highways/Roads
+RYD,railroad yard,"a system of tracks used for the making up of trains, and switching and storing freight cars",Center of Feature,R - Streets/Highways/Roads
+RNCH,ranch(es),a large farm specializing in extensive grazing of livestock,Center of Feature,S - Spot Features
+RPDS,rapids,"a turbulent section of a stream associated with a steep, irregular stream bed",Center of Feature,H - Hydrographic
+RVN,ravine(s),"a small, narrow, deep, steep-sided stream channel, smaller than a gorge",Center of Feature,H - Hydrographic
+RCH,reach,a straight section of a navigable stream or channel between two bends,Center of Feature,H - Hydrographic
+RF,reef(s),a surface-navigation hazard composed of consolidated material,Center of Feature,H - Hydrographic
+PRNJ,reformatory,"a facility for confining, training, and reforming young law offenders",Center of Feature,S - Spot Features
+CMPRF,refugee camp,a camp used by refugees,Center of Feature,S - Spot Features
+RGN,region,an area distinguished by one or more observable physical or cultural characteristics,Center of Feature,L - Area
+CTRR,religious center,"a facility where more than one religious activity is carried out, e.g., retreat, school, monastery, worship",Center of Feature,S - Spot Features
+PPLR,religious populated place,a populated place whose population is largely engaged in religious occupations,Center of Feature,P - Populated Place
+RLG,religious site,an ancient site of significant religious importance,Center of Feature,S - Spot Features
+ITTR,research institute,a facility where research is carried out,Center of Feature,S - Spot Features
+RESV,reservation,"a tract of land set aside for aboriginal, tribal, or native populations",Center of Feature,L - Area
+RES,reserve,a tract of public land reserved for future use or restricted as to use,Center of Feature,L - Area
+RSV,reservoir(s),an artificial pond or lake,Center of Feature,H - Hydrographic
+RSRT,resort,"a specialized facility for vacation, health, or participation sports activities",Center of Feature,S - Spot Features
+RHSE,resthouse,a structure maintained for the rest and shelter of travelers,Center of Feature,S - Spot Features
+RLGR,retreat,"a place of temporary seclusion, especially for religious groups",Center of Feature,S - Spot Features
+RDGE,ridge(s),"a long narrow elevation with steep sides, and a more or less continuous crest",Center of Feature,T - Hypsographic
+RD,road,"an open way with improved surface for transportation of animals, people and vehicles","Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+RDB,road bend,a conspicuously curved or bent section of a road,Center of Feature,R - Streets/Highways/Roads
+RDCUT,road cut,an excavation cut through a hill or ridge for a road,Center of Feature,R - Streets/Highways/Roads
+RDJCT,road junction,a place where two or more roads join,Center of Feature,R - Streets/Highways/Roads
+TNLRD,road tunnel,a tunnel through which a road passes,Center of Feature,R - Streets/Highways/Roads
+RDST,roadstead,an open anchorage affording less protection than a harbor,Center of Feature,H - Hydrographic
+RK,rock,"a conspicuous, isolated rocky mass",Center of Feature,T - Hypsographic
+HMDA,rock desert,"a relatively sand-free, high bedrock plateau in a hot desert, with or without a gravel veneer",Center of Feature,T - Hypsographic
+RKFL,rockfall,an irregular mass of fallen rock at the base of a cliff or steep slope,Center of Feature,T - Hypsographic
+RKS,rocks,"conspicuous, isolated rocky masses",Center of Feature,T - Hypsographic
+RKRY,rookery,a breeding place of a colony of birds or seals,Center of Feature,S - Spot Features
+ESTR,rubber plantation,an estate which specializes in growing and tapping rubber trees,Center of Feature,S - Spot Features
+RUIN,ruin(s),a destroyed or decayed structure which is no longer functional,Center of Feature,S - Spot Features
+BDGQ,ruined bridge,a destroyed or decayed bridge which is no longer functional,Center of Feature,S - Spot Features
+DAMQ,ruined dam,a destroyed or decayed dam which is no longer functional,Center of Feature,S - Spot Features
+SBKH,sabkha(s),a salt flat or salt encrusted plain subject to periodic inundation from flooding or high tides,Center of Feature,H - Hydrographic
+SDL,saddle,"a broad, open pass crossing a ridge or between hills or mountains",Center of Feature,T - Hypsographic
+SALT,salt area,a shallow basin or flat where salt accumulates after periodic inundation,Center of Feature,L - Area
+MFGN,salt evaporation ponds,diked salt ponds used in the production of solar evaporated salt,Center of Feature,H - Hydrographic
+LKN,salt lake(s),large inland body(-ies) of salt water with no outlet,Center of Feature,H - Hydrographic
+MRSHN,salt marsh,"a flat area, subject to periodic salt water inundation, dominated by grassy salt-tolerant plants",Center of Feature,H - Hydrographic
+MNN,salt mine(s),a mine from which salt is extracted,Center of Feature,S - Spot Features
+PNDN,salt pond(s),"small standing body(-ies) of salt water often in a marsh or swamp, usually along a seacoast",Center of Feature,H - Hydrographic
+SNTR,sanatorium,a facility where victims of physical or mental disorders are treated,Center of Feature,S - Spot Features
+SAND,sand area,a tract of land covered with sand,Center of Feature,T - Hypsographic
+ERG,sandy desert,an extensive tract of shifting sand and sand dunes,Center of Feature,T - Hypsographic
+STNS,satellite station,a facility for tracking and communicating with orbiting satellites,Center of Feature,S - Spot Features
+MLSW,sawmill,a mill where logs or lumber are sawn to specified shapes and sizes,Center of Feature,S - Spot Features
+SCH,school,building(s) where instruction in one or more branches of knowledge takes place,Center of Feature,S - Spot Features
+ADMS,school district,school district,Center of Feature,A - Administrative Region
+STNB,scientific research base,a facility for carrying out scientific/technological research or experiments,Center of Feature,S - Spot Features
+SCRB,scrubland,"a tract covered sparsely by low trees, bushes, and/or shrubs that have been stunted by an environmental limitation",Center of Feature,V - Vegetation
+SEA,sea,a large body of salt water more or less confined by continuous land or chains of islands forming a subdivision of an ocean,Center of Feature (changes to primary name or designation require BGN/FNC approval),H - Hydrographic
+SCNU,seachannel,"a continuously sloping, elongated depression commonly found in fans or plains and customarily bordered by levees on one or two sides",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SCSU,seachannels,"continuously sloping, elongated depressions commonly found in fans or plains and customarily bordered by levees on one or two sides",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SMU,seamount,"an elevation rising generally more than 1,000 meters and of limited extent across the summit",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SMSU,seamounts,"elevations rising generally more than 1,000 meters and of limited extent across the summit",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+AIRS,seaplane landing area,a place on a waterbody where floatplanes land and take off,Center of Feature,H - Hydrographic
+PPLA,seat of a first-order administrative division,seat of a primary administrative division (PPLC takes precedence over PPLA),Center of Feature (changes to primary name or designation require BGN/FNC approval),P - Populated Place
+PPLA4,seat of a fourth-order administrative division,seat of a fourth-order administrative division,Center of Feature,P - Populated Place
+PPLA2,seat of a second-order administrative division,seat of a second-order administrative division,Center of Feature,P - Populated Place
+PPLA3,seat of a third-order administrative division,seat of a third-order administrative division,Center of Feature,P - Populated Place
+ADM2,second-order administrative division,a subdivision of a first-order administrative division,Center of Feature,A - Administrative Region
+BNKX,section of bank,section of bank,Center of Feature,H - Hydrographic
+CNLX,section of canal,section of canal,Center of Feature,H - Hydrographic
+ESTX,section of estate,section of estate,Center of Feature,S - Spot Features
+HBRX,section of harbor,section of harbor,Center of Feature,H - Hydrographic
+PCLIX,section of independent political entity,section of independent political entity,Center of Feature (changes to primary name or designation require BGN/FNC approval),A - Administrative Region
+STMIX,section of intermittent stream,section of intermittent stream,Center of Feature,H - Hydrographic
+ISLX,section of island,section of island,Center of Feature,T - Hypsographic
+LGNX,section of lagoon,section of lagoon,Center of Feature,H - Hydrographic
+LKX,section of lake,section of lake,Center of Feature,H - Hydrographic
+PENX,section of peninsula,section of peninsula,Center of Feature,T - Hypsographic
+PLNX,section of plain,section of plain,Center of Feature,T - Hypsographic
+PLATX,section of plateau,section of plateau,Center of Feature,T - Hypsographic
+PPLX,section of populated place,section of populated place,Center of Feature,P - Populated Place
+RFX,section of reef,section of reef,Center of Feature,H - Hydrographic
+STMX,section of stream,section of stream,Center of Feature,H - Hydrographic
+VALX,section of valley,section of valley,Center of Feature,T - Hypsographic
+WADX,section of wadi,section of wadi,Center of Feature,H - Hydrographic
+FLLSX,section of waterfall(s),section of waterfall(s),Center of Feature,H - Hydrographic
+SWT,sewage treatment plant,facility for the processing of sewage and/or wastewater,Center of Feature,S - Spot Features
+SHOL,shoal(s),a surface-navigation hazard composed of unconsolidated material,Center of Feature,H - Hydrographic
+SHOPC,shopping center or mall,an urban shopping area featuring a variety of shops surrounding a usually open-air concourse reserved for pedestrian traffic; or a large suburban building or group of buildings containing various shops with associated passageways,Center of Feature,S - Spot Features
+SHOR,shore,"a narrow zone bordering a waterbody which covers and uncovers at high and low water, respectively",Center of Feature,T - Hypsographic
+SHRN,shrine,a structure or place memorializing a person or religious concept,Center of Feature,S - Spot Features
+SINK,sinkhole,a small crater-shape depression in a karst area,Center of Feature,T - Hypsographic
+ESTSL,sisal plantation,an estate that specializes in growing sisal,Center of Feature,S - Spot Features
+SLID,slide,"a mound of earth material, at the base of a slope and the associated scoured area",Center of Feature,T - Hypsographic
+SLP,slope(s),a surface with a relatively uniform slope angle,Center of Feature,T - Hypsographic
+SLCE,sluice,"a conduit or passage for carrying off surplus water from a waterbody, usually regulated by means of a sluice gate",Center of Feature,S - Spot Features
+SNOW,snowfield,an area of permanent snow and ice forming the accumulation area of a glacier,Center of Feature,L - Area
+SD,sound,a long arm of the sea forming a channel between the mainland and an island or islands; or connecting two larger bodies of water,Center of Feature,H - Hydrographic
+SPA,spa,a resort area usually developed around a medicinal spring,Center of Feature,S - Spot Features
+CTRS,space center,"a facility for launching, tracking, or controlling satellites and space vehicles",Center of Feature,S - Spot Features
+SPLY,spillway,"a passage or outlet through which surplus water flows over, around or through a dam",Center of Feature,S - Spot Features
+SPIT,spit,"a narrow, straight or curved continuation of a beach into a waterbody",Center of Feature,T - Hypsographic
+SPNG,spring(s),a place where ground water flows naturally out of the ground,Center of Feature,H - Hydrographic
+SPUR,spur(s),"a subordinate ridge projecting outward from a hill, mountain or other elevation",Center of Feature,T - Hypsographic
+SQR,square,"a broad, open, public area near the center of a town or city",Center of Feature,S - Spot Features
+STBL,stable,"a building for the shelter and feeding of farm animals, especially horses",Center of Feature,S - Spot Features
+STDM,stadium,a structure with an enclosure for athletic games with tiers of seats for spectators,Center of Feature,S - Spot Features
+STPS,steps,stones or slabs placed for ease in ascending or descending a steep slope,Center of Feature,S - Spot Features
+STKR,stock route,a route taken by livestock herds,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+REG,stony desert,a desert plain characterized by a surface veneer of gravel and stones,Center of Feature,T - Hypsographic
+RET,store,a building where goods and/or services are offered for sale,Center of Feature,S - Spot Features
+SHSE,storehouse,"a building for storing goods, especially provisions",Center of Feature,S - Spot Features
+STRT,strait,"a relatively narrow waterway, usually narrower and less extensive than a sound, connecting two larger bodies of water",Center of Feature,H - Hydrographic
+BNKR,stream bank,a sloping margin of a stream channel which normally confines the stream to its channel on land,Center of Feature,H - Hydrographic
+STMB,stream bend,a conspicuously curved or bent segment of a stream,Center of Feature,H - Hydrographic
+STMGS,stream gauging station,"named place where a measuring station for a watercourse, reservoir or other water body exists",Center of Feature,S - Spot Features
+STMM,stream mouth(s),"a place where a stream discharges into a lagoon, lake, or the sea",Center of Feature,H - Hydrographic
+STM,stream(s),natural flowing watercourse(s),At Mouth,H - Hydrographic
+ST,street,a paved urban thoroughfare,"Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+DAMSB,sub-surface dam,a dam put down to bedrock in a sand river,Center of Feature,S - Spot Features
+SUBW,subway,"a railroad used for mass public transportation primarily in urban areas, all or part of the system may be located below, above, or at ground level",Center of Feature,S - Spot Features
+SUBS,subway station,"a facility comprising ticket office, platforms, etc. for loading and unloading subway passengers",Center of Feature,S - Spot Features
+MLSG,sugar mill,a facility where sugar cane is processed into raw sugar,Center of Feature,S - Spot Features
+ESTSG,sugar plantation,an estate that specializes in growing sugar cane,Center of Feature,S - Spot Features
+MFGSG,sugar refinery,a facility for converting raw sugar into refined sugar,Center of Feature,S - Spot Features
+SPNS,sulphur spring(s),a place where sulphur ground water flows naturally out of the ground,Center of Feature,H - Hydrographic
+SWMP,swamp,a wetland dominated by tree vegetation,Center of Feature,H - Hydrographic
+SYG,synagogue,a place for Jewish worship and religious instruction,Center of Feature,S - Spot Features
+TMTU,tablemount (or guyot),"a seamount having a comparatively smooth, flat top",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+TMSU,tablemounts (or guyots),"seamounts having a comparatively smooth, flat top",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+TAL,talus slope,a steep concave slope formed by an accumulation of loose rock fragments at the base of a cliff or steep slope,Center of Feature,T - Hypsographic
+OILT,tank farm,"a tract of land occupied by large, cylindrical, metal tanks in which oil or liquid petrochemicals are stored",Center of Feature,S - Spot Features
+ESTT,tea plantation,an estate which specializes in growing tea bushes,Center of Feature,S - Spot Features
+SCHT,technical school,post-secondary school with a specifically technical or vocational curriculum,Center of Feature,S - Spot Features
+TMPL,temple(s),an edifice dedicated to religious worship,Center of Feature,S - Spot Features
+AIRT,terminal,airport facilities for the handling of freight and passengers,Center of Feature,S - Spot Features
+TRR,terrace,"a long, narrow alluvial platform bounded by steeper slopes above and below, usually overlooking a waterbody",Center of Feature,T - Hypsographic
+TERR,territory,territory,Center of Feature,A - Administrative Region
+ADM3,third-order administrative division,a subdivision of a second-order administrative division,Center of Feature,A - Administrative Region
+CRKT,tidal creek(s),a meandering channel in a coastal wetland subject to bi-directional tidal currents,Center of Feature,H - Hydrographic
+FLTT,tidal flat(s),a large flat area of mud or sand attached to the shore and alternately covered and uncovered by the tide,Center of Feature,H - Hydrographic
+MNSN,tin mine(s),a mine where tin ore is extracted,Center of Feature,S - Spot Features
+TOLL,toll gate/barrier,highway toll collection station,Center of Feature,S - Spot Features
+TMB,tomb(s),a structure for interring bodies,Center of Feature,S - Spot Features
+TOWR,tower,"a high conspicuous structure, typically much higher than its diameter",Center of Feature,S - Spot Features
+RDCR,traffic circle,a road junction formed around a central circle about which traffic moves in one direction only,Center of Feature,S - Spot Features
+TRL,trail,"a path, track, or route used by pedestrians, animals, or off-road vehicles","Westernmost End (When feature is North to South Oriented, Southernmost End)",R - Streets/Highways/Roads
+TRANT,transit terminal,facilities for the handling of vehicular freight and passengers,Center of Feature,S - Spot Features
+TREE,tree(s),a conspicuous tree used as a landmark,Center of Feature,V - Vegetation
+TRIG,triangulation station,a point on the earth whose position has been determined by triangulation,Center of Feature,S - Spot Features
+TRB,tribal area,a tract of land used by nomadic or other tribes,Center of Feature,L - Area
+TUND,tundra,"a marshy, treeless, high latitude plain, dominated by mosses, lichens, and low shrub vegetation under permafrost conditions",Center of Feature,V - Vegetation
+TNL,tunnel(s),"naturally occurring or manmade underground passage(s), open at both ends and usually containing a transportation route",Center of Feature,R - Streets/Highways/Roads
+CNLSB,underground irrigation canal(s),a gently inclined underground tunnel bringing water for irrigation from aquifers,"Westernmost End (When feature is North to South Oriented, Southernmost End)",H - Hydrographic
+LKSB,underground lake,a standing body of water in a cave,Center of Feature,H - Hydrographic
+APNU,undersea apron,"a gentle slope, with a generally smooth surface, particularly found around groups of islands and seamounts",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+ARCU,undersea arch,a low bulge around the southeastern end of the island of Hawaii,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+ARRU,undersea arrugado,an area of subdued corrugations off Baja California,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+BNKU,undersea bank,"an elevation, typically located on a shelf, over which the depth of water is relatively shallow but sufficient for safe surface navigation",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+BKSU,undersea banks,"elevations, typically located on a shelf, over which the depth of water is relatively shallow but sufficient for safe surface navigation",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+BSNU,undersea basin,a depression more or less equidimensional in plan and of variable extent,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+BNCU,undersea bench,a small terrace,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+BDLU,undersea borderland,"a region adjacent to a continent, normally occupied by or bordering a shelf, that is highly irregular with depths well in excess of those typical of a shelf",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+CNYU,undersea canyon,"a relatively narrow, deep depression with steep sides, the bottom of which generally has a continuous slope",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+CNSU,undersea canyons,"relatively narrow, deep depressions with steep sides, the bottom of which generally has a continuous slope",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+CDAU,undersea cordillera,"an entire mountain system including the subordinate ranges, interior plateaus, and basins",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+ESCU,undersea escarpment (or scarp),an elongated and comparatively steep slope separating flat or gently sloping areas,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+FANU,undersea fan,a relatively smooth feature normally sloping away from the lower termination of a canyon or canyon system,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+FLTU,undersea flat,a small level or nearly level area,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+FRKU,undersea fork,a branch of a canyon or valley,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+FRSU,undersea forks,a branch of a canyon or valley,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+FRZU,undersea fracture zone,"an extensive linear zone of irregular topography of the sea floor, characterized by steep-sided or asymmetrical ridges, troughs, or escarpments",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+FURU,undersea furrow,"a closed, linear, narrow, shallow depression",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+GAPU,undersea gap,a narrow break in a ridge or rise,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+GLYU,undersea gully,a small valley-like feature,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+HLLU,undersea hill,an elevation rising generally less than 500 meters,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+HLSU,undersea hills,elevations rising generally less than 500 meters,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+HOLU,undersea hole,a small depression of the sea floor,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+KNLU,undersea knoll,"an elevation rising generally more than 500 meters and less than 1,000 meters and of limited extent across the summit",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+KNSU,undersea knolls,"elevations rising generally more than 500 meters and less than 1,000 meters and of limited extent across the summits",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+LDGU,undersea ledge,"a rocky projection or outcrop, commonly linear and near shore",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+LEVU,undersea levee,"an embankment bordering a canyon, valley, or seachannel",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+MDVU,undersea median valley,the axial depression of the mid-oceanic ridge system,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+MESU,undersea mesa,"an isolated, extensive, flat-topped elevation on the shelf, with relatively steep sides",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+MOTU,undersea moat,"an annular depression that may not be continuous, located at the base of many seamounts, islands, and other isolated elevations",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+MNDU,undersea mound,"a low, isolated, rounded hill",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+MTU,undersea mountain,a well-delineated subdivision of a large and complex positive feature,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+MTSU,undersea mountains,well-delineated subdivisions of a large and complex positive feature,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PKU,undersea peak,"a prominent elevation, part of a larger feature, either pointed or of very limited extent across the summit",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PKSU,undersea peaks,"prominent elevations, part of a larger feature, either pointed or of very limited extent across the summit",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PNLU,undersea pinnacle,"a high tower or spire-shaped pillar of rock or coral, alone or cresting a summit",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PLNU,undersea plain,"a flat, gently sloping or nearly level region",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PLTU,undersea plateau,"a comparatively flat-topped feature of considerable extent, dropping off abruptly on one or more sides",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PLFU,undersea platform,a flat or gently sloping underwater surface extending seaward from the shore,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+PRVU,undersea province,a region identifiable by a group of similar physiographic features whose characteristics are markedly in contrast with surrounding areas,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RMPU,undersea ramp,a gentle slope connecting areas of different elevations,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RNGU,undersea range,a series of associated ridges or seamounts,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RAVU,undersea ravine,a small canyon,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RFU,undersea reef,a surface-navigation hazard composed of consolidated material,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RFSU,undersea reefs,surface-navigation hazards composed of consolidated material,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RDGU,undersea ridge,a long narrow elevation with steep sides,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RDSU,undersea ridges,long narrow elevations with steep sides,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+RISU,undersea rise,"a broad elevation that rises gently, and generally smoothly, from the sea floor",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SDLU,undersea saddle,"a low part, resembling in shape a saddle, in a ridge or between contiguous seamounts",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SHFU,undersea shelf,a zone adjacent to a continent (or around an island) that extends from the low water line to a depth at which there is usually a marked increase of slope towards oceanic depths,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+EDGU,undersea shelf edge,a line along which there is a marked increase of slope at the outer margin of a continental shelf or island shelf,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SHVU,undersea shelf valley,"a valley on the shelf, generally the shoreward extension of a canyon",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SHLU,undersea shoal,a surface-navigation hazard composed of unconsolidated material,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SHSU,undersea shoals,hazards to surface navigation composed of unconsolidated material,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SILU,undersea sill,"the low part of an underwater gap or saddle separating basins, including a similar feature at the mouth of a fjord",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SLPU,undersea slope,the slope seaward from the shelf edge to the beginning of a continental rise or the point where there is a general reduction in slope,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+SPRU,undersea spur,"a subordinate elevation, ridge, or rise projecting outward from a larger feature",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+TERU,undersea terrace,"a relatively flat horizontal or gently inclined surface, sometimes long and narrow, which is bounded by a steeper ascending slope on one side and by a steep descending slope on the opposite side",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+TNGU,undersea tongue,an elongate (tongue-like) extension of a flat sea floor into an adjacent higher feature,Center of Feature (modification/addition requires ACUF approval),U - Undersea
+TRNU,undersea trench,"a long, narrow, characteristically very deep and asymmetrical depression of the sea floor, with relatively steep sides",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+TRGU,undersea trough,"a long depression of the sea floor characteristically flat bottomed and steep sided, and normally shallower than a trench",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+VALU,undersea valley,"a relatively shallow, wide depression, the bottom of which usually has a continuous gradient",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+VLSU,undersea valleys,"a relatively shallow, wide depression, the bottom of which usually has a continuous gradient",Center of Feature (modification/addition requires ACUF approval),U - Undersea
+USGE,United States Government Establishment,a facility operated by the United States Government in Panama,Center of Feature,S - Spot Features
+UPLD,upland,an extensive interior region of high land with low to moderate surface relief,Center of Feature,T - Hypsographic
+VAL,valley,an elongated depression usually traversed by a stream,Center of Feature,T - Hypsographic
+VALS,valleys,elongated depressions usually traversed by a stream,Center of Feature,T - Hypsographic
+VETF,veterinary facility,a building or camp at which veterinary services are available,Center of Feature,S - Spot Features
+VIN,vineyard,a planting of grapevines,Center of Feature,V - Vegetation
+VINS,vineyards,plantings of grapevines,Center of Feature,V - Vegetation
+VLC,volcano,a conical elevation composed of volcanic materials with a crater at the top,Center of Feature,T - Hypsographic
+WADB,wadi bend,a conspicuously curved or bent segment of a wadi,Center of Feature,H - Hydrographic
+WADJ,wadi junction,a place where two or more wadies join,Center of Feature,H - Hydrographic
+WADM,wadi mouth,"the lower terminus of a wadi where it widens into an adjoining floodplain, depression, or waterbody",Center of Feature,H - Hydrographic
+WAD,wadi(s),"dry, intermittent, or ephemeral drainage course(s) commonly found in North Africa, and the Middle East, the channels of which are commonly shallow and braided",At Mouth,H - Hydrographic
+WALL,wall,"a thick masonry structure, usually enclosing a field or building, or forming the side of a structure",Center of Feature,S - Spot Features
+MLWTR,water mill,a mill powered by running water,Center of Feature,S - Spot Features
+PMPW,water pumping station,a facility for pumping water from a major well or through a pipeline,Center of Feature,S - Spot Features
+RSVT,water tank,"a contained pool or tank of water at, below, or above ground level",Center of Feature,H - Hydrographic
+WLL,water well(s),single or multiple shafts sunk into the ground to reach and tap a supply of water,Center of Feature,H - Hydrographic
+FLLS,waterfall(s),a perpendicular or very steep descent of the water of a stream,Center of Feature,H - Hydrographic
+WTRH,waterhole(s),"a natural hole, hollow, or small depression that contains water, used by man and animals, especially in arid areas",Center of Feature,H - Hydrographic
+WTRW,waterworks,a facility for supplying potable water through a water source and a system of pumps and filtration beds,Center of Feature,S - Spot Features
+WEIR,weir(s),"a small dam in a stream, designed to raise the water level or to divert stream flow through a desired channel",Center of Feature,S - Spot Features
+WTLD,wetland,"an area subject to inundation, usually characterized by bog, marsh, or swamp vegetation",Center of Feature,H - Hydrographic
+STNW,whaling station,a facility for butchering whales and processing train oil,Center of Feature,S - Spot Features
+WHRF,wharf(-ves),a structure of open rather than solid construction along a shore or a bank which provides berthing for ships and cargo-handling facilities,Center of Feature,S - Spot Features
+WHRL,whirlpool,"a turbulent, rotating movement of water in a stream",Center of Feature,H - Hydrographic
+RESW,wildlife reserve,a tract of public land reserved for the preservation of wildlife,Center of Feature,L - Area
+MLWND,windmill,a mill or water pump powered by wind,Center of Feature,S - Spot Features
+WRCK,wreck,the site of the remains of a wrecked vessel,Center of Feature,S - Spot Features
+ZOO,zoo,a zoological garden or park where wild animals are kept for exhibition,Center of Feature,S - Spot Features

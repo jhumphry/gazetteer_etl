@@ -135,6 +135,11 @@ can give a speed boost. The `--work-mem` and `--maintenance-work-mem` options
 temporarily increase the amount of working memory that the PostgreSQL server
 uses.
 
+### supplemental
+
+This directory holds some additional data tables defining the meanings of
+codings in the main tables. They should be fairly static.
+
 ### `gazetteer`
 
 This is an internal package that defines classes that are used by the above
