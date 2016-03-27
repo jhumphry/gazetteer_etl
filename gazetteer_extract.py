@@ -136,17 +136,22 @@ def process_file(filename, fp, cursor):
         print('File ''{}'' does not have the correct header'.format(filename))
         sys.exit(1)
 
-    table.copy_data(fpp, cur)
+    table.copy_data(fpp, cursor)
+
+    return table.full_table_name
+
 
 # Find the files to process
 
 file_ext = os.path.splitext(args.file)[1]
 
+tables_modified = []
+
 if file_ext == '.txt' or file_ext == '.csv':
     with open(args.file, 'rt') as fp, \
             connection.cursor() as cur:
 
-        process_file(args.file, fp, cur)
+        tables_modified.append(process_file(args.file, fp, cur))
 
     connection.commit()
 
@@ -156,7 +161,7 @@ elif file_ext == '.zip':
 
         for i in inputs.namelist():
             with inputs.open(i, 'r') as fp:
-                process_file(i, fp, cur)
+                tables_modified.append(process_file(i, fp, cur))
 
     connection.commit()
 
@@ -164,9 +169,13 @@ else:
     print('Cannot handle files of this type: {}'.format(file_ext))
     sys.exit(1)
 
+
 # Update database statistics
 
 connection.autocommit = True
+
 with connection.cursor() as cur:
-    cur.execute("VACUUM ANALYZE;")
+    for i in tables_modified:
+        cur.execute('VACUUM ANALYZE {};'.format(i))
+
 connection.close()

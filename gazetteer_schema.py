@@ -118,6 +118,8 @@ else:
 
 # Create tables or truncate them
 
+tables_modified = []
+
 with connection.cursor() as cur:
     if args.maintenance_work_mem != 0:
         cur.execute("SET SESSION maintenance_work_mem=%s;",
@@ -129,16 +131,21 @@ with connection.cursor() as cur:
     for table in tables:
         if args.action == 'truncate':
             cur.execute('TRUNCATE TABLE {} CASCADE;'.format(table))
+            tables_modified.append(table)
+
         elif args.action == 'create':
             if args.drop_existing:
                 cur.execute('DROP TABLE IF EXISTS {} CASCADE;'
                             .format(table))
+                tables_modified.append(table)
             cur.execute(gazetteer.gazetteer_tables[table].generate_sql_ddl())
+
         elif args.action == 'index':
             if table in gazetteer.gazetteer_tables_indexes:
                 for index in gazetteer.gazetteer_tables_indexes[table]:
                     cur.execute(index.
                                 generate_sql(drop_existing=args.drop_existing))
+
         elif args.action == 'dropindex':
             if table in gazetteer.gazetteer_tables_indexes:
                 for index in gazetteer.gazetteer_tables_indexes[table]:
@@ -146,10 +153,10 @@ with connection.cursor() as cur:
 
     connection.commit()
 
-# Update database statistics if necessary
+# Update database statistics only where necessary
 
-if args.action == 'truncate':
-    connection.autocommit = True
-    with connection.cursor() as cur:
-        cur.execute("ANALYZE;")
-    connection.close()
+connection.autocommit = True
+with connection.cursor() as cur:
+    for i in tables_modified:
+        cur.execute("VACUUM ANALYZE {};".format(i))
+connection.close()
