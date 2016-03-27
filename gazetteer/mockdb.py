@@ -72,6 +72,17 @@ class Connection(object):
 
     def __init__(self, log_file=sys.stdout):
         self.log_file = log_file
+        self._autocommit = False
+
+    @property
+    def autocommit(self):
+        return self._autocommit
+
+    @autocommit.setter
+    def autocommit(self, value):
+        self._autocommit = value
+        self.log_file.write("Set autocommit status to: {}\n".format(value))
+        self.log_file.flush()
 
     def cursor(self):
         '''Create a dummy cursor which uses the same output file.'''
