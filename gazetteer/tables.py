@@ -107,7 +107,7 @@ class GazetteerTableCSV(GazetteerTable):
     PostgreSQL's copy command, for the few files that are provided as CSV.'''
 
     def __init__(self, filename_regexp, schema, table_name, fields, pk,
-                 sep=',', escape='\\', quote='"', encoding=None,
+                 sep=',', escape='\\', quote='"', null=None, encoding=None,
                  datestyle='MDY', force_null=None):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
@@ -118,6 +118,7 @@ class GazetteerTableCSV(GazetteerTable):
         self.sep = sep
         self.escape = escape
         self.quote = quote
+        self.null = null
         self.encoding = encoding
         self.datestyle = datestyle
         self.force_null = force_null
@@ -127,17 +128,17 @@ class GazetteerTableCSV(GazetteerTable):
         cursor cur'''
 
         cur.execute('SET DATESTYLE=%s;', (self.datestyle, ))
-        if self.force_null is None:
-            sql = 'COPY {} FROM STDIN WITH ' \
-                  '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}', QUOTE '{}')''' \
-                  .format(self.full_table_name, self.sep, self.escape,
-                          self.quote)
-        else:
-            sql = 'COPY {} FROM STDIN WITH ' \
-                  '''(FORMAT CSV, DELIMITER '{}', ESCAPE '{}',''' \
-                  ''' QUOTE '{}', FORCE_NULL ({}))''' \
-                  .format(self.full_table_name, self.sep, self.escape,
-                          self.quote, self.force_null)
+
+        sql = '''COPY {} FROM STDIN WITH (FORMAT CSV, DELIMITER '{}', ''' \
+              .format(self.full_table_name, self.sep)
+
+        if self.null is not None:
+            sql += '''NULL '{}', '''.format(self.null)
+
+        if self.force_null is not None:
+            sql += '''FORCE_NULL ({}), '''.format(self.force_null)
+
+        sql += ''' ESCAPE '{}', QUOTE '{}');'''.format(self.escape, self.quote)
 
         cur.copy_expert(sql=sql, file=fileobj)
 
