@@ -142,15 +142,15 @@ GeonamesFKTRANSL_CD = GazetteerForeignKey(
     )
 
 
-ADM1Codes = GazetteerTableCSV(
-    filename_regexp='USNGA_ADM1_Codes.csv',
+AdministrativeCodes = GazetteerTableCSV(
+    filename_regexp='USNGA_Administrative_Codes.csv',
     schema='usnga',
-    table_name='adm1_codes',
-    fields=(TextField('Country Name', nullable=False),
-            TextField('ADM1 Code', nullable=False),
-            TextField('ADM1 Name', nullable=False)
+    table_name='administrative_codes',
+    fields=(TextField('CC1 ADM1', nullable=False),
+            TextField('Administrative Division Name', nullable=False),
+            TextField('Administrative Division Class', nullable=False)
             ),
-    pk='adm1_code'
+    pk='cc1_adm1'
     )
 
 
@@ -163,6 +163,39 @@ CountryCodes = GazetteerTableCSV(
             ),
     pk='country_code'
     )
+
+CC1ISO3166Xref = GazetteerTableCSV(
+    filename_regexp='USNGA_CC1_ISO3166_xref.csv',
+    schema='usnga',
+    table_name='cc1_iso3166_xref',
+    fields=(TextField('COUNTRY', nullable=False),
+            TextField('FIPS 10'),
+            FixedTextField('ISO 3166 digraph', width=2),
+            FixedTextField('ISO 3166 trigraph', width=3),
+            TextField('ISO 3166 numeric'),
+            TextField('TLD'),
+            TextField('IOC'),
+            TextField('SOVEREIGNTY'),
+            TextField('NOTES')
+            ),
+    pk='COUNTRY',
+    null='*'
+    )
+
+CC1ISO3166XrefFIPS10Index = GazetteerBTreeIndex(
+    name='cc1_iso3166_xref_fips_10_idx',
+    schema='usnga',
+    table_name='cc1_iso3166_xref',
+    columns='fips_10'
+    )
+
+CC1ISO3166XrefISO3166Index = GazetteerBTreeIndex(
+    name='cc1_iso3166_xref_iso3166_idx',
+    schema='usnga',
+    table_name='cc1_iso3166_xref',
+    columns='iso_3166_digraph'
+    )
+
 
 FeatureClassCodes = GazetteerTableCSV(
     filename_regexp='USNGA_Feature_Class_Codes.csv',
@@ -216,8 +249,9 @@ tables = (
     GeonamesDuplicates,
     GeonamesCountryFiles,
     GeonamesCountryFilesDuplicates,
-    ADM1Codes,
+    AdministrativeCodes,
     CountryCodes,
+    CC1ISO3166Xref,
     FeatureClassCodes,
     FeatureDesignationCodes,
     NameTypeCodes,
@@ -230,5 +264,7 @@ indexes = (
     GeonamesFKFC,
     GeonamesFKDSG,
     GeonamesFKNT,
-    GeonamesFKTRANSL_CD
+    GeonamesFKTRANSL_CD,
+    CC1ISO3166XrefFIPS10Index,
+    CC1ISO3166XrefISO3166Index
     )
