@@ -44,12 +44,7 @@ class GazetteerTable:
         '''Return a Boolean that indicates if the filename matches the pattern
         for this table.'''
 
-        matched = self.filename_regexp.fullmatch(filename)
-
-        if matched:
-            return True
-        else:
-            return False
+        return self.filename_regexp.fullmatch(filename)
 
     def check_header(self, header, print_debug=False):
         '''Return a Boolean value based on whether the provided header row
@@ -76,7 +71,7 @@ class GazetteerTable:
 
         result = 'CREATE TABLE {} (\n'.format(self.full_table_name)
         for i in self.fields[:-1]:
-                result += '    ' + i.generate_sql() + ',\n'
+            result += '    ' + i.generate_sql() + ',\n'
 
         result += '    ' + self.fields[-1].generate_sql()
 
