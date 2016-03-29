@@ -102,7 +102,7 @@ with connection.cursor() as cur:
 # Process files
 
 
-def process_file(filename, fp, cursor):
+def process_file(filename, file_object, cursor):
     '''Process a file and if appropriate copy data to the database'''
 
     if args.type == 'DEFAULT':
@@ -127,16 +127,17 @@ def process_file(filename, fp, cursor):
     print('Uploading ''{}'' data to {}.'.format(filename,
                                                 table.full_table_name))
 
-    if isinstance(fp, io.TextIOBase):
-        fpp = fp
+    if isinstance(file_object, io.TextIOBase):
+        text_file_object = file_object
     else:
-        fpp = io.TextIOWrapper(fp, encoding=table.encoding)
+        text_file_object = \
+            io.TextIOWrapper(file_object, encoding=table.encoding)
 
-    if not table.check_header(fpp.readline(), print_debug=True):
+    if not table.check_header(text_file_object.readline(), print_debug=True):
         print('File ''{}'' does not have the correct header'.format(filename))
         sys.exit(1)
 
-    table.copy_data(fpp, cursor)
+    table.copy_data(text_file_object, cursor)
 
     return table.full_table_name
 
