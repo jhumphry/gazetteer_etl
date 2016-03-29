@@ -47,17 +47,23 @@ class Cursor(object):
         '''Log a request to execute a COPY command to upload bulk data. This
         is a Postgresql-specific command'''
 
-        self.log_file.write("Executed a COPY from file object to table: '{}'"
+        self.log_file.write("Executed a COPY from file '{}' to table: '{}'"
                             " with params {}\n"
-                            .format(table, repr((sep, null, size, columns))))
+                            .format(file.name,
+                                    table,
+                                    repr((sep, null, size, columns)))
+                           )
 
     def copy_expert(self, sql, file, size=8192):
         '''Log a request to execute a COPY command to upload bulk data. This
         is a Postgresql-specific command'''
 
-        self.log_file.write("Executed a COPY from file object using SQL: '{}'"
+        self.log_file.write("Executed a COPY from file '{}' using SQL: '{}'"
                             " with size '{}'\n"
-                            .format(sql, repr(size)))
+                            .format(file.name,
+                                    sql,
+                                    repr(size))
+                           )
 
     def close(self):
         '''Close the dummy database cursor object. Does not close the
