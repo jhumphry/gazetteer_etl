@@ -41,6 +41,8 @@ class GazetteerBTreeIndex:
         self.fillfactor = fillfactor
 
     def generate_sql(self, drop_existing=False):
+        '''Return the text of a SQL statement that will create the index. If
+        specified, drop the existing index first.'''
 
         result = ''
 
@@ -69,6 +71,7 @@ class GazetteerBTreeIndex:
         return result
 
     def generate_drop_sql(self):
+        '''Return the text of a SQL statement that will drop the index.'''
 
         return 'DROP INDEX IF EXISTS {0}.{1} CASCADE;\n\n' \
                .format(self.schema, self.name)
@@ -98,6 +101,8 @@ class GazetteerForeignKey:
             self.foreign_columns = foreign_columns
 
     def generate_sql(self, drop_existing=False):
+        '''Return the text of a SQL statement that will create the index. If
+        specified, drop the existing index first.'''
 
         result = ''
 
@@ -121,6 +126,7 @@ class GazetteerForeignKey:
         return result
 
     def generate_drop_sql(self):
+        '''Return the text of a SQL statement that will drop the index.'''
 
         return 'ALTER TABLE {0} DROP CONSTRAINT IF EXISTS {1} CASCADE;\n\n' \
                   .format(self.full_table_name, self.name)
