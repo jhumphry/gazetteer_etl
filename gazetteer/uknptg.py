@@ -57,7 +57,7 @@ class GazetteerTableCSV_NPTG(GazetteerTableCSV):
 
 
 Localities = GazetteerTableCSV(
-    filename_regexp='Localities.csv',
+    filename_regexp=r'Localities.csv',
     schema='uknptg',
     table_name='localities',
     fields=(FixedTextField('NptgLocalityCode', width=8, nullable=False),
@@ -105,7 +105,7 @@ LocalitiesFK1 = GazetteerForeignKey(
 
 LocalityAlternativeNames = GazetteerTableCSV_NPTG(
     dummy_columns=1,
-    filename_regexp='LocalityAlternativeNames.csv',
+    filename_regexp=r'LocalityAlternativeNames.csv',
     schema='uknptg',
     table_name='localities_alternative_names',
     fields=(FixedTextField('NptgLocalityCode', width=8, nullable=False),
@@ -150,7 +150,7 @@ LocalityAlternativeNamesFK2 = GazetteerForeignKey(
     )
 
 AdjacentLocality = GazetteerTableCSV(
-    filename_regexp='AdjacentLocality.csv',
+    filename_regexp=r'AdjacentLocality.csv',
     schema='uknptg',
     table_name='adjacent_localities',
     fields=(FixedTextField('NptgLocalityCode', width=8, nullable=False),
@@ -189,7 +189,7 @@ AdjacentLocalitiesFK2 = GazetteerForeignKey(
 
 LocalityHierarchy = GazetteerTableCSV_NPTG(
     dummy_columns=1,
-    filename_regexp='LocalityHierarchy.csv',
+    filename_regexp=r'LocalityHierarchy.csv',
     schema='uknptg',
     table_name='localities_hierarchy',
     fields=(FixedTextField('ParentNptgLocalityCode', width=8, nullable=False),
@@ -228,7 +228,7 @@ LocalityHierarchyFK2 = GazetteerForeignKey(
 
 
 AdminAreas = GazetteerTableCSV(
-    filename_regexp='AdminAreas.csv',
+    filename_regexp=r'AdminAreas.csv',
     schema='uknptg',
     table_name='admin_areas',
     fields=(SmallIntField('AdministrativeAreaCode', nullable=False),
@@ -267,7 +267,7 @@ AdminAreasFK1 = GazetteerForeignKey(
 
 
 Regions = GazetteerTableCSV(
-    filename_regexp='Regions.csv',
+    filename_regexp=r'Regions.csv',
     schema='uknptg',
     table_name='regions',
     fields=(FixedTextField('RegionCode', width=2, nullable=False),
@@ -285,7 +285,7 @@ Regions = GazetteerTableCSV(
 
 
 Districts = GazetteerTableCSV(
-    filename_regexp='Districts.csv',
+    filename_regexp=r'Districts.csv',
     schema='uknptg',
     table_name='districts',
     fields=(SmallIntField('DistrictCode', nullable=False),
@@ -315,7 +315,7 @@ DistrictsFK1 = GazetteerForeignKey(
 
 
 PlusbusZones = GazetteerTableCSV(
-    filename_regexp='PlusbusZones.csv',
+    filename_regexp=r'PlusbusZones.csv',
     schema='uknptg',
     table_name='plusbus_zones',
     fields=(FixedTextField('PlusbusZoneCode', width=12, nullable=False),
@@ -334,7 +334,7 @@ PlusbusZones = GazetteerTableCSV(
 
 
 PlusbusMapping = GazetteerTableCSV(
-    filename_regexp='PlusbusMapping.csv',
+    filename_regexp=r'PlusbusMapping.csv',
     schema='uknptg',
     table_name='plusbus_mapping',
     fields=(FixedTextField('PlusbusZoneCode', width=12, nullable=False),

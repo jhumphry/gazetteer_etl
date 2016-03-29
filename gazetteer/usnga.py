@@ -32,7 +32,7 @@ from .indexes import GazetteerBTreeIndex, GazetteerForeignKey
 
 
 Geonames = GazetteerTable(
-    filename_regexp='Countries.txt',
+    filename_regexp=r'Countries.txt',
     schema='usnga',
     table_name='geonames',
     fields=(SmallIntField('RC', nullable=False),  # Regional font Code
@@ -80,7 +80,7 @@ Geonames = GazetteerTable(
 
 
 GeonamesDuplicates = GazetteerTableDuplicate(
-    filename_regexp='Countries_disclaimer.txt',
+    filename_regexp=r'Countries_disclaimer.txt',
     schema='usnga',
     table_name='geonames'
     )
@@ -90,7 +90,7 @@ GeonamesCountryFiles = copy.copy(Geonames)
 GeonamesCountryFiles.filename_regexp = re.compile('[a-z]{2}.txt')
 
 GeonamesCountryFilesDuplicates = GazetteerTableDuplicate(
-    filename_regexp='[a-z]{2}_('
+    filename_regexp=r'[a-z]{2}_('
                     'administrative_a|hydrographic_h|'
                     'localities_l|populatedplaces_p|'
                     'transportation_r|spot_s|'
@@ -143,7 +143,7 @@ GeonamesFKTRANSL_CD = GazetteerForeignKey(
 
 
 AdministrativeCodes = GazetteerTableCSV(
-    filename_regexp='USNGA_Administrative_Codes.csv',
+    filename_regexp=r'USNGA_Administrative_Codes.csv',
     schema='usnga',
     table_name='administrative_codes',
     fields=(TextField('CC1 ADM1', nullable=False),
@@ -155,7 +155,7 @@ AdministrativeCodes = GazetteerTableCSV(
 
 
 CountryCodes = GazetteerTableCSV(
-    filename_regexp='USNGA_Country_Codes.csv',
+    filename_regexp=r'USNGA_Country_Codes.csv',
     schema='usnga',
     table_name='country_codes',
     fields=(TextField('Country Code', nullable=False),
@@ -165,7 +165,7 @@ CountryCodes = GazetteerTableCSV(
     )
 
 CC1ISO3166Xref = GazetteerTableCSV(
-    filename_regexp='USNGA_CC1_ISO3166_xref.csv',
+    filename_regexp=r'USNGA_CC1_ISO3166_xref.csv',
     schema='usnga',
     table_name='cc1_iso3166_xref',
     fields=(TextField('COUNTRY', nullable=False),
@@ -198,7 +198,7 @@ CC1ISO3166XrefISO3166Index = GazetteerBTreeIndex(
 
 
 FeatureClassCodes = GazetteerTableCSV(
-    filename_regexp='USNGA_Feature_Class_Codes.csv',
+    filename_regexp=r'USNGA_Feature_Class_Codes.csv',
     schema='usnga',
     table_name='feature_class_codes',
     fields=(TextField('Feature Class', nullable=False),
@@ -208,7 +208,7 @@ FeatureClassCodes = GazetteerTableCSV(
     )
 
 FeatureDesignationCodes = GazetteerTableCSV(
-    filename_regexp='USNGA_Feature_Designation_Codes.csv',
+    filename_regexp=r'USNGA_Feature_Designation_Codes.csv',
     schema='usnga',
     table_name='feature_designation_codes',
     fields=(TextField('Feature Designation Code', nullable=False),
@@ -222,7 +222,7 @@ FeatureDesignationCodes = GazetteerTableCSV(
 
 
 NameTypeCodes = GazetteerTableCSV(
-    filename_regexp='USNGA_Name_Type_Codes.csv',
+    filename_regexp=r'USNGA_Name_Type_Codes.csv',
     schema='usnga',
     table_name='name_type_codes',
     fields=(FixedTextField('Name Type Code', width=2, nullable=False),
@@ -234,7 +234,7 @@ NameTypeCodes = GazetteerTableCSV(
 
 
 TransliterationCodes = GazetteerTableCSV(
-    filename_regexp='USNGA_Transliteration_Codes.csv',
+    filename_regexp=r'USNGA_Transliteration_Codes.csv',
     schema='usnga',
     table_name='transliteration_codes',
     fields=(TextField('Transliteration Code', nullable=False),

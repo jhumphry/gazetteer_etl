@@ -28,7 +28,7 @@ from .tables import GazetteerTableCSV
 from .indexes import GazetteerBTreeIndex
 
 BAT = GazetteerTableCSV(
-    filename_regexp='apip_bat_gazetteer.csv',
+    filename_regexp=r'apip_bat_gazetteer.csv',
     schema='ukapc',
     table_name='bat',
     fields=(TextField('FID', nullable=False),

@@ -32,7 +32,7 @@ from .indexes import GazetteerBTreeIndex, GazetteerForeignKey
 
 
 Features = GazetteerTable(
-    filename_regexp='NationalFile_([0-9]{8})\.txt',
+    filename_regexp=r'NationalFile_([0-9]{8})\.txt',
     schema='usgnis',
     table_name='features',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -84,10 +84,10 @@ FeaturesFK1 = GazetteerForeignKey(
 
 AllStatesFeatures = copy.copy(Features)
 AllStatesFeatures.filename_regexp = \
-    re.compile('[A-Z]{2}_Features_([0-9]{8})\.txt')
+    re.compile(r'[A-Z]{2}_Features_([0-9]{8})\.txt')
 
 FedCodes = GazetteerTable(
-    filename_regexp='NationalFedCodes_([0-9]{8})\.txt',
+    filename_regexp=r'NationalFedCodes_([0-9]{8})\.txt',
     schema='usgnis',
     table_name='fed_codes',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -119,7 +119,7 @@ FedCodesFK1 = GazetteerForeignKey(
 
 AllStatesFedCodes = copy.copy(FedCodes)
 AllStatesFedCodes.filename_regexp = \
-    re.compile('[A-Z]{2}_FedCodes_([0-9]{8})\.txt')
+    re.compile(r'[A-Z]{2}_FedCodes_([0-9]{8})\.txt')
 
 # The Feature_Description_History files currently have lines containing a
 # variety of characters, including a '\|' sequence that PostgreSQL's COPY
@@ -127,7 +127,7 @@ AllStatesFedCodes.filename_regexp = \
 # to be processed with a slower, prepared INSERT-based routine.
 
 FeatureDescriptionHistory = GazetteerTableInserted(
-    filename_regexp='Feature_Description_History_([0-9]{8})\.txt',
+    filename_regexp=r'Feature_Description_History_([0-9]{8})\.txt',
     schema='usgnis',
     table_name='feature_description_history',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -138,7 +138,7 @@ FeatureDescriptionHistory = GazetteerTableInserted(
     )
 
 GovtUnits = GazetteerTable(
-    filename_regexp='GOVT_UNITS_([0-9]{8})\.txt',
+    filename_regexp=r'GOVT_UNITS_([0-9]{8})\.txt',
     schema='usgnis',
     table_name='govt_units',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -159,7 +159,7 @@ GovtUnits = GazetteerTable(
 # is required.
 
 AllNames = GazetteerTableInserted(
-    filename_regexp='AllNames_([0-9]{8})\.txt',
+    filename_regexp=r'AllNames_([0-9]{8})\.txt',
     schema='usgnis',
     table_name='all_names',
     fields=(IntegerField('FEATURE_ID', nullable=False),
@@ -173,7 +173,7 @@ AllNames = GazetteerTableInserted(
     )
 
 AntarcticaFeatures = GazetteerTable(
-    filename_regexp='ANTARCTICA_([0-9]{8})\.txt',
+    filename_regexp=r'ANTARCTICA_([0-9]{8})\.txt',
     schema='usgnis',
     table_name='antarctica',
     fields=(IntegerField('ANTARCTICA_FEATURE_ID', nullable=False),
@@ -195,7 +195,7 @@ AntarcticaFeatures = GazetteerTable(
     )
 
 CensusClassCodeDefinitions = GazetteerTableCSV(
-    filename_regexp='USGNIS_Census_Class_Code_Definitions.csv',
+    filename_regexp=r'USGNIS_Census_Class_Code_Definitions.csv',
     schema='usgnis',
     table_name='census_class_code_definitions',
     fields=(FixedTextField('Code', width=2, nullable=False),
@@ -205,7 +205,7 @@ CensusClassCodeDefinitions = GazetteerTableCSV(
     )
 
 FeatureClassCodeDefinitions = GazetteerTableCSV(
-    filename_regexp='USGNIS_Feature_Class_Code_Definitions.csv',
+    filename_regexp=r'USGNIS_Feature_Class_Code_Definitions.csv',
     schema='usgnis',
     table_name='feature_class_code_definitions',
     fields=(TextField('Class', nullable=False),

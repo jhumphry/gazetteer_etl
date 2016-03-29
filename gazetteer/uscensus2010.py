@@ -28,7 +28,7 @@ from .tables import GazetteerTable
 
 
 Counties = GazetteerTable(
-    filename_regexp='Gaz_counties_national.txt',
+    filename_regexp=r'Gaz_counties_national.txt',
     schema='uscensus2010',
     table_name='counties',
     fields=(FixedTextField('USPS', width=2, nullable=False),
@@ -51,7 +51,7 @@ Counties = GazetteerTable(
 
 
 CountiesSubdivisions = GazetteerTable(
-    filename_regexp='Gaz_cousubs_national.txt',
+    filename_regexp=r'Gaz_cousubs_national.txt',
     schema='uscensus2010',
     table_name='counties_subdivisions',
     fields=(FixedTextField('USPS', width=2, nullable=False),
@@ -75,7 +75,7 @@ CountiesSubdivisions = GazetteerTable(
 
 
 Places = GazetteerTable(
-    filename_regexp='Gaz_places_national.txt',
+    filename_regexp=r'Gaz_places_national.txt',
     schema='uscensus2010',
     table_name='places',
     fields=(FixedTextField('USPS', width=2, nullable=False),
