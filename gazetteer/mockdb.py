@@ -52,7 +52,7 @@ class Cursor(object):
                             .format(file.name,
                                     table,
                                     repr((sep, null, size, columns)))
-                           )
+                            )
 
     def copy_expert(self, sql, file, size=8192):
         '''Log a request to execute a COPY command to upload bulk data. This
@@ -63,7 +63,7 @@ class Cursor(object):
                             .format(file.name,
                                     sql,
                                     repr(size))
-                           )
+                            )
 
     def close(self):
         '''Close the dummy database cursor object. Does not close the
@@ -80,15 +80,15 @@ class Connection(object):
         self.log_file = log_file
         self._autocommit = False
 
-    @property
-    def autocommit(self):
-        return self._autocommit
+    def set_autocommit(self, value):
+        '''Log an attempt to change the autocommit mode of the mock database
+        connection object'''
 
-    @autocommit.setter
-    def autocommit(self, value):
         self._autocommit = value
         self.log_file.write("Set autocommit status to: {}\n".format(value))
         self.log_file.flush()
+
+    autocommit = property(fset=set_autocommit)
 
     def cursor(self):
         '''Create a dummy cursor which uses the same output file.'''
