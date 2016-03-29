@@ -129,4 +129,4 @@ class GazetteerForeignKey:
         '''Return the text of a SQL statement that will drop the index.'''
 
         return 'ALTER TABLE {0} DROP CONSTRAINT IF EXISTS {1} CASCADE;\n\n' \
-                  .format(self.full_table_name, self.name)
+               .format(self.full_table_name, self.name)
