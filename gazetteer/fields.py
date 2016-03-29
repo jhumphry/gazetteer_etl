@@ -21,8 +21,14 @@
 '''Descriptions of the fields that can make up gazetteer data files, along
 with information on their SQL equivalents'''
 
+import abc
 
-class GazetteerField:
+
+class GazetteerField(metaclass=abc.ABCMeta):
+    '''An abstract class that defines a field/column in a gazetteer data
+    table.'''
+
+    sql_type_name = 'NONE'
 
     def __init__(self, field_name, sql_name='', nullable=True):
         self.field_name = field_name
@@ -42,31 +48,38 @@ class GazetteerField:
 
 
 class BigIntField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type BIGINT.'''
 
     sql_type_name = 'BIGINT'
 
 
 class IntegerField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type INTEGER.'''
 
     sql_type_name = 'INTEGER'
 
 
 class SmallIntField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type SMALLINT.'''
 
     sql_type_name = 'SMALLINT'
 
 
 class DoubleField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type DOUBLE PRECISION.'''
 
     sql_type_name = 'DOUBLE PRECISION'
 
 
 class TextField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type TEXT.'''
 
     sql_type_name = 'TEXT'
 
 
 class FixedTextField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type CHARACTER VARYING()
+     with a defined width.'''
 
     def __init__(self, field_name, width, sql_name='', nullable=True):
         super().__init__(field_name, sql_name, nullable)
@@ -81,19 +94,22 @@ class FixedTextField(GazetteerField):
 
 
 class DateField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type DATE.'''
 
     sql_type_name = 'DATE'
 
 
 class TimeStampField(GazetteerField):
+    '''A gazetteer field corresponding to the SQL type TIMESTAMP.'''
 
     sql_type_name = 'TIMESTAMP'
 
 
 class FlagField(GazetteerField):
-    '''This is intended for single character fields that are sometimes used as
-    a form of Boolean or basic enumeration type. It may be more efficient to
-    switch these to the "char" type (with the quotations) which is an internal
-    PostgreSQL type which has a fixed width and only takes up one byte.'''
+    '''This is intended for gazetteer single character fields that are
+    sometimes used as a form of Boolean or basic enumeration type. It may be
+    more efficient to switch these to the "char" type (with the quotations)
+    which is an internal PostgreSQL type which has a fixed width and only
+    takes up one byte.'''
 
     sql_type_name = 'CHARACTER VARYING(1)'
