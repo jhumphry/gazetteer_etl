@@ -26,6 +26,7 @@ import gazetteer.uknptg
 import gazetteer.usgnis
 import gazetteer.uscensus2010
 import gazetteer.usnga
+import gazetteer.toronto
 
 gazetteer_schema = {}
 gazetteer_tables = {}
@@ -95,3 +96,5 @@ register_tables(uscensus2010.tables)
 register_indexes(uscensus2010.indexes)
 register_tables(usnga.tables)
 register_indexes(usnga.indexes)
+register_tables(toronto.tables)
+register_indexes(toronto.indexes)
