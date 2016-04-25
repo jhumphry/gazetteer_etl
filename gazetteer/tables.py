@@ -23,6 +23,12 @@ on generating appropriate SQL'''
 
 import re
 
+try:
+    from dbfread import StreamDBF
+    dbfread_available = True
+except ImportError:
+    dbfread_available = False
+
 
 class GazetteerTable:
     '''This class defines both a file that can be read, and a database table
@@ -171,6 +177,89 @@ class GazetteerTableInserted(GazetteerTable):
         for line in fileobj:
             params = [(None if x.strip() == '' else x)
                       for x in line.split(self.sep)]
+            cur.execute(sql_insert, params)
+
+
+class GazetteerTableDBF(GazetteerTable):
+    '''This derivative of GazetteerTable reads from .dbf files and INSERTS the
+    results one-by-one.'''
+
+    REQUIRES_TEXTIO = False
+
+    def __init__(self, **kwargs):
+
+        super().__init__(**kwargs)
+
+        self.header_checked = False
+        self.fileobj = None
+        self.dbfobj = None
+
+    def check_header(self, file_object, print_debug=False):
+        '''Return a Boolean value based on whether the provided header row
+        matches the expectation in the code'''
+
+        if not dbfread_available:
+            raise NotImplementedError('dbfread package not available')
+
+        assert not self.header_checked
+
+        self.header_checked = True
+        self.fileobj = file_object
+
+        def factory(lst):
+            return [item[1] for item in lst]
+
+        self.dbfobj = StreamDBF(file_object,
+                                lowernames=False,
+                                recfactory=factory)
+
+        columns = self.dbfobj.field_names
+        if len(columns) != len(self.fields):
+            if print_debug:
+                print('Wrong number of columns: {} expected : {}'
+                      .format(len(columns), len(self.fields)))
+            return False
+
+        for i in range(0, len(columns)):
+            if self.fields[i].field_name != columns[i].strip('" '):
+                if print_debug:
+                    print('Unknown column name: {}'
+                          .format(columns[i].strip('"')))
+                return False
+
+        return True
+
+    def copy_data(self, fileobj, cur):
+        '''Copy data from the file object fileobj to the database using the
+        cursor cur'''
+
+        if not self.header_checked:
+            result = self.check_header(fileobj, False)
+            if not result:
+                raise ValueError('Not a valid DBF file')
+        else:
+            if fileobj != self.fileobj:
+                raise ValueError('File object has changed')
+
+        cur.execute('SET DATESTYLE=%s;', (self.datestyle, ))
+
+        prepared_name = 'insert_' + self.table_name.replace('.', '_')
+        num_fields = len(self.fields)
+
+        sql_prepare_params = ",".join(["$"+str(x)
+                                       for x in range(1, num_fields+1)])
+        cur.execute('''PREPARE {0} AS INSERT INTO {1} VALUES ({2});'''
+                    .format(prepared_name,
+                            self.full_table_name,
+                            sql_prepare_params))
+
+        sql_insert_params = ",".join(["%s" for x in range(1, num_fields+1)])
+        sql_insert = 'EXECUTE {0} ({1});'.format(prepared_name,
+                                                 sql_insert_params)
+
+        for record in self.dbfobj:
+            params = [(None if x == '' else x)
+                      for x in record]
             cur.execute(sql_insert, params)
 
 
