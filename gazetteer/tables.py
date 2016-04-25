@@ -28,6 +28,8 @@ class GazetteerTable:
     '''This class defines both a file that can be read, and a database table
     that the data can be uploaded to.'''
 
+    REQUIRES_TEXTIO = True
+
     def __init__(self, filename_regexp, schema, table_name,
                  fields, pk, sep='|', encoding=None, datestyle='MDY'):
         self.filename_regexp = re.compile(filename_regexp)
@@ -46,9 +48,11 @@ class GazetteerTable:
 
         return self.filename_regexp.fullmatch(filename)
 
-    def check_header(self, header, print_debug=False):
+    def check_header(self, file_object, print_debug=False):
         '''Return a Boolean value based on whether the provided header row
         matches the expectation in the code'''
+
+        header = file_object.readline()
 
         columns = header.strip('\ufeff\n ').split(self.sep)
         if len(columns) != len(self.fields):
@@ -176,6 +180,8 @@ class GazetteerTableDuplicate(GazetteerTable):
     ignored unless the type is specifically set. This table type can be used
     to match on the filename, but not do anything with the file itself.'''
 
+    REQUIRES_TEXTIO = False
+
     def __init__(self, filename_regexp, schema, table_name):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
@@ -183,7 +189,7 @@ class GazetteerTableDuplicate(GazetteerTable):
         self.full_table_name = schema + '.' + table_name
         self.encoding = 'UTF-8'
 
-    def check_header(self, header, print_debug=False):
+    def check_header(self, file_object, print_debug=False):
         return True
 
     def generate_sql_ddl(self):

@@ -127,17 +127,17 @@ def process_file(filename, file_object, cursor):
     print('Uploading ''{}'' data to {}.'.format(filename,
                                                 table.full_table_name))
 
-    if isinstance(file_object, io.TextIOBase):
-        text_file_object = file_object
-    else:
-        text_file_object = \
+    if table.REQUIRES_TEXTIO and not isinstance(file_object, io.TextIOBase):
+        wrapped_file_object = \
             io.TextIOWrapper(file_object, encoding=table.encoding)
+    else:
+        wrapped_file_object = file_object
 
-    if not table.check_header(text_file_object.readline(), print_debug=True):
+    if not table.check_header(wrapped_file_object, print_debug=True):
         print('File ''{}'' does not have the correct header'.format(filename))
         sys.exit(1)
 
-    table.copy_data(text_file_object, cursor)
+    table.copy_data(wrapped_file_object, cursor)
 
     return table.full_table_name
 
@@ -149,7 +149,7 @@ file_ext = os.path.splitext(args.file)[1]
 tables_modified = []
 
 if file_ext == '.txt' or file_ext == '.csv':
-    with open(args.file, 'rt') as fp, \
+    with open(args.file, 'rb') as fp, \
             connection.cursor() as cur:
 
         tables_modified.append(process_file(args.file, fp, cur))

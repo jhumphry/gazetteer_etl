@@ -38,7 +38,10 @@ class GazetteerTableCSV_NPTG(GazetteerTableCSV):
         self.dummy_columns = dummy_columns
         super().__init__(**kwargs)
 
-    def check_header(self, header, print_debug=False):
+    def check_header(self, file_object, print_debug=False):
+
+        header = file_object.readline()
+
         columns = header.strip('\ufeff\n ').split(self.sep)
         if len(columns) + self.dummy_columns != len(self.fields):
             if print_debug:
