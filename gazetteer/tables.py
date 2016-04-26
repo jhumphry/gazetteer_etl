@@ -177,6 +177,8 @@ class GazetteerTableInserted(GazetteerTable):
         for line in fileobj:
             params = [(None if x.strip() == '' else x)
                       for x in line.split(self.sep)]
+            if params == [None]:
+                continue
             cur.execute(sql_insert, params)
 
 
