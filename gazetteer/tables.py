@@ -276,8 +276,8 @@ class GazetteerTableDuplicate(GazetteerTable):
     def __init__(self, filename_regexp, schema, table_name):
         self.filename_regexp = re.compile(filename_regexp)
         self.schema = schema
-        self.table_name = table_name
-        self.full_table_name = schema + '.' + table_name
+        self.table_name = None
+        self.full_table_name = None
         self.encoding = 'UTF-8'
 
     def check_header(self, file_object, print_debug=False):

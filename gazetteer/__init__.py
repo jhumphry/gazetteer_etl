@@ -45,14 +45,16 @@ def register_tables(tables):
 
     for i in tables:
 
-        if i.schema not in gazetteer_schema:
-            gazetteer_schema[i.schema] = set()
-        gazetteer_schema[i.schema].add(i.table_name)
-
         gazetteer_files.append(i)
 
-        if i.full_table_name not in gazetteer_tables:
-            gazetteer_tables[i.full_table_name] = i
+        if i.table_name is not None:
+
+            if i.schema not in gazetteer_schema:
+                gazetteer_schema[i.schema] = set()
+            gazetteer_schema[i.schema].add(i.table_name)
+
+            if i.full_table_name not in gazetteer_tables:
+                gazetteer_tables[i.full_table_name] = i
 
 
 def register_indexes(indexes):

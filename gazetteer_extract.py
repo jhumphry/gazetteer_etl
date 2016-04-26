@@ -177,6 +177,7 @@ connection.autocommit = True
 
 with connection.cursor() as cur:
     for i in tables_modified:
-        cur.execute('VACUUM ANALYZE {};'.format(i))
+        if i is not None:
+            cur.execute('VACUUM ANALYZE {};'.format(i))
 
 connection.close()
