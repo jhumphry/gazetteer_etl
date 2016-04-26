@@ -148,15 +148,7 @@ file_ext = os.path.splitext(args.file)[1]
 
 tables_modified = []
 
-if file_ext == '.txt' or file_ext == '.csv':
-    with open(args.file, 'rt') as fp, \
-            connection.cursor() as cur:
-
-        tables_modified.append(process_file(args.file, fp, cur))
-
-    connection.commit()
-
-if file_ext == '.dbf':
+if file_ext in ('.txt', '.csv', '.dbf'):
     with open(args.file, 'rb') as fp, \
             connection.cursor() as cur:
 
