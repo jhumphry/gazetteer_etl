@@ -24,6 +24,16 @@ project is not endorsed by or affiliated with the City of Toronto.'''
 from .fields import SmallIntField, IntegerField, DoubleField
 from .fields import TextField, FlagField
 from .tables import dbfread_available,  GazetteerTableDBF
+from .tables import GazetteerTableInserted
+
+
+class TorontoFeatureCodesCSV(GazetteerTableInserted):
+
+    def check_header(self, file_object, print_debug=False):
+        header = file_object.readline()
+        if header != 'ADDRESS FEATURE CODES\n':
+            return False
+        return True
 
 
 AddressPoint = GazetteerTableDBF(
@@ -57,10 +67,22 @@ AddressPoint = GazetteerTableDBF(
     encoding='UTF-8'
     )
 
+AddressFeatureCodes = TorontoFeatureCodesCSV(
+    filename_regexp=r'readme_address_points_Jan2013.txt',
+    schema='toronto',
+    table_name='feature_codes',
+    fields=(IntegerField('fcode', nullable=False),
+            TextField('description', nullable=False)
+            ),
+    pk='fcode',
+    sep='\t',
+    encoding='cp1252'
+    )
 
 if dbfread_available:
     tables = (
         AddressPoint,
+        AddressFeatureCodes
         )
 
     indexes = tuple()
