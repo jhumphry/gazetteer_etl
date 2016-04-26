@@ -23,11 +23,13 @@ project is not endorsed by or affiliated with the City of Toronto.'''
 
 from .fields import SmallIntField, IntegerField, DoubleField
 from .fields import TextField, FlagField
-from .tables import dbfread_available,  GazetteerTableDBF
+from .tables import dbfread_available, GazetteerTableDBF
 from .tables import GazetteerTableInserted, GazetteerTableDuplicate
 
 
 class TorontoFeatureCodesCSV(GazetteerTableInserted):
+    '''A special version of GazetteerTableInserted to cope with the
+    non-standard header on the feature codes descriptions file.'''
 
     def check_header(self, file_object, print_debug=False):
         header = file_object.readline()
