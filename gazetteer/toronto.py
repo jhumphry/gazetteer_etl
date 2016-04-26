@@ -24,7 +24,7 @@ project is not endorsed by or affiliated with the City of Toronto.'''
 from .fields import SmallIntField, IntegerField, DoubleField
 from .fields import TextField, FlagField
 from .tables import dbfread_available,  GazetteerTableDBF
-from .tables import GazetteerTableInserted
+from .tables import GazetteerTableInserted, GazetteerTableDuplicate
 
 
 class TorontoFeatureCodesCSV(GazetteerTableInserted):
@@ -79,10 +79,19 @@ AddressFeatureCodes = TorontoFeatureCodesCSV(
     encoding='cp1252'
     )
 
+AddressPointDiscards = GazetteerTableDuplicate(
+    filename_regexp=r'ADDRESS_POINT_WGS84('
+                    r'.prj|_readme.txt|.shp|'
+                    r'.shp.xml|.shx)',
+    schema='usnga',
+    table_name='other'
+    )
+
 if dbfread_available:
     tables = (
         AddressPoint,
-        AddressFeatureCodes
+        AddressFeatureCodes,
+        AddressPointDiscards
         )
 
     indexes = tuple()
