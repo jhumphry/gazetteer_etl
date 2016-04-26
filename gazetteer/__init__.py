@@ -21,12 +21,12 @@
 '''A package that describes gazetteer data files and the associated schema for
 upload into a database.'''
 
-import gazetteer.ukapc
-import gazetteer.uknptg
-import gazetteer.usgnis
-import gazetteer.uscensus2010
-import gazetteer.usnga
-import gazetteer.toronto
+from . import ukapc
+from . import uknptg
+from . import usgnis
+from . import uscensus2010
+from . import usnga
+from . import toronto
 
 gazetteer_schema = {}
 gazetteer_tables = {}
