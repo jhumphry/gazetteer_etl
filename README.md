@@ -35,6 +35,8 @@ on Geographic Names - Domestic and Antarctic Names
 - [usnga](http://geonames.nga.mil/gns/html/namefiles.html) : U.S. National
 Geospacial-Intelligence Agency
 
+- [toronto](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=91415f9cd70bb210VgnVCM1000003dd60f89RCRD&vgnextchannel=1a66e03bb8d1e310VgnVCM10000071d60f89RCRD)
+: Toronto One Address Repository
 
 This is an independent project and it is not associated with or endorsed by
 the producers of the data sources listed above. It is available under the GPL
