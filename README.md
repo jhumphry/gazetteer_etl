@@ -20,20 +20,21 @@ not contain all of the fields included in the data available from the
 underlying sources. Currently, files from the following sources are supported
 to some degree:
 
-- ukapc: UK Antarctic Place-names Committee
-<http://apc.antarctica.ac.uk/gazetteers/>
+- [ukapc](http://apc.antarctica.ac.uk/gazetteers/) : UK Antarctic Place-names
+Committee
 
-- uknptg: UK National Public Transport Gazetteer
-<https://data.gov.uk/dataset/nptg>
+- [uknptg](https://data.gov.uk/dataset/nptg) : UK National Public Transport
+Gazetteer
 
-- usgnis: U.S. Board on Geographic Names - Domestic and Antarctic Names
-<http://geonames.usgs.gov/domestic/download_data.htm>
+- [usgnis](http://geonames.usgs.gov/domestic/download_data.htm) : U.S. Board
+on Geographic Names - Domestic and Antarctic Names
 
-- uscensus2010: U.S. Census Bureau 2010 Census Gazetteer Files
-<http://www.census.gov/geo/maps-data/data/gazetteer2010.html>
+- [uscensus2010](http://www.census.gov/geo/maps-data/data/gazetteer2010.html)
+: U.S. Census Bureau 2010 Census Gazetteer Files
 
-- usnga: U.S. National Geospacial-Intelligence Agency
-<http://geonames.nga.mil/gns/html/namefiles.html>
+- [usnga](http://geonames.nga.mil/gns/html/namefiles.html) : U.S. National
+Geospacial-Intelligence Agency
+
 
 This is an independent project and it is not associated with or endorsed by
 the producers of the data sources listed above. It is available under the GPL
@@ -46,9 +47,15 @@ v2 or later, as described in the file `COPYING`.
 
 ## Provided programs and package
 
+The following programs and code are provided by this package. The code is
+written for Python 3 and uses [psycopg](http://initd.org/psycopg/) to
+interface with PostgreSQL. Some data sources may require the ability to read
+`.dbf` files. This is not covered by the standard Python library and so needs
+a recent version of the [dbfread](https://github.com/olemb/dbfread) library.
+
 ### `gazetteer_schema.py`
 
-This program can create or recreate the schemas and tables in a database which
+This program can create or recreate the schema and tables in a database which
 can then be used by `gazetteer_extract.py`. It can also truncate the tables to
 clear out all existing data, and create or drop suitable indexes and foreign
 key relationships on the tables. The optional `TABLE` parameter can be used to
@@ -135,10 +142,10 @@ can give a speed boost. The `--work-mem` and `--maintenance-work-mem` options
 temporarily increase the amount of working memory that the PostgreSQL server
 uses.
 
-### supplemental
+### `supplemental`
 
 This directory holds some additional data tables defining the meanings of
-codings in the main tables. They should be fairly static.
+codes in the main tables. They should be fairly static.
 
 ### `gazetteer`
 
